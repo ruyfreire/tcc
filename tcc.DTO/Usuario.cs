@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace tcc.DTO
 {
-    class Usuario
+   public class Usuario
     {
-    }
+        public string email { get; set; }
+        public string nome { get; set; }
+        public string senha { get; set; }
+        public DateTime nascimento { get; set; }
+        public string sexo { get; set; }
+        public int peso { get; set; }
+        public int altura { get; set; }
+        public string objetivo { get; set; }
+        public string id_gym_personal { get; set; }
+        public string id_nutricionista { get; set; }
+        public int id_treino { get; set; }
+        public int id_dieta { get; set; }
+
+}
 }
