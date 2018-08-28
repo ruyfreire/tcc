@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Voltar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.Ok = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.criarUsuario = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(320, 51);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(231, 26);
             this.textBox1.TabIndex = 2;
@@ -76,29 +76,30 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(320, 120);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(231, 26);
             this.textBox2.TabIndex = 3;
             this.textBox2.UseSystemPasswordChar = true;
             // 
-            // Voltar
+            // btnSair
             // 
-            this.Voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Voltar.Location = new System.Drawing.Point(487, 393);
-            this.Voltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Voltar.Name = "Voltar";
-            this.Voltar.Size = new System.Drawing.Size(112, 28);
-            this.Voltar.TabIndex = 4;
-            this.Voltar.Text = "Sair";
-            this.Voltar.UseVisualStyleBackColor = true;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(487, 393);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(112, 28);
+            this.btnSair.TabIndex = 4;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // Ok
             // 
             this.Ok.BackColor = System.Drawing.Color.GreenYellow;
             this.Ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ok.Location = new System.Drawing.Point(272, 206);
-            this.Ok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Ok.Margin = new System.Windows.Forms.Padding(4);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(112, 28);
             this.Ok.TabIndex = 5;
@@ -116,16 +117,17 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueci a senha";
             // 
-            // linkLabel2
+            // criarUsuario
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(268, 330);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(136, 20);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Criar novo usuário";
+            this.criarUsuario.AutoSize = true;
+            this.criarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.criarUsuario.Location = new System.Drawing.Point(268, 330);
+            this.criarUsuario.Name = "criarUsuario";
+            this.criarUsuario.Size = new System.Drawing.Size(136, 20);
+            this.criarUsuario.TabIndex = 7;
+            this.criarUsuario.TabStop = true;
+            this.criarUsuario.Text = "Criar novo usuário";
+            this.criarUsuario.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.criarUsuario_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -143,16 +145,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 434);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.criarUsuario);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.Ok);
-            this.Controls.Add(this.Voltar);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login";
             this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -167,10 +169,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button Voltar;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button Ok;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel criarUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
