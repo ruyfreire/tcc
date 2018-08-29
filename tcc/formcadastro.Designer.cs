@@ -43,9 +43,12 @@
             this.labobjetivo = new System.Windows.Forms.Label();
             this.comboBoxsexo = new System.Windows.Forms.ComboBox();
             this.comboBoxobjetivo = new System.Windows.Forms.ComboBox();
-            this.bttlimpar = new System.Windows.Forms.Button();
+            this.btnlimpar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.maskednascimento = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtname
@@ -54,7 +57,6 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(249, 20);
             this.txtname.TabIndex = 0;
-            this.txtname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtemail
             // 
@@ -78,7 +80,6 @@
             this.labname.Size = new System.Drawing.Size(35, 13);
             this.labname.TabIndex = 5;
             this.labname.Text = "Nome";
-            this.labname.Click += new System.EventHandler(this.label1_Click);
             // 
             // labemail
             // 
@@ -121,14 +122,14 @@
             this.txtpeso.Location = new System.Drawing.Point(147, 223);
             this.txtpeso.Name = "txtpeso";
             this.txtpeso.Size = new System.Drawing.Size(103, 20);
-            this.txtpeso.TabIndex = 10;
+            this.txtpeso.TabIndex = 5;
             // 
             // txtaltura
             // 
             this.txtaltura.Location = new System.Drawing.Point(147, 262);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(103, 20);
-            this.txtaltura.TabIndex = 11;
+            this.txtaltura.TabIndex = 6;
             // 
             // labpeso
             // 
@@ -159,6 +160,7 @@
             // 
             // comboBoxsexo
             // 
+            this.comboBoxsexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxsexo.FormattingEnabled = true;
             this.comboBoxsexo.Items.AddRange(new object[] {
             "F",
@@ -166,11 +168,11 @@
             this.comboBoxsexo.Location = new System.Drawing.Point(147, 189);
             this.comboBoxsexo.Name = "comboBoxsexo";
             this.comboBoxsexo.Size = new System.Drawing.Size(48, 21);
-            this.comboBoxsexo.TabIndex = 16;
-            this.comboBoxsexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxsexo.TabIndex = 4;
             // 
             // comboBoxobjetivo
             // 
+            this.comboBoxobjetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxobjetivo.FormattingEnabled = true;
             this.comboBoxobjetivo.Items.AddRange(new object[] {
             "Ganhar Peso",
@@ -178,27 +180,27 @@
             this.comboBoxobjetivo.Location = new System.Drawing.Point(147, 300);
             this.comboBoxobjetivo.Name = "comboBoxobjetivo";
             this.comboBoxobjetivo.Size = new System.Drawing.Size(103, 21);
-            this.comboBoxobjetivo.TabIndex = 17;
+            this.comboBoxobjetivo.TabIndex = 7;
             // 
-            // bttlimpar
+            // btnlimpar
             // 
-            this.bttlimpar.Location = new System.Drawing.Point(147, 351);
-            this.bttlimpar.Name = "bttlimpar";
-            this.bttlimpar.Size = new System.Drawing.Size(75, 23);
-            this.bttlimpar.TabIndex = 19;
-            this.bttlimpar.Text = "Limpar";
-            this.bttlimpar.UseVisualStyleBackColor = true;
-            this.bttlimpar.Click += new System.EventHandler(this.button1_Click);
+            this.btnlimpar.Location = new System.Drawing.Point(147, 351);
+            this.btnlimpar.Name = "btnlimpar";
+            this.btnlimpar.Size = new System.Drawing.Size(75, 23);
+            this.btnlimpar.TabIndex = 9;
+            this.btnlimpar.Text = "Limpar";
+            this.btnlimpar.UseVisualStyleBackColor = true;
+            this.btnlimpar.Click += new System.EventHandler(this.btnlimpar_Click);
             // 
             // btnsalvar
             // 
             this.btnsalvar.Location = new System.Drawing.Point(321, 351);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnsalvar.TabIndex = 20;
+            this.btnsalvar.TabIndex = 8;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
-            this.btnsalvar.Click += new System.EventHandler(this.button2_Click);
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // maskednascimento
             // 
@@ -206,17 +208,47 @@
             this.maskednascimento.Mask = "00/00/0000";
             this.maskednascimento.Name = "maskednascimento";
             this.maskednascimento.Size = new System.Drawing.Size(65, 20);
-            this.maskednascimento.TabIndex = 21;
+            this.maskednascimento.TabIndex = 3;
             this.maskednascimento.ValidatingType = typeof(System.DateTime);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(256, 226);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "ex: 00.00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(256, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "cm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "6 a 8";
             // 
             // formcadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 405);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.maskednascimento);
             this.Controls.Add(this.btnsalvar);
-            this.Controls.Add(this.bttlimpar);
+            this.Controls.Add(this.btnlimpar);
             this.Controls.Add(this.comboBoxobjetivo);
             this.Controls.Add(this.comboBoxsexo);
             this.Controls.Add(this.labobjetivo);
@@ -234,6 +266,7 @@
             this.Controls.Add(this.txtname);
             this.Name = "formcadastro";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formcadastro_FormClosed);
             this.Load += new System.EventHandler(this.formcadastro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,8 +290,11 @@
         private System.Windows.Forms.Label labobjetivo;
         private System.Windows.Forms.ComboBox comboBoxsexo;
         private System.Windows.Forms.ComboBox comboBoxobjetivo;
-        private System.Windows.Forms.Button bttlimpar;
+        private System.Windows.Forms.Button btnlimpar;
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.MaskedTextBox maskednascimento;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -13,7 +13,7 @@ namespace tcc.DTO
         public string senha { get; set; }
         public DateTime nascimento { get; set; }
         public string sexo { get; set; }
-        public int peso { get; set; }
+        public Decimal peso { get; set; }
         public int altura { get; set; }
         public string objetivo { get; set; }
         public string id_gym_personal { get; set; }

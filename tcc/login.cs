@@ -16,5 +16,17 @@ namespace tcc
         {
             InitializeComponent();
         }
+
+        private void criarUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formcadastro formularioCadastro = new formcadastro();
+            formularioCadastro.Show();
+            this.Visible = false;
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
