@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta_Dieta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta_Dieta.Designer.cs">
+      <DependentUpon>Consulta_Dieta.cs</DependentUpon>
+    </Compile>
     <Compile Include="formcadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consulta_Dieta.resx">
+      <DependentUpon>Consulta_Dieta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formcadastro.resx">
       <DependentUpon>formcadastro.cs</DependentUpon>
     </EmbeddedResource>
