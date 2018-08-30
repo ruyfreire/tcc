@@ -23,9 +23,10 @@ namespace tcc
         private void formcadastro_Load(object sender, EventArgs e)
         {
             /* Define o tipo correto do campo data, e chama o metodo validaData através do TypeValidationCompleted,
-            * que é executado automaticamente no campo maskedtextbox quando perde o foco */
+            * que é executado automaticamente no campo maskedtextbox quando perde o foco
             maskednascimento.ValidatingType = typeof(System.DateTime);
             maskednascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);
+            */
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)
@@ -35,15 +36,10 @@ namespace tcc
 
         private void btnsalvar_Click(object sender, EventArgs e)
         {
-            enviarCadastro();
-        }
-
-        public void enviarCadastro()
-        {
             try
             {
-                String[] lista = {"nome", "email", "senha", "nascimento", "sexo", "peso", "altura", "objetivo"};
-                if (validaCampos(lista) )
+                String[] lista = { "nome", "email", "senha", "nascimento", "sexo", "peso", "altura", "objetivo" };
+                if (validaCampos(lista))
                 {
                     //após validar, inclui no objeto e envia para a prox camada
                     Usuario novoUser = new Usuario();
@@ -61,10 +57,9 @@ namespace tcc
                     var cadastro = new UsuarioBLL().novoUsuarioBLL(novoUser);
                     if (cadastro >= 1)
                     {
-                        MessageBox.Show("Cadastro realidado com sucesso!");
+                        MessageBox.Show("Cadastro realidado com sucesso!", "Novo usuário");
                     }
                 }
-                
             }
             catch (Exception ex)
             {
@@ -72,6 +67,7 @@ namespace tcc
 
             }
         }
+
 
         public void limpar_camposCadastro()
         {
@@ -102,17 +98,17 @@ namespace tcc
                         Regex testaNome = new Regex(@"^[a-zA-Z]+\s{1}[a-zA-Z]+?(\s{1}[a-zA-Z]+){0,4}$", RegexOptions.IgnoreCase);
                         if (!testaNome.IsMatch(txtname.Text))
                         {
-                            MessageBox.Show("Nome inválido, (apenas letras, mínimo 1 sobrenome, e máximo 5, sem espaço no começo ou final)");
+                            MessageBox.Show("Nome inválido, (apenas letras, mínimo 1 sobrenome, e máximo 5, sem espaço no começo ou final)", "Nome");
                             return false;
                         }
                         if ((txtname.Text.Equals("")))
                         {
-                            MessageBox.Show("Campo nome vazio!");
+                            MessageBox.Show("Campo nome vazio!", "Nome");
                             return false;
                         }
                         if (txtname.Text.Length < 3)
                         {
-                            MessageBox.Show("Nome menor que 3 letras");
+                            MessageBox.Show("Nome menor que 3 letras", "Nome");
                             return false;
                         }
                     break;
@@ -123,7 +119,7 @@ namespace tcc
                         Regex testaEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
                         if (!testaEmail.IsMatch(txtemail.Text))
                         {
-                            MessageBox.Show("E-mail inválido");
+                            MessageBox.Show("E-mail inválido", "E-mail");
                             return false;
                         }
                         break;
@@ -133,7 +129,7 @@ namespace tcc
                         //valda senha entre 6 e 8
                         if (txtsenha.Text.Length < 6 || txtsenha.Text.Length > 8)
                         {
-                            MessageBox.Show("A senha deve conter de 6 a 8 caracteres");
+                            MessageBox.Show("A senha deve conter de 6 a 8 caracteres", "Senha");
                             return false;
                         }
                         break;
@@ -144,7 +140,7 @@ namespace tcc
                         nascimento = nascimento.Replace(" ", "");
                         if(nascimento == "")
                         {
-                            MessageBox.Show("Preencha a data de nascimento!");
+                            MessageBox.Show("Preencha a data de nascimento!", "Data de Nascimento");
                             return false;
                         }
                     break;
@@ -153,7 +149,7 @@ namespace tcc
                     case "sexo":
                         if (comboBoxsexo.SelectedItem == null)
                         {
-                            MessageBox.Show("Selecione um sexo");
+                            MessageBox.Show("Selecione um sexo", "Sexo");
                             return false;
                         }
                         break;
@@ -161,20 +157,21 @@ namespace tcc
 
                     //valida peso entre 30 e 200
                     case "peso":
-                        Regex testaPeso = new Regex(@"^[0-9]{0,3},[0-9]{2}$");
+                        Regex testaPeso = new Regex(@"^[0-9]{0,3},?([0-9]){0,2}$");
+                        Decimal peso = Convert.ToDecimal(txtpeso.Text);
+                        Console.WriteLine(peso);
+                        Decimal peso_menor = 30m;
+                        Decimal peso_maior = 200m;
                         if (!testaPeso.IsMatch(txtpeso.Text))
                         {
-                            MessageBox.Show("Use virgula e valor entre 30,00 e 200,00");
+                            MessageBox.Show("Formato inválido, entre com o peso correto (30kg a 200kg)", "Peso");
                             return false;
                         }
                         else
                         {
-                            Decimal peso = Convert.ToDecimal(txtpeso.Text);
-                            Decimal menor = 30.00m;
-                            Decimal maior = 200.00m;
-                            if (Decimal.Compare(peso, menor) < 0 || Decimal.Compare(peso, maior) > 0)
+                            if (Decimal.Compare(peso, peso_menor) < 0 || Decimal.Compare(peso, peso_maior) > 0)
                             {
-                                MessageBox.Show("Peso não permitido!");
+                                MessageBox.Show("Valor permitido de 30kg a 200kg", "Peso");
                                 return false;
                             }
                         }
@@ -183,30 +180,31 @@ namespace tcc
 
                     //valida altura entre 0,50 e 2,50
                     case "altura":
-                        Regex testaAltura = new Regex(@"^[0-2],[0-5][0-9]$");
+                        Regex testaAltura = new Regex(@"^[0-9],?([0-9]){0,2}$");
+                        Decimal altura = Convert.ToDecimal(txtaltura.Text);
+                        Decimal altura_menor = 0.5m;
+                        Decimal altura_maior = 2.5m;
                         if (!testaAltura.IsMatch(txtaltura.Text))
                         {
-                            MessageBox.Show("Use virgula e valor entre 0,50 a 2,59");
+                            MessageBox.Show("Formato inválido, entre com a altura correta (0,5m a 2,59m)", "Altura");
                             return false;
                         }
                         else
                         {
-                            Decimal altura = Convert.ToDecimal(txtaltura.Text);
-                            Decimal menor = 0.50m;
-                            Decimal maior = 2.50m;
-                            if (Decimal.Compare(altura, menor) < 0 || Decimal.Compare(altura, maior) > 0)
+                            if ( (Decimal.Compare(altura, altura_menor) < 0) || (Decimal.Compare(altura, altura_maior) > 0))
                             {
-                                MessageBox.Show("Altura não permitida!");
+                                MessageBox.Show("Valor permitido de 0,5m a 2,59m", "Altura");
                                 return false;
                             }
                         }
-                        break;
+
+                    break;
 
 
                     case "objetivo":
                         if (comboBoxobjetivo.SelectedItem == null)
                         {
-                            MessageBox.Show("Selecione um objetivo");
+                            MessageBox.Show("Selecione um objetivo", "Objetivo");
                             return false;
                         }
                         break;
@@ -222,7 +220,7 @@ namespace tcc
         {
             if (!e.IsValidInput)
             {
-                MessageBox.Show("Data inválida");
+                MessageBox.Show("Data inválida", "Data de nascimento");
                 maskednascimento.Focus();
             }
         }
