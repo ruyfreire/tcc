@@ -24,9 +24,9 @@ namespace tcc
         {
             /* Define o tipo correto do campo data, e chama o metodo validaData através do TypeValidationCompleted,
             * que é executado automaticamente no campo maskedtextbox quando perde o foco
+            */
             maskednascimento.ValidatingType = typeof(System.DateTime);
             maskednascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);
-            */
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)
