@@ -52,12 +52,16 @@
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dietaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.treinoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem,
             this.Consultar,
             this.Relatorios,
             this.Dados_Diarios,
@@ -124,13 +128,13 @@
             // alimentaresToolStripMenuItem
             // 
             this.alimentaresToolStripMenuItem.Name = "alimentaresToolStripMenuItem";
-            this.alimentaresToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.alimentaresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alimentaresToolStripMenuItem.Text = "Alimentares";
             // 
             // atividadesToolStripMenuItem
             // 
             this.atividadesToolStripMenuItem.Name = "atividadesToolStripMenuItem";
-            this.atividadesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.atividadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.atividadesToolStripMenuItem.Text = "Atividades";
             // 
             // Dados_Diarios
@@ -219,6 +223,27 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dietaToolStripMenuItem2,
+            this.treinoToolStripMenuItem2});
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // dietaToolStripMenuItem2
+            // 
+            this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
+            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.dietaToolStripMenuItem2.Text = "Dieta";
+            // 
+            // treinoToolStripMenuItem2
+            // 
+            this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
+            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.treinoToolStripMenuItem2.Text = "Treino";
+            // 
             // usuarioMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +287,9 @@
         private System.Windows.Forms.ToolStripMenuItem buscarProfissionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nutriçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dietaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem treinoToolStripMenuItem2;
     }
 }
 
