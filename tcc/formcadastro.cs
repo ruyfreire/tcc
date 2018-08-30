@@ -171,5 +171,15 @@ namespace tcc
             login telaLogin = new login();
             telaLogin.Show();
         }
+
+        private void txtemail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

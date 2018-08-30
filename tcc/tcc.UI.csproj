@@ -51,6 +51,18 @@
     <Compile Include="formcadastro.Designer.cs">
       <DependentUpon>formcadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="formcadastronutricionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formcadastronutricionista.Designer.cs">
+      <DependentUpon>formcadastronutricionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formcadastropersonnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formcadastropersonnal.Designer.cs">
+      <DependentUpon>formcadastropersonnal.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     </Compile>
     <EmbeddedResource Include="formcadastro.resx">
       <DependentUpon>formcadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formcadastronutricionista.resx">
+      <DependentUpon>formcadastronutricionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formcadastropersonnal.resx">
+      <DependentUpon>formcadastropersonnal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

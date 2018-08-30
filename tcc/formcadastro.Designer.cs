@@ -57,6 +57,7 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(249, 20);
             this.txtname.TabIndex = 0;
+            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
             // 
             // txtemail
             // 
@@ -64,6 +65,7 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(249, 20);
             this.txtemail.TabIndex = 1;
+            this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
             // 
             // txtsenha
             // 
@@ -242,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 405);
+            this.ClientSize = new System.Drawing.Size(432, 432);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -265,7 +267,7 @@
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtname);
             this.Name = "formcadastro";
-            this.Text = "Form1";
+            this.Text = "Cadastro Usuário";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formcadastro_FormClosed);
             this.Load += new System.EventHandler(this.formcadastro_Load);
             this.ResumeLayout(false);
