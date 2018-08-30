@@ -51,7 +51,7 @@ namespace tcc
         {
             try
             {
-
+                /*
                 Regex testaNome = new Regex(@"^[a-zA-Z]+\s{1}[a-zA-Z]+?(\s{1}[a-zA-Z]+){0,4}$", RegexOptions.IgnoreCase);
                 //valida nome com expressao regular, minimo de 1 sobrenome e maximo de 5
                 if ( !testaNome.IsMatch(txtname.Text) )
@@ -102,13 +102,6 @@ namespace tcc
                 }
 
 
-                //valida altura entre 50 e 250
-                int altura = Convert.ToInt32(txtaltura.Text);
-                if (altura < 50 || altura > 250)
-                {
-                    MessageBox.Show("Altura deve estar entre 50 e 250cm");
-                    return;
-                }
 
                 if (comboBoxobjetivo.SelectedItem == null)
                 {
@@ -134,6 +127,24 @@ namespace tcc
                 if (cadastro >= 1)
                 {
                     MessageBox.Show("Cadastro realidado com sucesso!");
+                }
+                */
+
+                //valida altura entre 50 e 250
+                Regex testaAltura = new Regex(@"^[0-2]\.[0-9]{2}$");
+                if (!testaAltura.IsMatch(txtaltura.Text))
+                {
+                    MessageBox.Show("Digite a altura no formato  '0.00'");
+                    return;
+                }
+                else
+                {
+                    Decimal altura = Convert.ToDecimal(txtaltura.Text);
+                    if ( altura.CompareTo(0.50m) < 0 || altura.CompareTo(2.50m) > 0 )
+                    {
+                        MessageBox.Show("Altura deve estar entre 0.50m e 2.50m");
+                        return;
+                    }
                 }
             }
             catch (Exception ex)
