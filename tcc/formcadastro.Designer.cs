@@ -36,8 +36,6 @@
             this.labsenha = new System.Windows.Forms.Label();
             this.labnascimento = new System.Windows.Forms.Label();
             this.labsexo = new System.Windows.Forms.Label();
-            this.txtpeso = new System.Windows.Forms.TextBox();
-            this.txtaltura = new System.Windows.Forms.TextBox();
             this.labpeso = new System.Windows.Forms.Label();
             this.labaltura = new System.Windows.Forms.Label();
             this.labobjetivo = new System.Windows.Forms.Label();
@@ -46,9 +44,11 @@
             this.btnlimpar = new System.Windows.Forms.Button();
             this.btnsalvar = new System.Windows.Forms.Button();
             this.maskednascimento = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtpeso = new System.Windows.Forms.TextBox();
+            this.txtaltura = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtname
@@ -117,20 +117,6 @@
             this.labsexo.TabIndex = 9;
             this.labsexo.Text = "Sexo";
             // 
-            // txtpeso
-            // 
-            this.txtpeso.Location = new System.Drawing.Point(147, 223);
-            this.txtpeso.Name = "txtpeso";
-            this.txtpeso.Size = new System.Drawing.Size(103, 20);
-            this.txtpeso.TabIndex = 5;
-            // 
-            // txtaltura
-            // 
-            this.txtaltura.Location = new System.Drawing.Point(147, 262);
-            this.txtaltura.Name = "txtaltura";
-            this.txtaltura.Size = new System.Drawing.Size(103, 20);
-            this.txtaltura.TabIndex = 6;
-            // 
             // labpeso
             // 
             this.labpeso.AutoSize = true;
@@ -179,7 +165,7 @@
             "Perder Peso"});
             this.comboBoxobjetivo.Location = new System.Drawing.Point(147, 300);
             this.comboBoxobjetivo.Name = "comboBoxobjetivo";
-            this.comboBoxobjetivo.Size = new System.Drawing.Size(103, 21);
+            this.comboBoxobjetivo.Size = new System.Drawing.Size(116, 21);
             this.comboBoxobjetivo.TabIndex = 7;
             // 
             // btnlimpar
@@ -211,32 +197,46 @@
             this.maskednascimento.TabIndex = 3;
             this.maskednascimento.ValidatingType = typeof(System.DateTime);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 226);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "ex: 00.00";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(256, 265);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "cm";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(282, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 16;
-            this.label3.Text = "6 a 8";
+            this.label3.Text = "6 a 8 Caracteres";
+            // 
+            // txtpeso
+            // 
+            this.txtpeso.Location = new System.Drawing.Point(147, 223);
+            this.txtpeso.Name = "txtpeso";
+            this.txtpeso.Size = new System.Drawing.Size(116, 20);
+            this.txtpeso.TabIndex = 5;
+            // 
+            // txtaltura
+            // 
+            this.txtaltura.Location = new System.Drawing.Point(147, 262);
+            this.txtaltura.Name = "txtaltura";
+            this.txtaltura.Size = new System.Drawing.Size(116, 20);
+            this.txtaltura.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(269, 226);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "( 00,00 )";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(269, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "( 0,00 )";
             // 
             // formcadastro
             // 
@@ -244,8 +244,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 405);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.maskednascimento);
             this.Controls.Add(this.btnsalvar);
             this.Controls.Add(this.btnlimpar);
@@ -254,14 +254,14 @@
             this.Controls.Add(this.labobjetivo);
             this.Controls.Add(this.labaltura);
             this.Controls.Add(this.labpeso);
-            this.Controls.Add(this.txtaltura);
-            this.Controls.Add(this.txtpeso);
             this.Controls.Add(this.labsexo);
             this.Controls.Add(this.labnascimento);
             this.Controls.Add(this.labsenha);
             this.Controls.Add(this.labemail);
             this.Controls.Add(this.labname);
             this.Controls.Add(this.txtsenha);
+            this.Controls.Add(this.txtaltura);
+            this.Controls.Add(this.txtpeso);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtname);
             this.Name = "formcadastro";
@@ -283,8 +283,6 @@
         private System.Windows.Forms.Label labsenha;
         private System.Windows.Forms.Label labnascimento;
         private System.Windows.Forms.Label labsexo;
-        private System.Windows.Forms.TextBox txtpeso;
-        private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.Label labpeso;
         private System.Windows.Forms.Label labaltura;
         private System.Windows.Forms.Label labobjetivo;
@@ -293,8 +291,10 @@
         private System.Windows.Forms.Button btnlimpar;
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.MaskedTextBox maskednascimento;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtpeso;
+        private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
