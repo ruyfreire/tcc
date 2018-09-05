@@ -13,8 +13,8 @@ namespace tcc.DTO
         public string email { get; set; }
         public DateTime nascimento { get; set; }
         public string sexo { get; set; }
-        public int crea { get; set; }
+        public string crea { get; set; }
         public string endereco { get; set; }
-        public int cpf_cnpj { get; set; }
+        public string cpf_cnpj { get; set; }
     }
 }

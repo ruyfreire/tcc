@@ -41,7 +41,7 @@ namespace tcc
                 Validacoes validar = new Validacoes();
                 if ( 
                     validar.validaCampos("nome", txtname.Text)
-                    && validar.validaCampos("email", txtemail.Text)
+                    && validar.validaCampos("email", txtemail.Text.ToLower())
                     && validar.validaCampos("senha", txtsenha.Text)
                     && validar.validaCampos("nascimento", maskednascimento.Text)
                     && validar.validaCampos("sexo", comboBoxsexo.Text)
@@ -54,7 +54,7 @@ namespace tcc
                     Usuario novoUser = new Usuario();
 
                     novoUser.nome = txtname.Text;
-                    novoUser.email = txtemail.Text;
+                    novoUser.email = txtemail.Text.ToLower();
                     novoUser.senha = txtsenha.Text;
                     novoUser.nascimento = Convert.ToDateTime(maskednascimento.Text);
                     novoUser.sexo = comboBoxsexo.Text;
@@ -67,6 +67,15 @@ namespace tcc
                     if (cadastrado >= 1)
                     {
                         MessageBox.Show("Cadastro realidado com sucesso!", "Novo usuário");
+                        Close();
+                    }
+                    else if (cadastrado == -1)
+                    {
+                        MessageBox.Show("E-mail ja cadastrado!", "Novo usuário");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar!", "Novo usuário");
                     }
                 }
             }
@@ -93,8 +102,7 @@ namespace tcc
 
         private void formcadastro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            login telaLogin = new login();
-            telaLogin.Show();
+            telaLogin(); //volta para tela de login
         }
         
 
@@ -105,6 +113,13 @@ namespace tcc
                 MessageBox.Show("Data inválida", "Data de nascimento");
                 maskednascimento.Focus();
             }
+        }
+
+
+        private void telaLogin()
+        {
+            login telaLogin = new login();
+            telaLogin.Show();
         }
     }
 }

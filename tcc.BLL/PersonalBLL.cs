@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 using tcc.DAL;
 using tcc.DTO;
 
 namespace tcc.BLL
 {
-    public class UsuarioBLL
+    public class PersonalBLL
     {
-        public int novoUsuarioBLL(Usuario novoUser)
+        public int novoPersonal(Personal novo)
         {
             try
             {
-                return new UsuarioDAL().novoUsuarioDAL(novoUser);
+                return new PersonalDAL().novoPersonal(novo);
             }
             catch (Exception ex)
             {
@@ -24,21 +22,20 @@ namespace tcc.BLL
             }
         }
 
-
-        public int autenticaUsuario(String email, String senha)
+        public int autenticaPersonal(String email, String senha)
         {
             try
             {
-                //verifica se usuario existe, antes de autenticar senha
-                int existeUsuario = new UsuarioDAL().existeUsuario(email);
+                //verifica se personal existe, antes de autenticar senha
+                int existePersonal = new PersonalDAL().existePersonal(email);
 
-                // se encontrar usuario, verifica a resposta de retorno
-                if (existeUsuario == 1)
+                // se encontrar personal, verifica a resposta de retorno
+                if (existePersonal == 1)
                 {
-                    return new UsuarioDAL().autenticaUsuario(email, senha);
+                    return new PersonalDAL().autenticaPersonal(email, senha);
                 }
 
-                //se nao encontrar usuario, retorna 0
+                //se nao encontrar personal, retorna 0
                 else
                 {
                     return 0;
@@ -51,11 +48,11 @@ namespace tcc.BLL
         }
 
 
-        public Usuario carregaUsuario(String email)
+        public Personal carregaPersonal(String email)
         {
             try
             {
-                return new UsuarioDAL().carregaUsuario(email);
+                return new PersonalDAL().carregaPersonal(email);
             }
             catch (Exception ex)
             {
