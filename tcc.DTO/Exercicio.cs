@@ -13,6 +13,6 @@ namespace tcc.DTO
         public string grupo_muscular { get; set; }
         public string execucao { get; set; }
         public int queima_calorica { get; set; }
-        public TimeSpan tempo { get; set; }
+        public int tempo { get; set; }
     }
 }

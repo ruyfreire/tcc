@@ -18,8 +18,5 @@ namespace tcc.DTO
         public string objetivo { get; set; }
         public string id_gym_personal { get; set; }
         public string id_nutricionista { get; set; }
-        public int id_treino { get; set; }
-        public int id_dieta { get; set; }
-
-}
+    }
 }

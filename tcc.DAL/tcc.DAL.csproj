@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DietaDAL.cs" />
     <Compile Include="NutricionistaDAL.cs" />
     <Compile Include="PersonalDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

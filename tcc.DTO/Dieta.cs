@@ -10,7 +10,6 @@ namespace tcc.DTO
     {
         public int id_dieta { get; set; }
         public string tipo_refeicao { get; set; }
-        public int id_alimento { get; set; }
         public int qtde_porcao { get; set; }
     }
 }
