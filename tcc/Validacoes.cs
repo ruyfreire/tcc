@@ -33,8 +33,6 @@ namespace tcc
                         return false;
                     }
                     break;
-
-
                 //valida e-mail com expressao regular para carecteres paermitidos
                 case "email":
                     Regex testaEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
@@ -44,8 +42,6 @@ namespace tcc
                         return false;
                     }
                     break;
-
-
                 case "senha":
                     //valda senha entre 6 e 8
                     if (campo.Length < 6 || campo.Length > 8)
@@ -54,8 +50,6 @@ namespace tcc
                         return false;
                     }
                     break;
-
-
                 case "nascimento":
                     String nascimento = campo.Replace("/", "");
                     nascimento = nascimento.Replace(" ", "");
@@ -65,8 +59,6 @@ namespace tcc
                         return false;
                     }
                     break;
-
-
                 case "sexo":
                     if (campo == "")
                     {
@@ -74,12 +66,10 @@ namespace tcc
                         return false;
                     }
                     break;
-
-
                 //valida peso entre 30 e 200
                 case "peso":
                     Regex testaPeso = new Regex(@"^[0-9]{0,3},?([0-9]){0,2}$");
-                    
+
                     if (!testaPeso.IsMatch(campo))
                     {
                         MessageBox.Show("Formato inválido, entre com o peso correto (30kg a 200kg)", "Peso");
@@ -97,12 +87,10 @@ namespace tcc
                         }
                     }
                     break;
-
-
                 //valida altura entre 0,50 e 2,50
                 case "altura":
                     Regex testaAltura = new Regex(@"^[0-9],?([0-9]){0,2}$");
-                    
+
                     if (!testaAltura.IsMatch(campo))
                     {
                         MessageBox.Show("Formato inválido, entre com a altura correta (0,5m a 2,59m)", "Altura");
@@ -119,10 +107,7 @@ namespace tcc
                             return false;
                         }
                     }
-
                     break;
-
-
                 case "objetivo":
                     if (campo == "")
                     {
@@ -130,11 +115,9 @@ namespace tcc
                         return false;
                     }
                     break;
-
                 default:
                     break;
             }
-
             return true;
         }
     }

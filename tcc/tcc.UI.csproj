@@ -89,6 +89,7 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validacoes.cs" />
     <EmbeddedResource Include="Consulta_Dieta.resx">
       <DependentUpon>Consulta_Dieta.cs</DependentUpon>
     </EmbeddedResource>
