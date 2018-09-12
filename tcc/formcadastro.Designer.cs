@@ -69,8 +69,10 @@
             // 
             this.txtsenha.Location = new System.Drawing.Point(147, 118);
             this.txtsenha.Name = "txtsenha";
+            this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(129, 20);
             this.txtsenha.TabIndex = 2;
+            this.txtsenha.TextChanged += new System.EventHandler(this.txtsenha_TextChanged);
             // 
             // labname
             // 
@@ -264,8 +266,9 @@
             this.Controls.Add(this.txtpeso);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtname);
+            this.MaximizeBox = false;
             this.Name = "formcadastro";
-            this.Text = "Form1";
+            this.Text = "Cadastro Usuário";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formcadastro_FormClosed);
             this.Load += new System.EventHandler(this.formcadastro_Load);
             this.ResumeLayout(false);

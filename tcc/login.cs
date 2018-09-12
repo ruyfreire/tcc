@@ -33,7 +33,7 @@ namespace tcc
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            /*
+            
             String email = txtUsuario.Text;
             String senha = txtSenha.Text;
             
@@ -52,7 +52,7 @@ namespace tcc
             {
                 MessageBox.Show("Usuário não existe!");
             }
-            */
+            
 
             
             /*
@@ -108,6 +108,22 @@ namespace tcc
                 MessageBox.Show("Nutricionista não existe!");
             }
             */
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            {
+                CadastroPersonal formularioCadastro = new CadastroPersonal();
+                formularioCadastro.Show();
+                this.Visible = false;
+            }
+        }
+
+        private void criarnutricionista_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CadastroNutricionista formularioCadastro = new CadastroNutricionista();
+            formularioCadastro.Show();
+            this.Visible = false;
         }
     }
 }

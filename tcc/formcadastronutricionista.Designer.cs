@@ -58,6 +58,7 @@
             this.btnsalvar.TabIndex = 55;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.Btnsalvar_Click);
             // 
             // btnlimpar
             // 
@@ -198,8 +199,10 @@
             // 
             this.txtsenha.Location = new System.Drawing.Point(133, 106);
             this.txtsenha.Name = "txtsenha";
+            this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(129, 20);
             this.txtsenha.TabIndex = 39;
+            this.txtsenha.TextChanged += new System.EventHandler(this.txtsenha_TextChanged);
             // 
             // txtemail
             // 
@@ -218,7 +221,7 @@
             // maskedcpf
             // 
             this.maskedcpf.Location = new System.Drawing.Point(133, 141);
-            this.maskedcpf.Mask = "000.000.000-00";
+            this.maskedcpf.Mask = "000,000,000-00";
             this.maskedcpf.Name = "maskedcpf";
             this.maskedcpf.Size = new System.Drawing.Size(86, 20);
             this.maskedcpf.TabIndex = 57;

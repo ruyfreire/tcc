@@ -40,7 +40,7 @@ namespace tcc.DAL
                     cm.Parameters.Add("senha", System.Data.SqlDbType.Char).Value = novoUser.senha;
                     cm.Parameters.Add("nascimento", System.Data.SqlDbType.DateTime).Value = novoUser.nascimento;
                     cm.Parameters.Add("sexo", System.Data.SqlDbType.Char).Value = novoUser.sexo;
-                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.peso;
+                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.crn;
                     cm.Parameters.Add("altura", System.Data.SqlDbType.Real).Value = novoUser.altura;
                     cm.Parameters.Add("objetivo", System.Data.SqlDbType.VarChar).Value = novoUser.objetivo;
 
@@ -169,7 +169,7 @@ namespace tcc.DAL
                 usuario.senha = Convert.ToString(er["senha"]);
                 usuario.nascimento = Convert.ToDateTime(er["nascimento"]);
                 usuario.sexo = Convert.ToString(er["sexo"]);
-                usuario.peso = Convert.ToDecimal(er["peso"]);
+                usuario.crn = Convert.ToDecimal(er["peso"]);
                 usuario.altura = Convert.ToDecimal(er["altura"]);
                 usuario.objetivo = Convert.ToString(er["objetivo"]);
 

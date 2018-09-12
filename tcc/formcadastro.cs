@@ -58,7 +58,7 @@ namespace tcc
                     novoUser.senha = txtsenha.Text;
                     novoUser.nascimento = Convert.ToDateTime(maskednascimento.Text);
                     novoUser.sexo = comboBoxsexo.Text;
-                    novoUser.peso = Convert.ToDecimal(txtpeso.Text);
+                    novoUser.crn = Convert.ToDecimal(txtpeso.Text);
                     novoUser.altura = Convert.ToDecimal(txtaltura.Text);
                     novoUser.objetivo = comboBoxobjetivo.Text;
 
@@ -120,6 +120,11 @@ namespace tcc
         {
             login telaLogin = new login();
             telaLogin.Show();
+        }
+
+        private void txtsenha_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
