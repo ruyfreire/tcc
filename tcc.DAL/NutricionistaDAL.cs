@@ -10,7 +10,7 @@ namespace tcc.DAL
 {
     public class NutricionistaDAL
     {
-        /*Recebe o objeto USUARIO,
+        /*Recebe o objeto Nutricionista,
         e insere na tabela de usuarios
         */
         public int novoNutricionista(Nutricionista novo)
@@ -57,7 +57,7 @@ namespace tcc.DAL
         }
 
 
-        /*busca usuario existente atraves do email, 
+        /*busca nutricionista existente atraves do email, 
         retorna 1 se encontrar,
         retorna 0 senao encontrar
         */
@@ -97,7 +97,7 @@ namespace tcc.DAL
 
 
         /*
-        Busca usuário pelo email, e compara a senha digitada, com a senha do banco
+        Busca nutricionista pelo email, e compara a senha digitada, com a senha do banco
         se for igual, retorna 1
         se for diferente, retorna 0
         */
@@ -139,7 +139,7 @@ namespace tcc.DAL
 
 
         /*
-        Busca usuário pelo email, cria um objeto USUARIO, 
+        Busca nutricionista pelo email, cria um objeto NUTRICIONISTA, 
         e retorna o objeto com todos os dados do perfil
         */
         public Nutricionista carregaNutricionista(String email)
@@ -160,17 +160,17 @@ namespace tcc.DAL
                 er = cm.ExecuteReader();
                 er.Read();
 
-                //se encontrar correspondencia, retornar -1 para canselar cadastro
-                Nutricionista nutricionista = new Nutricionista();
-
-                nutricionista.email = Convert.ToString(er["email"]);
-                nutricionista.nome = Convert.ToString(er["nome"]);
-                nutricionista.senha = Convert.ToString(er["senha"]);
-                nutricionista.nascimento = Convert.ToDateTime(er["nascimento"]);
-                nutricionista.sexo = Convert.ToString(er["sexo"]);
-                nutricionista.crn = Convert.ToString(er["crn"]);
-                nutricionista.endereco = Convert.ToString(er["endereco"]);
-                nutricionista.cpf_cnpj = Convert.ToString(er["cpf_cnpj"]);
+                Nutricionista nutricionista = new Nutricionista
+                {
+                    email = Convert.ToString(er["email"]),
+                    nome = Convert.ToString(er["nome"]),
+                    senha = Convert.ToString(er["senha"]),
+                    nascimento = Convert.ToDateTime(er["nascimento"]),
+                    sexo = Convert.ToString(er["sexo"]),
+                    crn = Convert.ToString(er["crn"]),
+                    endereco = Convert.ToString(er["endereco"]),
+                    cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                };
 
                 return nutricionista;
             }

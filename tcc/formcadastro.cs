@@ -50,17 +50,22 @@ namespace tcc
                     && validar.validaCampos("objetivo", comboBoxobjetivo.Text)
                     )
                 {
-                    //após validar, inclui no objeto e envia para a prox camada
-                    Usuario novoUser = new Usuario();
+                    //extrai o nome de login do email da pessoa
+                    String[] loginGerado = txtemail.Text.ToLower().Split('@');
 
-                    novoUser.nome = txtname.Text;
-                    novoUser.email = txtemail.Text.ToLower();
-                    novoUser.senha = txtsenha.Text;
-                    novoUser.nascimento = Convert.ToDateTime(maskednascimento.Text);
-                    novoUser.sexo = comboBoxsexo.Text;
-                    novoUser.peso = Convert.ToDecimal(txtpeso.Text);
-                    novoUser.altura = Convert.ToDecimal(txtaltura.Text);
-                    novoUser.objetivo = comboBoxobjetivo.Text;
+                    //após validar, inclui no objeto e envia para a prox camada
+                    Usuario novoUser = new Usuario
+                    {
+                        nome = txtname.Text,
+                        email = txtemail.Text.ToLower(),
+                        login = loginGerado[0],
+                        senha = txtsenha.Text,
+                        nascimento = Convert.ToDateTime(maskednascimento.Text),
+                        sexo = comboBoxsexo.Text,
+                        peso = Convert.ToDecimal(txtpeso.Text),
+                        altura = Convert.ToDecimal(txtaltura.Text),
+                        objetivo = comboBoxobjetivo.Text
+                    };
 
                     //verifica se foi cadastrado com sucesso
                     var cadastrado = new UsuarioBLL().novoUsuarioBLL(novoUser);

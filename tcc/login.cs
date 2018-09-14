@@ -33,16 +33,15 @@ namespace tcc
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            /*
-            String email = txtUsuario.Text;
+            String login = txtUsuario.Text;
             String senha = txtSenha.Text;
             
-            int autentica = new UsuarioBLL().autenticaUsuario(email, senha);
+            int autentica = new UsuarioBLL().autenticaUsuario(login, senha);
 
              if (autentica == 1)
             {
                 MessageBox.Show("Autenticado com Sucesso!");
-                Usuario usuario = new UsuarioBLL().carregaUsuario(email);
+                Usuario usuario = new UsuarioBLL().carregaUsuario(login);
             }
             else if (autentica == -1)
             {
@@ -52,7 +51,6 @@ namespace tcc
             {
                 MessageBox.Show("Usuário não existe!");
             }
-            */
 
             
             /*

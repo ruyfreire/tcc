@@ -10,8 +10,8 @@ namespace tcc.DAL
 {
     public class PersonalDAL
     {
-        /*Recebe o objeto USUARIO,
-        e insere na tabela de usuarios
+        /*Recebe o objeto Personal,
+        e insere na tabela de gym_personal
         */
         public int novoPersonal(Personal novo)
         {
@@ -57,7 +57,7 @@ namespace tcc.DAL
         }
 
 
-        /*busca usuario existente atraves do email, 
+        /*busca personal existente atraves do email, 
         retorna 1 se encontrar,
         retorna 0 senao encontrar
         */
@@ -97,7 +97,7 @@ namespace tcc.DAL
 
 
         /*
-        Busca usuário pelo email, e compara a senha digitada, com a senha do banco
+        Busca personal pelo email, e compara a senha digitada, com a senha do banco
         se for igual, retorna 1
         se for diferente, retorna 0
         */
@@ -139,7 +139,7 @@ namespace tcc.DAL
 
 
         /*
-        Busca usuário pelo email, cria um objeto USUARIO, 
+        Busca personal pelo email, cria um objeto PERSONAL, 
         e retorna o objeto com todos os dados do perfil
         */
         public Personal carregaPersonal(String email)
@@ -160,17 +160,17 @@ namespace tcc.DAL
                 er = cm.ExecuteReader();
                 er.Read();
 
-                //se encontrar correspondencia, retornar -1 para canselar cadastro
-                Personal personal = new Personal();
-
-                personal.senha = Convert.ToString(er["senha"]);
-                personal.nome = Convert.ToString(er["nome"]);
-                personal.email = Convert.ToString(er["email"]);
-                personal.nascimento = Convert.ToDateTime(er["nascimento"]);
-                personal.sexo = Convert.ToString(er["sexo"]);
-                personal.crea = Convert.ToString(er["crea"]);
-                personal.endereco = Convert.ToString(er["endereco"]);
-                personal.cpf_cnpj = Convert.ToString(er["cpf_cnpj"]);
+                Personal personal = new Personal
+                {
+                    senha = Convert.ToString(er["senha"]),
+                    nome = Convert.ToString(er["nome"]),
+                    email = Convert.ToString(er["email"]),
+                    nascimento = Convert.ToDateTime(er["nascimento"]),
+                    sexo = Convert.ToString(er["sexo"]),
+                    crea = Convert.ToString(er["crea"]),
+                    endereco = Convert.ToString(er["endereco"]),
+                    cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                };
 
                 return personal;
             }

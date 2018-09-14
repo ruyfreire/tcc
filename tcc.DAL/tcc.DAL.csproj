@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlimentoDAL.cs" />
     <Compile Include="DietaDAL.cs" />
+    <Compile Include="ExerciciosDAL.cs" />
     <Compile Include="NutricionistaDAL.cs" />
     <Compile Include="PersonalDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +52,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TreinoDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>

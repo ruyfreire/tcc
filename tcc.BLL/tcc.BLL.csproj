@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlimentosBLL.cs" />
+    <Compile Include="DietaBLL.cs" />
+    <Compile Include="ExerciciosBLL.cs" />
     <Compile Include="NutricionistaBLL.cs" />
     <Compile Include="PersonalBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

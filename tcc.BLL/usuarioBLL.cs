@@ -25,17 +25,17 @@ namespace tcc.BLL
         }
 
 
-        public int autenticaUsuario(String email, String senha)
+        public int autenticaUsuario(String login, String senha)
         {
             try
             {
                 //verifica se usuario existe, antes de autenticar senha
-                int existeUsuario = new UsuarioDAL().existeUsuario(email);
-
+                int existeUsuario = new UsuarioDAL().existeUsuario(login);
+                    
                 // se encontrar usuario, verifica a resposta de retorno
                 if (existeUsuario == 1)
                 {
-                    return new UsuarioDAL().autenticaUsuario(email, senha);
+                    return new UsuarioDAL().autenticaUsuario(login, senha);
                 }
 
                 //se nao encontrar usuario, retorna 0
@@ -51,11 +51,11 @@ namespace tcc.BLL
         }
 
 
-        public Usuario carregaUsuario(String email)
+        public Usuario carregaUsuario(String login)
         {
             try
             {
-                return new UsuarioDAL().carregaUsuario(email);
+                return new UsuarioDAL().carregaUsuario(login);
             }
             catch (Exception ex)
             {

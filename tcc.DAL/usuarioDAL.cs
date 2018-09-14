@@ -11,9 +11,18 @@ namespace tcc.DAL
 {
     public class UsuarioDAL
     {
+        SqlConnection con = new SqlConnection
+        {
+            ConnectionString = Properties.Settings.Default.CST
+        };
+        SqlCommand cm = new SqlCommand
+        {
+            CommandType = System.Data.CommandType.Text
+        };
+        SqlDataReader er;
+
         /*Recebe o objeto USUARIO,
-        e insere na tabela de usuarios
-        */
+        e insere na tabela de usuarios */
         public int novoUsuarioDAL(Usuario novoUser)
         {
             try
@@ -25,18 +34,13 @@ namespace tcc.DAL
                 }
                 else
                 {
-                    //Conexão com BD e insere os dados do usuario
-                    SqlConnection con = new SqlConnection();
-                    con.ConnectionString = Properties.Settings.Default.CST;
-                    SqlCommand cm = new SqlCommand();
-                    cm.CommandType = System.Data.CommandType.Text;
-
-                    cm.CommandText = "INSERT INTO usuario (email, nome, senha, nascimento, sexo, peso, altura, objetivo)" +
-                                     "VALUES (@email, @nome, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
+                    cm.CommandText = "INSERT INTO usuario (email, nome, login, senha, nascimento, sexo, peso, altura, objetivo)" +
+                                     "VALUES (@email, @nome, @login, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
 
                     //Parametros irá substituir os valores dentro do campo
                     cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = novoUser.email;
                     cm.Parameters.Add("nome", System.Data.SqlDbType.VarChar).Value = novoUser.nome;
+                    cm.Parameters.Add("login", System.Data.SqlDbType.VarChar).Value = novoUser.login;
                     cm.Parameters.Add("senha", System.Data.SqlDbType.Char).Value = novoUser.senha;
                     cm.Parameters.Add("nascimento", System.Data.SqlDbType.DateTime).Value = novoUser.nascimento;
                     cm.Parameters.Add("sexo", System.Data.SqlDbType.Char).Value = novoUser.sexo;
@@ -58,21 +62,14 @@ namespace tcc.DAL
         }
 
 
-        /*busca usuario existente atraves do email, 
+        /* busca usuario existente atraves do login, 
         retorna 1 se encontrar,
-        retorna 0 senao encontrar
-        */
-        public int existeUsuario(String email)
+        retorna 0 senao encontrar */
+        public int existeUsuario(String login)
         {
             try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Properties.Settings.Default.CST;
-                SqlCommand cm = new SqlCommand();
-                cm.CommandType = System.Data.CommandType.Text;
-                SqlDataReader er;
-
-                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
+            {                
+                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -97,22 +94,14 @@ namespace tcc.DAL
         }
 
 
-        /*
-        Busca usuário pelo email, e compara a senha digitada, com a senha do banco
+        /* Busca usuário pelo login, e compara a senha digitada, com a senha do banco
         se for igual, retorna 1
-        se for diferente, retorna 0
-        */
-        public int autenticaUsuario(String email, String senha)
+        se for diferente, retorna 0 */
+        public int autenticaUsuario(String login, String senha)
         {
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Properties.Settings.Default.CST;
-                SqlCommand cm = new SqlCommand();
-                cm.CommandType = System.Data.CommandType.Text;
-                SqlDataReader er;
-
-                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE email='" + email + "'";
+                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -139,21 +128,13 @@ namespace tcc.DAL
         }
 
 
-        /*
-        Busca usuário pelo email, cria um objeto USUARIO, 
-        e retorna o objeto com todos os dados do perfil
-        */
-        public Usuario carregaUsuario(String email)
+        /* Busca usuário pelo id, cria um objeto USUARIO, 
+        e retorna o objeto com todos os dados do perfil */
+        public Usuario carregaUsuario(string login)
         {
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Properties.Settings.Default.CST;
-                SqlCommand cm = new SqlCommand();
-                cm.CommandType = System.Data.CommandType.Text;
-                SqlDataReader er;
-
-                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
+                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -162,16 +143,19 @@ namespace tcc.DAL
                 er.Read();
 
                 //se encontrar correspondencia, retornar -1 para canselar cadastro
-                Usuario usuario = new Usuario();
-
-                usuario.email = Convert.ToString(er["email"]);
-                usuario.nome = Convert.ToString(er["nome"]);
-                usuario.senha = Convert.ToString(er["senha"]);
-                usuario.nascimento = Convert.ToDateTime(er["nascimento"]);
-                usuario.sexo = Convert.ToString(er["sexo"]);
-                usuario.peso = Convert.ToDecimal(er["peso"]);
-                usuario.altura = Convert.ToDecimal(er["altura"]);
-                usuario.objetivo = Convert.ToString(er["objetivo"]);
+                Usuario usuario = new Usuario
+                {
+                    id_usuario = Convert.ToInt32(er["id_usuario"]),
+                    email = Convert.ToString(er["email"]),
+                    nome = Convert.ToString(er["nome"]),
+                    login = Convert.ToString(er["login"]),
+                    senha = Convert.ToString(er["senha"]),
+                    nascimento = Convert.ToDateTime(er["nascimento"]),
+                    sexo = Convert.ToString(er["sexo"]),
+                    peso = Convert.ToDecimal(er["peso"]),
+                    altura = Convert.ToDecimal(er["altura"]),
+                    objetivo = Convert.ToString(er["objetivo"])
+                };
 
                 return usuario;
             }
@@ -180,7 +164,59 @@ namespace tcc.DAL
                 throw ex;
             }
         }
+                                    
 
+        /* Recebe onjeto usuário, e atualiza as informações no banco */
+        public int alteraUsuario(Usuario usuario)
+        {
+            try
+            {
+                cm.CommandText = "UPDATE usuario  SET email=@email, nome=@nome, login=@login, senha=@senha, nascimento=@nascimento, sexo=@sexo, peso=@peso, altura=@altura, objetivo=@objetivo";
+
+                cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = usuario.email;
+                cm.Parameters.Add("nome", System.Data.SqlDbType.VarChar).Value = usuario.nome;
+                cm.Parameters.Add("login", System.Data.SqlDbType.VarChar).Value = usuario.login;
+                cm.Parameters.Add("senha", System.Data.SqlDbType.Char).Value = usuario.senha;
+                cm.Parameters.Add("nascimento", System.Data.SqlDbType.DateTime).Value = usuario.nascimento;
+                cm.Parameters.Add("sexo", System.Data.SqlDbType.Char).Value = usuario.sexo;
+                cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = usuario.peso;
+                cm.Parameters.Add("altura", System.Data.SqlDbType.Real).Value = usuario.altura;
+                cm.Parameters.Add("objetivo", System.Data.SqlDbType.VarChar).Value = usuario.objetivo;
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public int excluiUsuario(Usuario usuario)
+        {
+            try
+            {
+                cm.CommandText = "DELETE FROM usuario  WHERE id_usuario=" + usuario.id_usuario;
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                if(qtd > 0)
+                {
+                    new DietaDAL().excluiTodasDietasUsuario(usuario.id_usuario);
+                }
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }
