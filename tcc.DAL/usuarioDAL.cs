@@ -40,7 +40,7 @@ namespace tcc.DAL
                     cm.Parameters.Add("senha", System.Data.SqlDbType.Char).Value = novoUser.senha;
                     cm.Parameters.Add("nascimento", System.Data.SqlDbType.DateTime).Value = novoUser.nascimento;
                     cm.Parameters.Add("sexo", System.Data.SqlDbType.Char).Value = novoUser.sexo;
-                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.crn;
+                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.peso;
                     cm.Parameters.Add("altura", System.Data.SqlDbType.Real).Value = novoUser.altura;
                     cm.Parameters.Add("objetivo", System.Data.SqlDbType.VarChar).Value = novoUser.objetivo;
 
@@ -71,7 +71,7 @@ namespace tcc.DAL
                 cm.CommandType = System.Data.CommandType.Text;
                 SqlDataReader er;
 
-                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
+                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -109,7 +109,7 @@ namespace tcc.DAL
                 cm.CommandType = System.Data.CommandType.Text;
                 SqlDataReader er;
 
-                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE email='" + email + "'";
+                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -148,7 +148,7 @@ namespace tcc.DAL
                 cm.CommandType = System.Data.CommandType.Text;
                 SqlDataReader er;
 
-                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
+                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -185,6 +185,12 @@ namespace tcc.DAL
         {
             try
             {
+                //Conexão com BD e insere os dados do usuario
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
                 cm.CommandText = "UPDATE usuario  SET email=@email, nome=@nome, login=@login, senha=@senha, nascimento=@nascimento, sexo=@sexo, peso=@peso, altura=@altura, objetivo=@objetivo";
 
                 cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = usuario.email;
@@ -214,6 +220,12 @@ namespace tcc.DAL
         {
             try
             {
+                //Conexão com BD e insere os dados do usuario
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
                 cm.CommandText = "DELETE FROM usuario  WHERE id_usuario=" + usuario.id_usuario;
 
                 cm.Connection = con;
