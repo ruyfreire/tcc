@@ -32,9 +32,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Kcal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porção = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Porção = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kcal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +54,7 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -100,11 +101,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(346, 107);
             this.dataGridView1.TabIndex = 56;
             // 
-            // Kcal
+            // Alimento
             // 
-            this.Kcal.HeaderText = "Kcal";
-            this.Kcal.Name = "Kcal";
-            this.Kcal.ReadOnly = true;
+            this.Alimento.HeaderText = "Alimento";
+            this.Alimento.Name = "Alimento";
+            this.Alimento.ReadOnly = true;
             // 
             // Porção
             // 
@@ -112,11 +113,11 @@
             this.Porção.Name = "Porção";
             this.Porção.ReadOnly = true;
             // 
-            // Alimento
+            // Kcal
             // 
-            this.Alimento.HeaderText = "Alimento";
-            this.Alimento.Name = "Alimento";
-            this.Alimento.ReadOnly = true;
+            this.Kcal.HeaderText = "Kcal";
+            this.Kcal.Name = "Kcal";
+            this.Kcal.ReadOnly = true;
             // 
             // dataGridView2
             // 
@@ -272,11 +273,21 @@
             this.comboBox1.Size = new System.Drawing.Size(221, 21);
             this.comboBox1.TabIndex = 63;
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(313, 7);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(141, 21);
+            this.btnConsultar.TabIndex = 64;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            // 
             // Consulta_Dieta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 749);
+            this.ClientSize = new System.Drawing.Size(466, 749);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView5);
             this.Controls.Add(this.label4);
@@ -289,7 +300,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Name = "Consulta_Dieta";
-            this.Text = "Consulta_Dieta";
+            this.Text = "Consulta Dieta";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -327,5 +338,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }

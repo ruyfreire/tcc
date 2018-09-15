@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dietaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.treinoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.Consultar = new System.Windows.Forms.ToolStripMenuItem();
             this.dietaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profissionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoNutricionistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoPersonalAcademiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Relatorios = new System.Windows.Forms.ToolStripMenuItem();
-            this.alimentaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Dados_Diarios = new System.Windows.Forms.ToolStripMenuItem();
             this.dietaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.treinoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +52,6 @@
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dietaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.treinoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +60,6 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem,
             this.Consultar,
-            this.Relatorios,
             this.Dados_Diarios,
             this.Informacoes,
             this.Configuracoes});
@@ -72,6 +68,27 @@
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dietaToolStripMenuItem2,
+            this.treinoToolStripMenuItem2});
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // dietaToolStripMenuItem2
+            // 
+            this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
+            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.dietaToolStripMenuItem2.Text = "Dieta";
+            // 
+            // treinoToolStripMenuItem2
+            // 
+            this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
+            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.treinoToolStripMenuItem2.Text = "Treino";
             // 
             // Consultar
             // 
@@ -86,13 +103,13 @@
             // dietaToolStripMenuItem
             // 
             this.dietaToolStripMenuItem.Name = "dietaToolStripMenuItem";
-            this.dietaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dietaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.dietaToolStripMenuItem.Text = "Dieta";
             // 
             // treinoToolStripMenuItem
             // 
             this.treinoToolStripMenuItem.Name = "treinoToolStripMenuItem";
-            this.treinoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.treinoToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.treinoToolStripMenuItem.Text = "Treino";
             // 
             // profissionalToolStripMenuItem
@@ -101,7 +118,7 @@
             this.contatoNutricionistaToolStripMenuItem,
             this.contatoPersonalAcademiaToolStripMenuItem});
             this.profissionalToolStripMenuItem.Name = "profissionalToolStripMenuItem";
-            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.profissionalToolStripMenuItem.Text = "Profissional";
             // 
             // contatoNutricionistaToolStripMenuItem
@@ -116,27 +133,6 @@
             this.contatoPersonalAcademiaToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.contatoPersonalAcademiaToolStripMenuItem.Text = "Contato Personal / Academia";
             // 
-            // Relatorios
-            // 
-            this.Relatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alimentaresToolStripMenuItem,
-            this.atividadesToolStripMenuItem});
-            this.Relatorios.Name = "Relatorios";
-            this.Relatorios.Size = new System.Drawing.Size(71, 20);
-            this.Relatorios.Text = "Relatórios";
-            // 
-            // alimentaresToolStripMenuItem
-            // 
-            this.alimentaresToolStripMenuItem.Name = "alimentaresToolStripMenuItem";
-            this.alimentaresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alimentaresToolStripMenuItem.Text = "Alimentares";
-            // 
-            // atividadesToolStripMenuItem
-            // 
-            this.atividadesToolStripMenuItem.Name = "atividadesToolStripMenuItem";
-            this.atividadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.atividadesToolStripMenuItem.Text = "Atividades";
-            // 
             // Dados_Diarios
             // 
             this.Dados_Diarios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -149,13 +145,13 @@
             // dietaToolStripMenuItem1
             // 
             this.dietaToolStripMenuItem1.Name = "dietaToolStripMenuItem1";
-            this.dietaToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.dietaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.dietaToolStripMenuItem1.Text = "Dieta";
             // 
             // treinoToolStripMenuItem1
             // 
             this.treinoToolStripMenuItem1.Name = "treinoToolStripMenuItem1";
-            this.treinoToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.treinoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.treinoToolStripMenuItem1.Text = "Treino";
             // 
             // Informacoes
@@ -223,27 +219,6 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // cadastrarToolStripMenuItem
-            // 
-            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dietaToolStripMenuItem2,
-            this.treinoToolStripMenuItem2});
-            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
-            // 
-            // dietaToolStripMenuItem2
-            // 
-            this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
-            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.dietaToolStripMenuItem2.Text = "Dieta";
-            // 
-            // treinoToolStripMenuItem2
-            // 
-            this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
-            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.treinoToolStripMenuItem2.Text = "Treino";
-            // 
             // usuarioMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,9 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem profissionalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contatoNutricionistaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contatoPersonalAcademiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Relatorios;
-        private System.Windows.Forms.ToolStripMenuItem alimentaresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem atividadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Dados_Diarios;
         private System.Windows.Forms.ToolStripMenuItem dietaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem treinoToolStripMenuItem1;
