@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.criarPersonal = new System.Windows.Forms.LinkLabel();
             this.criarnutricionista = new System.Windows.Forms.LinkLabel();
+            this.comboperfil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +51,10 @@
             this.label1.Location = new System.Drawing.Point(197, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 24);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Usuário :";
+            this.label1.Text = "Login :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -101,7 +103,7 @@
             // 
             this.btnOk.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(439, 212);
+            this.btnOk.Location = new System.Drawing.Point(439, 243);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(112, 28);
@@ -114,12 +116,13 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(233, 397);
+            this.linkLabel1.Location = new System.Drawing.Point(233, 395);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(127, 20);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueci a senha";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // criarUsuario
             // 
@@ -167,12 +170,25 @@
             this.criarnutricionista.Text = "Cadastro Nutricionista";
             this.criarnutricionista.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.criarnutricionista_LinkClicked);
             // 
+            // comboperfil
+            // 
+            this.comboperfil.FormattingEnabled = true;
+            this.comboperfil.Items.AddRange(new object[] {
+            "Usuário",
+            "Personal",
+            "Nutricionista"});
+            this.comboperfil.Location = new System.Drawing.Point(430, 181);
+            this.comboperfil.Name = "comboperfil";
+            this.comboperfil.Size = new System.Drawing.Size(121, 24);
+            this.comboperfil.TabIndex = 11;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(612, 434);
+            this.Controls.Add(this.comboperfil);
             this.Controls.Add(this.criarnutricionista);
             this.Controls.Add(this.criarPersonal);
             this.Controls.Add(this.pictureBox1);
@@ -209,5 +225,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel criarPersonal;
         private System.Windows.Forms.LinkLabel criarnutricionista;
+        private System.Windows.Forms.ComboBox comboperfil;
     }
 }

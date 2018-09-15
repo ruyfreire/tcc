@@ -100,7 +100,7 @@ namespace tcc
             }
 
         }
-        private void CadastroNutricionista_FormClosed(object sender, FormClosedEventArgs e)
+        private void CadastroPersonal_FormClosed(object sender, FormClosedEventArgs e)
         {
             telaLogin(); //volta para tela de login
         }
