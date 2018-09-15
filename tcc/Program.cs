@@ -16,7 +16,7 @@ namespace tcc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Testa());
+            Application.Run(new login());
         }
     }
 }

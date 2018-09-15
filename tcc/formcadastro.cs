@@ -107,7 +107,7 @@ namespace tcc
 
         private void formcadastro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            telaLogin(); //volta para tela de login
+            TelaLogin(); //volta para tela de login
         }
         
 
@@ -121,7 +121,7 @@ namespace tcc
         }
 
 
-        private void telaLogin()
+        private void TelaLogin()
         {
             login telaLogin = new login();
             telaLogin.Show();

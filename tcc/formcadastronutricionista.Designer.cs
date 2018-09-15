@@ -253,6 +253,7 @@
             this.Controls.Add(this.txtname);
             this.Name = "CadastroNutricionista";
             this.Text = "Cadastro Nutricionista";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Formcadastronutricionista_Formclosed);
             this.Load += new System.EventHandler(this.formcadastronutricionista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
