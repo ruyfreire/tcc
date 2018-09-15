@@ -38,6 +38,8 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.criarUsuario = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.criarPersonal = new System.Windows.Forms.LinkLabel();
+            this.criarnutricionista = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(208, 120);
+            this.label2.Location = new System.Drawing.Point(197, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 24);
@@ -78,6 +80,7 @@
             this.txtSenha.Location = new System.Drawing.Point(320, 120);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(231, 26);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
@@ -96,9 +99,9 @@
             // 
             // btnOk
             // 
-            this.btnOk.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnOk.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(272, 206);
+            this.btnOk.Location = new System.Drawing.Point(439, 212);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(112, 28);
@@ -111,7 +114,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(268, 275);
+            this.linkLabel1.Location = new System.Drawing.Point(233, 397);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(127, 20);
             this.linkLabel1.TabIndex = 6;
@@ -122,7 +125,7 @@
             // 
             this.criarUsuario.AutoSize = true;
             this.criarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criarUsuario.Location = new System.Drawing.Point(268, 330);
+            this.criarUsuario.Location = new System.Drawing.Point(12, 307);
             this.criarUsuario.Name = "criarUsuario";
             this.criarUsuario.Size = new System.Drawing.Size(136, 20);
             this.criarUsuario.TabIndex = 7;
@@ -140,11 +143,38 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // criarPersonal
+            // 
+            this.criarPersonal.AutoSize = true;
+            this.criarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.criarPersonal.Location = new System.Drawing.Point(233, 307);
+            this.criarPersonal.Name = "criarPersonal";
+            this.criarPersonal.Size = new System.Drawing.Size(140, 20);
+            this.criarPersonal.TabIndex = 9;
+            this.criarPersonal.TabStop = true;
+            this.criarPersonal.Text = "Cadastro Personal";
+            this.criarPersonal.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // criarnutricionista
+            // 
+            this.criarnutricionista.AutoSize = true;
+            this.criarnutricionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.criarnutricionista.Location = new System.Drawing.Point(449, 307);
+            this.criarnutricionista.Name = "criarnutricionista";
+            this.criarnutricionista.Size = new System.Drawing.Size(165, 20);
+            this.criarnutricionista.TabIndex = 10;
+            this.criarnutricionista.TabStop = true;
+            this.criarnutricionista.Text = "Cadastro Nutricionista";
+            this.criarnutricionista.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.criarnutricionista_LinkClicked);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(612, 434);
+            this.Controls.Add(this.criarnutricionista);
+            this.Controls.Add(this.criarPersonal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.criarUsuario);
             this.Controls.Add(this.linkLabel1);
@@ -155,7 +185,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "login";
             this.Text = "login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -175,5 +207,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel criarUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel criarPersonal;
+        private System.Windows.Forms.LinkLabel criarnutricionista;
     }
 }

@@ -11,16 +11,6 @@ namespace tcc.DAL
 {
     public class UsuarioDAL
     {
-        SqlConnection con = new SqlConnection
-        {
-            ConnectionString = Properties.Settings.Default.CST
-        };
-        SqlCommand cm = new SqlCommand
-        {
-            CommandType = System.Data.CommandType.Text
-        };
-        SqlDataReader er;
-
         /*Recebe o objeto USUARIO,
         e insere na tabela de usuarios */
         public int novoUsuarioDAL(Usuario novoUser)
@@ -34,8 +24,14 @@ namespace tcc.DAL
                 }
                 else
                 {
-                    cm.CommandText = "INSERT INTO usuario (email, nome, login, senha, nascimento, sexo, peso, altura, objetivo)" +
-                                     "VALUES (@email, @nome, @login, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
+                    //Conexão com BD e insere os dados do usuario
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = Properties.Settings.Default.CST;
+                    SqlCommand cm = new SqlCommand();
+                    cm.CommandType = System.Data.CommandType.Text;
+
+                    cm.CommandText = "INSERT INTO usuario (email, nome, senha, nascimento, sexo, peso, altura, objetivo)" +
+                                     "VALUES (@email, @nome, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
 
                     //Parametros irá substituir os valores dentro do campo
                     cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = novoUser.email;
@@ -44,7 +40,7 @@ namespace tcc.DAL
                     cm.Parameters.Add("senha", System.Data.SqlDbType.Char).Value = novoUser.senha;
                     cm.Parameters.Add("nascimento", System.Data.SqlDbType.DateTime).Value = novoUser.nascimento;
                     cm.Parameters.Add("sexo", System.Data.SqlDbType.Char).Value = novoUser.sexo;
-                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.peso;
+                    cm.Parameters.Add("peso", System.Data.SqlDbType.Real).Value = novoUser.crn;
                     cm.Parameters.Add("altura", System.Data.SqlDbType.Real).Value = novoUser.altura;
                     cm.Parameters.Add("objetivo", System.Data.SqlDbType.VarChar).Value = novoUser.objetivo;
 
@@ -68,8 +64,14 @@ namespace tcc.DAL
         public int existeUsuario(String login)
         {
             try
-            {                
-                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -101,7 +103,13 @@ namespace tcc.DAL
         {
             try
             {
-                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE login='" + login + "'";
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT RTRIM(senha) FROM usuario WHERE email='" + email + "'";
 
                 cm.Connection = con;
                 con.Open();
@@ -134,7 +142,13 @@ namespace tcc.DAL
         {
             try
             {
-                cm.CommandText = "SELECT * FROM usuario WHERE login='" + login + "'";
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM usuario WHERE email='" + email + "'";
 
                 cm.Connection = con;
                 con.Open();

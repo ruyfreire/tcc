@@ -107,5 +107,21 @@ namespace tcc
             }
             */
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            {
+                CadastroPersonal formularioCadastro = new CadastroPersonal();
+                formularioCadastro.Show();
+                this.Visible = false;
+            }
+        }
+
+        private void criarnutricionista_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CadastroNutricionista formularioCadastro = new CadastroNutricionista();
+            formularioCadastro.Show();
+            this.Visible = false;
+        }
     }
 }

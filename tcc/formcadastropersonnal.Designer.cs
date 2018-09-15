@@ -129,8 +129,10 @@
             // 
             this.txtsenha.Location = new System.Drawing.Point(134, 107);
             this.txtsenha.Name = "txtsenha";
+            this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(129, 20);
             this.txtsenha.TabIndex = 19;
+            this.txtsenha.TextChanged += new System.EventHandler(this.txtsenha_TextChanged);
             // 
             // txtemail
             // 
@@ -205,6 +207,7 @@
             this.btnsalvar.TabIndex = 35;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnlimpar
             // 
