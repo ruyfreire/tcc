@@ -45,11 +45,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="exercicio.cs">
+    <Compile Include="Alimentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="exercicio.Designer.cs">
-      <DependentUpon>exercicio.cs</DependentUpon>
+    <Compile Include="Alimentos.Designer.cs">
+      <DependentUpon>Alimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca Nutricionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca Nutricionista.Designer.cs">
+      <DependentUpon>Busca Nutricionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca Personal.Designer.cs">
+      <DependentUpon>Busca Personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoNutricionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoNutricionista.Designer.cs">
+      <DependentUpon>ContatoNutricionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoPersonal.Designer.cs">
+      <DependentUpon>ContatoPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exercicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exercicios.Designer.cs">
+      <DependentUpon>Exercicios.cs</DependentUpon>
     </Compile>
     <Compile Include="formcadastro.cs">
       <SubType>Form</SubType>
@@ -77,8 +107,23 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="exercicio.resx">
-      <DependentUpon>exercicio.cs</DependentUpon>
+    <EmbeddedResource Include="Alimentos.resx">
+      <DependentUpon>Alimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca Nutricionista.resx">
+      <DependentUpon>Busca Nutricionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca Personal.resx">
+      <DependentUpon>Busca Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoNutricionista.resx">
+      <DependentUpon>ContatoNutricionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoPersonal.resx">
+      <DependentUpon>ContatoPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exercicios.resx">
+      <DependentUpon>Exercicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formcadastro.resx">
       <DependentUpon>formcadastro.cs</DependentUpon>
