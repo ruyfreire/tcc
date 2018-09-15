@@ -76,6 +76,8 @@
       <DependentUpon>ContatoPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="Exercicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="cadastrocliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +137,6 @@
     </Compile>
     <Compile Include="Consulta_Treino.Designer.cs">
       <DependentUpon>Consulta_Treino.cs</DependentUpon>
-    </Compile>
-    <Compile Include="exercicio.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exercicios.Designer.cs">
       <DependentUpon>Exercicios.cs</DependentUpon>
@@ -203,6 +202,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exercicios.resx">
       <DependentUpon>Exercicios.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Validacoes.cs" />
     <EmbeddedResource Include="cadastrocliente.resx">
       <DependentUpon>cadastrocliente.cs</DependentUpon>
@@ -233,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta_Treino.resx">
       <DependentUpon>Consulta_Treino.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="exercicio.resx">
-      <DependentUpon>exercicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formcadastro.resx">
       <DependentUpon>formcadastro.cs</DependentUpon>
