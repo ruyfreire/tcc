@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace tcc
 {
-    public partial class Form1 : Form
+    public partial class Busca_Personal : Form
     {
-        public Form1()
+        public Busca_Personal()
         {
             InitializeComponent();
         }
