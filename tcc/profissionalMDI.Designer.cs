@@ -33,9 +33,6 @@
             this.Clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Relatorios = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dietasTreinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Informacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.alimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exercíciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +48,6 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Clientes,
-            this.Relatorios,
             this.Informacoes,
             this.Configuracoes});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -81,27 +77,6 @@
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
-            // Relatorios
-            // 
-            this.Relatorios.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem,
-            this.dietasTreinosToolStripMenuItem});
-            this.Relatorios.Name = "Relatorios";
-            this.Relatorios.Size = new System.Drawing.Size(71, 20);
-            this.Relatorios.Text = "Relatórios";
-            // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // dietasTreinosToolStripMenuItem
-            // 
-            this.dietasTreinosToolStripMenuItem.Name = "dietasTreinosToolStripMenuItem";
-            this.dietasTreinosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.dietasTreinosToolStripMenuItem.Text = "Dietas / Treinos";
-            // 
             // Informacoes
             // 
             this.Informacoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,13 +89,13 @@
             // alimentosToolStripMenuItem
             // 
             this.alimentosToolStripMenuItem.Name = "alimentosToolStripMenuItem";
-            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alimentosToolStripMenuItem.Text = "Alimentos";
             // 
             // exercíciosToolStripMenuItem
             // 
             this.exercíciosToolStripMenuItem.Name = "exercíciosToolStripMenuItem";
-            this.exercíciosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.exercíciosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exercíciosToolStripMenuItem.Text = "Exercícios";
             // 
             // Configuracoes
@@ -178,9 +153,6 @@
         private System.Windows.Forms.ToolStripMenuItem Clientes;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Relatorios;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dietasTreinosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Informacoes;
         private System.Windows.Forms.ToolStripMenuItem alimentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exercíciosToolStripMenuItem;
