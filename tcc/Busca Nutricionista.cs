@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace tcc
 {
-    public partial class Form1 : Form
+    public partial class Busca_Nutricionista : Form
     {
-        public Form1()
+        public Busca_Nutricionista()
         {
             InitializeComponent();
+        }
+
+        private void Busca_Nutricionista_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

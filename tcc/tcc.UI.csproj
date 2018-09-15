@@ -45,6 +45,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alimentos.Designer.cs">
+      <DependentUpon>Alimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca Nutricionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca Nutricionista.Designer.cs">
+      <DependentUpon>Busca Nutricionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca Personal.Designer.cs">
+      <DependentUpon>Busca Personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoNutricionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoNutricionista.Designer.cs">
+      <DependentUpon>ContatoNutricionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContatoPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContatoPersonal.Designer.cs">
+      <DependentUpon>ContatoPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exercicios.cs">
     <Compile Include="cadastrocliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +87,42 @@
     </Compile>
     <Compile Include="Consulta_Dieta.Designer.cs">
       <DependentUpon>Consulta_Dieta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
     <Compile Include="Esquecisenha.cs">
       <SubType>Form</SubType>
@@ -72,8 +139,8 @@
     <Compile Include="exercicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="exercicio.Designer.cs">
-      <DependentUpon>exercicio.cs</DependentUpon>
+    <Compile Include="Exercicios.Designer.cs">
+      <DependentUpon>Exercicios.cs</DependentUpon>
     </Compile>
     <Compile Include="formcadastro.cs">
       <SubType>Form</SubType>
@@ -119,12 +186,47 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Alimentos.resx">
+      <DependentUpon>Alimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca Nutricionista.resx">
+      <DependentUpon>Busca Nutricionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca Personal.resx">
+      <DependentUpon>Busca Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoNutricionista.resx">
+      <DependentUpon>ContatoNutricionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContatoPersonal.resx">
+      <DependentUpon>ContatoPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exercicios.resx">
+      <DependentUpon>Exercicios.cs</DependentUpon>
     <Compile Include="Validacoes.cs" />
     <EmbeddedResource Include="cadastrocliente.resx">
       <DependentUpon>cadastrocliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta_Dieta.resx">
       <DependentUpon>Consulta_Dieta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Esquecisenha.resx">
       <DependentUpon>Esquecisenha.cs</DependentUpon>
