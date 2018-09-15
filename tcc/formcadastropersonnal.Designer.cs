@@ -254,6 +254,7 @@
             this.Controls.Add(this.txtname);
             this.Name = "CadastroPersonal";
             this.Text = "Cadastro Personal   ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CadastroPersonal_FormClosed);
             this.Load += new System.EventHandler(this.formcadastropersonnal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

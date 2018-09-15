@@ -9,6 +9,7 @@ namespace tcc.DTO
    public class Treino
     {
         public int id_treino { get; set; }
+        public string diaSemana { get; set; }
         public int serie { get; set; }
         public int duracao { get; set; }
     }

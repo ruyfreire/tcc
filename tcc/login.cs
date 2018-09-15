@@ -123,5 +123,22 @@ namespace tcc
             formularioCadastro.Show();
             this.Visible = false;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Esquecisenha formularioCadastro = new Esquecisenha(comboperfil.Text);
+            formularioCadastro.Show();
+            this.Visible = false;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

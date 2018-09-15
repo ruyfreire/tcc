@@ -45,17 +45,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastrocliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrocliente.Designer.cs">
+      <DependentUpon>cadastrocliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta_Dieta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consulta_Dieta.Designer.cs">
       <DependentUpon>Consulta_Dieta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Esquecisenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Esquecisenha.Designer.cs">
+      <DependentUpon>Esquecisenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta_Treino.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consulta_Treino.Designer.cs">
       <DependentUpon>Consulta_Treino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exercicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exercicio.Designer.cs">
+      <DependentUpon>exercicio.cs</DependentUpon>
     </Compile>
     <Compile Include="formcadastro.cs">
       <SubType>Form</SubType>
@@ -102,11 +120,20 @@
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Validacoes.cs" />
+    <EmbeddedResource Include="cadastrocliente.resx">
+      <DependentUpon>cadastrocliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta_Dieta.resx">
       <DependentUpon>Consulta_Dieta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Esquecisenha.resx">
+      <DependentUpon>Esquecisenha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta_Treino.resx">
       <DependentUpon>Consulta_Treino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exercicio.resx">
+      <DependentUpon>exercicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formcadastro.resx">
       <DependentUpon>formcadastro.cs</DependentUpon>
