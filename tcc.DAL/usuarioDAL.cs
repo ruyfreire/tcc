@@ -24,7 +24,7 @@ namespace tcc.DAL
                 }
                 else
                 {
-                    //Conexão com BD e insere os dados do usuario
+                    //Conexão com BD
                     SqlConnection con = new SqlConnection();
                     con.ConnectionString = Properties.Settings.Default.CST;
                     SqlCommand cm = new SqlCommand();
@@ -138,7 +138,7 @@ namespace tcc.DAL
 
         /* Busca usuário pelo id, cria um objeto USUARIO, 
         e retorna o objeto com todos os dados do perfil */
-        public Usuario carregaUsuario(string login)
+        public Usuario carregaUsuario(String login)
         {
             try
             {
@@ -168,8 +168,13 @@ namespace tcc.DAL
                     sexo = Convert.ToString(er["sexo"]),
                     peso = Convert.ToDecimal(er["peso"]),
                     altura = Convert.ToDecimal(er["altura"]),
-                    objetivo = Convert.ToString(er["objetivo"])
+                    objetivo = Convert.ToString(er["objetivo"])                   
                 };
+                if (er["id_gym_personal"].ToString().Equals("")) usuario.id_gym_personal = 0;
+                else usuario.id_gym_personal = Convert.ToInt32(er["id_gym_personal"]);
+
+                if (er["id_nutricionista"].ToString().Equals("")) usuario.id_nutricionista = 0;
+                else usuario.id_nutricionista = Convert.ToInt32(er["id_nutricionista"]);
 
                 return usuario;
             }
@@ -185,13 +190,13 @@ namespace tcc.DAL
         {
             try
             {
-                //Conexão com BD e insere os dados do usuario
+                //Conexão com BD
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "UPDATE usuario  SET email=@email, nome=@nome, login=@login, senha=@senha, nascimento=@nascimento, sexo=@sexo, peso=@peso, altura=@altura, objetivo=@objetivo";
+                cm.CommandText = "UPDATE usuario  SET email=@email, nome=@nome, login=@login, senha=@senha, nascimento=@nascimento, sexo=@sexo, peso=@peso, altura=@altura, objetivo=@objetivo WHERE id_usuario=" + usuario.id_usuario;
 
                 cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = usuario.email;
                 cm.Parameters.Add("nome", System.Data.SqlDbType.VarChar).Value = usuario.nome;
@@ -216,7 +221,192 @@ namespace tcc.DAL
         }
 
 
-        public int excluiUsuario(Usuario usuario)
+        public int excluiUsuario(int id_usuario)
+        {
+            try
+            {
+                //excluiUsuario dietas e treinos do usuario
+                new DietaDAL().excluiTodasDietasUsuario(id_usuario);
+                new TreinoDAL().excluiTodosTreinoUsuario(id_usuario);
+
+                //Conexão com BD
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "DELETE FROM usuario  WHERE id_usuario=" + id_usuario;
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public int atualizaPersonal(Usuario user, int id_gym_personal)
+        {
+            try
+            {
+                Usuario usuario = carregaUsuario(user.login);
+                if (usuario.id_gym_personal != 0 && id_gym_personal != 0)
+                    return -1;
+
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "UPDATE usuario SET id_gym_personal=@id_gym_personal WHERE id_usuario=" + usuario.id_usuario;
+
+                //Parametros irá substituir os valores dentro do campo
+                if (id_gym_personal == 0)
+                {
+                    cm.Parameters.Add("id_gym_personal", System.Data.SqlDbType.Int).Value = DBNull.Value;
+                    removeDicionarioGymPersonalUsuario(usuario.id_usuario, id_gym_personal);
+                }
+                else
+                {
+                    cm.Parameters.Add("id_gym_personal", System.Data.SqlDbType.Int).Value = id_gym_personal;
+                    insereDicionarioGymPersonalUsuario(usuario.id_usuario, id_gym_personal);
+                }
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int insereDicionarioGymPersonalUsuario(int id_usuario, int id_gym_personal)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "INSERT INTO gym_personal_usuario (link_personal, link_usuario)" +
+                                    "VALUES (@link_personal, @link_usuario)";
+
+                //Parametros irá substituir os valores dentro do campo
+                cm.Parameters.Add("link_personal", System.Data.SqlDbType.Int).Value = id_gym_personal;
+                cm.Parameters.Add("link_usuario", System.Data.SqlDbType.Int).Value = id_usuario;
+                
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int removeDicionarioGymPersonalUsuario(int id_usuario, int id_gym_personal)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "DELETE FROM gym_personal_usuario WHERE link_personal=" + id_gym_personal + " AND " + "link_usuario=" + id_usuario;
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        public int atualizaNutricionista(int id_usuario, int id_nutricionista)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "UPDATE usuario SET id_nutricionista=@id_nutricionista WHERE id_usuario=" + id_usuario;
+
+                //Parametros irá substituir os valores dentro do campo
+                if (id_nutricionista == 0)
+                {
+                    cm.Parameters.Add("id_gym_personal", System.Data.SqlDbType.Int).Value = DBNull.Value;
+                    removeDicionarioNutricionistaUsuario(id_usuario, id_nutricionista);
+                }
+                else
+                {
+                    cm.Parameters.Add("id_gym_personal", System.Data.SqlDbType.Int).Value = id_nutricionista;
+                    insereDicionarioNutricionistaUsuario(id_usuario, id_nutricionista);
+                }
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int insereDicionarioNutricionistaUsuario(int id_usuario, int id_nutricionista)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+
+                cm.CommandText = "INSERT INTO nutricionista_usuario (link_nutricionista, link_usuario)" +
+                                    "VALUES (@link_nutricionista, @link_usuario)";
+
+                //Parametros irá substituir os valores dentro do campo
+                cm.Parameters.Add("link_nutricionista", System.Data.SqlDbType.Int).Value = id_nutricionista;
+                cm.Parameters.Add("link_usuario", System.Data.SqlDbType.Int).Value = id_usuario;
+
+                cm.Connection = con;
+                con.Open();
+                int qtd = cm.ExecuteNonQuery();
+
+                return qtd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int removeDicionarioNutricionistaUsuario(int id_usuario, int id_nutricionista)
         {
             try
             {
@@ -226,16 +416,12 @@ namespace tcc.DAL
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "DELETE FROM usuario  WHERE id_usuario=" + usuario.id_usuario;
+                cm.CommandText = "DELETE FROM nutricionista_usuario WHERE link_nutricionista=" + id_nutricionista + " AND " + "link_usuario=" + id_usuario;
 
                 cm.Connection = con;
                 con.Open();
                 int qtd = cm.ExecuteNonQuery();
 
-                if(qtd > 0)
-                {
-                    new DietaDAL().excluiTodasDietasUsuario(usuario.id_usuario);
-                }
                 return qtd;
             }
             catch (Exception ex)
@@ -243,6 +429,5 @@ namespace tcc.DAL
                 throw ex;
             }
         }
-
     }
 }

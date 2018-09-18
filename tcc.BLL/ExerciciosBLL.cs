@@ -7,15 +7,32 @@ namespace tcc.BLL
 {
     public class ExerciciosBLL
     {
-        public Exercicio buscaExercicioEspecifico(int id_Exercicio)
+        public int incluiExercicioTreino(int id_treino, int id_exercicio)
         {
-            return new ExerciciosDAL().buscaExercicioEspecifico(id_Exercicio);
+            return new ExerciciosDAL().incluiExercicioTreino(id_treino, id_exercicio);
         }
 
 
-        public IList<Exercicio> buscaListaDeExerciciosEspecificos(ArrayList id_Exercicios)
+        public int excluiExercicioTreino(int id_treino, int id_exercicio)
         {
-            return new ExerciciosDAL().buscaListaDeExerciciosEspecificos(id_Exercicios);
+            return new ExerciciosDAL().excluiExercicioTreino(id_treino, id_exercicio);
+        }
+
+
+        public IList<Exercicio> carregaExerciciosTreino(int id_treino)
+        {
+            return new ExerciciosDAL().carregaExerciciosTreino(id_treino);
+        }
+
+        public Exercicio buscaExercicioEspecifico(int id_exercicio)
+        {
+            return new ExerciciosDAL().buscaExercicioEspecifico(id_exercicio);
+        }
+
+
+        public IList<Exercicio> buscaListaDeExerciciosEspecificos(ArrayList id_exercicios)
+        {
+            return new ExerciciosDAL().buscaListaDeExerciciosEspecificos(id_exercicios);
         }
 
 

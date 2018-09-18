@@ -15,11 +15,6 @@ namespace tcc.DAL
         {
             try
             {
-                if(existeLinkAlimentoDieta(id_dieta, id_alimento) == 1 )
-                {
-                    return -1;
-                }
-
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
@@ -53,11 +48,6 @@ namespace tcc.DAL
         {
             try
             {
-                if (existeLinkAlimentoDieta(id_dieta, id_alimento) == 0)
-                {
-                    return -1;
-                }
-
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
@@ -79,33 +69,6 @@ namespace tcc.DAL
             }
         }
 
-        /* Verifica na tabela/dicionario dieta_alimento se possui o link da dieta e alimento informado,
-         retorna 1 se encontrar,
-         retorna 0 se não encontrar */
-        public int existeLinkAlimentoDieta(int id_dieta, int id_alimento)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Properties.Settings.Default.CST;
-                SqlCommand cm = new SqlCommand();
-                cm.CommandType = System.Data.CommandType.Text;
-                SqlDataReader er;
-
-                cm.CommandText = "SELECT * FROM dieta_alimentos WHERE link_dieta=" + id_dieta + " AND " + "link_alimento=" + id_alimento;
-
-                cm.Connection = con;
-                con.Open();
-
-                er = cm.ExecuteReader();
-                if(er.HasRows) return 1;
-                else return 0;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         /* Busca um alimento especifico,
          de acordo com o id que é passado ao método */

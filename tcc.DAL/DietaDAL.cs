@@ -20,7 +20,7 @@ namespace tcc.DAL
                 {
                     if ( dietaSeleciona.tipo_refeicao.Equals(novaDieta.tipo_refeicao) )
                     {
-                        return -1; // retorna -1 para informar cancelamento de cadastro
+                        return 0; // retorna -1 para informar cancelamento de cadastro
                     }
                 }
 
@@ -47,7 +47,8 @@ namespace tcc.DAL
                     er.Read();
                     /* Chama a função para atualizar o dicionario de usuario_dieta,
                      enviando o id do usuario e o id da dieta recem criada */
-                    qtd = insereDicionarioDietaUsuario(id_usuario, Convert.ToInt32(er[0]));
+                    insereDicionarioDietaUsuario(id_usuario, Convert.ToInt32(er[0]));
+                    qtd++;
                 }
 
                 con.Close();
@@ -101,6 +102,10 @@ namespace tcc.DAL
         {
             try
             {
+                /* Carrega os alimentos da dieta, para excluir no dicionario dieta_alimentos */
+                IList<Alimento> alimentosDieta = new AlimentoDAL().carregaAlimentosDieta(id_dieta);
+
+
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
@@ -112,22 +117,23 @@ namespace tcc.DAL
                 con.Open();
 
                 int dietaExcluida = 0;
-                int dicionarioExcluido = 0;
                 dietaExcluida = cm.ExecuteNonQuery();
                 if (dietaExcluida > 0)
                 {
                     /* Chama a função para atualizar o dicionario de usuario_dieta,
                      enviando o id do usuario e o id da dieta */
-                    dicionarioExcluido = removeDicionarioDietaUsuario(id_usuario, id_dieta);
+                    removeDicionarioDietaUsuario(id_usuario, id_dieta);
+
+                    /* Exclui no dicionario dieta_alimentos */
+                    foreach (Alimento alimento in alimentosDieta)
+                    {
+                        new AlimentoDAL().excluiAlimentoDieta(id_dieta, alimento.id_alimento);
+                    }
                 }
 
                 con.Close();
-                if ((dietaExcluida == 1) && (dicionarioExcluido == 1))
-                    return 1;
-                else if ((dietaExcluida == 1) && (dicionarioExcluido == 0))
-                    return -1;
-                else
-                    return 0;
+
+                return dietaExcluida;
             }
             catch (Exception ex)
             {
@@ -151,6 +157,9 @@ namespace tcc.DAL
                 int qtd;
                 foreach (Dieta dieta in dietas)
                 {
+                    /* Carrega os alimentos da dieta, para excluir no dicionario dieta_alimentos */
+                    IList<Alimento> alimentosDieta = new AlimentoDAL().carregaAlimentosDieta(dieta.id_dieta);
+
                     cm.CommandText = "DELETE FROM dieta WHERE id_dieta=" + dieta.id_dieta;
 
                     cm.Connection = con;
@@ -162,7 +171,14 @@ namespace tcc.DAL
                     {
                         /* Chama a função para atualizar o dicionario de usuario_dieta,
                          enviando o id do usuario e o id da dieta */
-                        qtd = removeDicionarioDietaUsuario(id_usuario, dieta.id_dieta);
+                        removeDicionarioDietaUsuario(id_usuario, dieta.id_dieta);
+
+                        /* Carrega os alimentos da dieta, para excluir no dicionario dieta_alimentos */                        
+                        foreach (Alimento alimento in alimentosDieta)
+                        {
+                            new AlimentoDAL().excluiAlimentoDieta(dieta.id_dieta, alimento.id_alimento);
+                        }
+
                         totalDieta++; // soma ao total de dietas excluidas
                     }
                     con.Close();

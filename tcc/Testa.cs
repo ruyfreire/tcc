@@ -21,6 +21,22 @@ namespace tcc
 
         private void btnCarregaTodos_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario { id_usuario = 1, login = "ruy" };
+            int result = new UsuarioBLL().atualizaPersonal(usuario, 1);
+
+            if (result > 0) MessageBox.Show("Personal atualizado com sucesso");
+            else if (result == -1) MessageBox.Show("Usuario já possui personal");
+            else MessageBox.Show("Erro ao atualizar Personal");
+
+            /*
+            // ======  INCLUI UM TREINO   =======
+            int id_usuario = 1;
+            Treino treino = new Treino { diaSemana = "quarta", serie = 7, duracao = 20 };
+            incluiTreino(id_usuario, treino);
+             */
+            
+
+            
             /*
             // ======  INCLUI UMA DIETA   =======
             int id_usuario = 1;
@@ -55,11 +71,24 @@ namespace tcc
 
         private void btnCarregaEspecifico_Click(object sender, EventArgs e)
         {
+            // ======  EXCLUI UM TREINO   =======
+            int id_treino = 4;
+            int id_usuario = 1;
+            excluiTreino(id_usuario, id_treino);
+            
+
             /*
             //incluir alimento em dieta
             int id_dieta = 1; int id_alimento = 10;
             incluiAlimentoDieta(id_dieta, id_alimento);
              */
+
+            /*
+            //incluir exercicio em treino
+            int id_treino = 1; int id_exercicio = 2;
+            incluiExercicioTreino(id_treino, id_exercicio);
+             */
+
 
             //carregaAlimentosDieta(2);
 
@@ -72,11 +101,20 @@ namespace tcc
 
         private void btnCarregaLista_Click(object sender, EventArgs e)
         {
+            carregaExercicioTreino(1);
+
             /*
             //excluir alimento em dieta
             int id_dieta = 1; int id_alimento = 10;
             excluiAlimentoDieta(id_dieta, id_alimento);
              */
+
+            /*
+            //excluir exercicio em treino
+            int id_treino = 1; int id_exercicio = 2;
+            excluiExercicioTreino(id_treino, id_exercicio);
+             */
+
 
             //carregaAlimentosDieta(3);
 
@@ -94,48 +132,102 @@ namespace tcc
 
         /* ==================  metodos de teste ============================== */
 
-        public void incluiAlimentoDieta(int id_dieta, int id_alimento)
+        public void incluiTreino(int id_usuario, Treino treino)
         {
-            int result = new AlimentosBLL().incluiAlimentoDieta(id_dieta, id_alimento);
-            if (result == 1) MessageBox.Show("Alimento incluído com sucesso!");
-            else if (result == -1) MessageBox.Show("Alimento já presente na dieta");
-            else MessageBox.Show("Erro ao incluir alimento!");
+            int result = new TreinoBLL().incluirTreinoUsuario(id_usuario, treino);
+            if (result == 0)
+            {
+                MessageBox.Show("Usuario já possui um treino neste dia");
+            }
+            else if (result > 0)
+            {
+                MessageBox.Show("Treino cadastrado com Sucesso");
+            }
+            else if (result < 0)
+            {
+                MessageBox.Show("Erro ao cadastrar treino");
+            }
         }
-        public void excluiAlimentoDieta(int id_dieta, int id_alimento)
+        public void excluiTreino(int id_usuario, int id_treino)
         {
-            int result = new AlimentosBLL().excluiAlimentoDieta(id_dieta, id_alimento);
-            if (result == 1) MessageBox.Show("Alimento excluído com sucesso!");
-            else if (result == -1) MessageBox.Show("Alimento não encontrado na dieta");
-            else MessageBox.Show("Erro ao excluir alimento!");
+            int result = new TreinoBLL().excluiTreinoUnicoUsuario(id_usuario, id_treino);
+            if (result == 1)
+            {
+                MessageBox.Show("Treino excluído com Sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Treino não excluído ou não encontrado");
+            }
         }
-        public void listaEspecificaALIMENTO()
+        public void alteraTreino(Treino treino)
         {
-            IList<Alimento> listaAlimentos = new List<Alimento>();
-            ArrayList id_alimentos = new ArrayList { 1, 2, 3, 4 };
-            listaAlimentos = new AlimentosBLL().buscaListaDeAlimentosEspecificos(id_alimentos);
-            gridTabela.DataSource = listaAlimentos;
+            int result = new TreinoBLL().alteraTreinoDeUsuario(treino);
+            if (result == 1)
+            {
+                MessageBox.Show("Treino alterado com Sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Treino não alterado");
+            }
         }
-        public void unicoALIMENTO()
+        public void carregaExercicioTreino(int id_usuario)
         {
-            Alimento alimento = new Alimento();
+            gridManha.DataSource = null;
+            gridAlmoco.DataSource = null;
+            gridTarde.DataSource = null;
+            gridJanta.DataSource = null;
 
-            int id_alimento = 2;
-            alimento = new AlimentosBLL().buscaUnicoAlimento(id_alimento);
+            /* Carrega os treinos vinculadas ao id do usuario */
+            IList<Treino> treinos = new TreinoBLL().carregaTreinosDeUsuario(id_usuario);
+            if (treinos.Count == 0)
+            {
+                MessageBox.Show("Sem treinos para este usuário!");
+            }
+            else
+            {
+                foreach (Treino treino in treinos)
+                {
+                    /* Carrega lista de exercicios, vinculados ao id de cada treino do usuario */
+                    IList<Exercicio> exerciciosTreino = new ExerciciosBLL().carregaExerciciosTreino(treino.id_treino);
 
-            //cria lista apenas para inserir no grid
-            IList<Alimento> alimentoGrid = new List<Alimento>();
-            alimentoGrid.Add(alimento);
-            gridTabela.DataSource = alimentoGrid;
+                    /* Verifica qual o dia da semana do treino, e inclui os dados do treino no grid correto */
+                    if (treino.diaSemana.Equals("segunda"))
+                    {
+                        gridManha.DataSource = exerciciosTreino;
+                    }
+                    else if (treino.diaSemana.Equals("terça"))
+                    {
+                        gridAlmoco.DataSource = exerciciosTreino;
+                    }
+                    else if (treino.diaSemana.Equals("quarta"))
+                    {
+                        gridTarde.DataSource = exerciciosTreino;
+                    }
+                    else
+                    {
+                        gridJanta.DataSource = exerciciosTreino;
+                    }
+                }
+            }
         }
-        public void todosALIMENTO()
+
+        public void incluiExercicioTreino(int id_treino, int id_exercicio)
         {
-            IList<Alimento> listaAlimentos = new List<Alimento>();
-
-            listaAlimentos = new AlimentosBLL().buscaTodosAlimentos();
-            gridTabela.DataSource = listaAlimentos;
+            int result = new ExerciciosBLL().incluiExercicioTreino(id_treino, id_exercicio);
+            if (result == 1) MessageBox.Show("Exercicio incluído com sucesso!");
+            else if (result == -1) MessageBox.Show("Exercicio já presente no treino");
+            else MessageBox.Show("Erro ao incluir exercicio!");
         }
-
-
+        public void excluiExercicioTreino(int id_treino, int id_exercicio)
+        {
+            int result = new ExerciciosBLL().excluiExercicioTreino(id_treino, id_exercicio);
+            if (result == 1) MessageBox.Show("Exercicio excluído com sucesso!");
+            else if (result == -1) MessageBox.Show("Exercicio não encontrado no treino");
+            else MessageBox.Show("Erro ao excluir exercicio!");
+        }
+                
         public void unicoEXERCICIO()
         {
             Exercicio exercicio = new Exercicio();
@@ -162,16 +254,18 @@ namespace tcc
             listaExercicios = new ExerciciosBLL().buscaTodosExercicios();
             gridTabela.DataSource = listaExercicios;
         }
+        
+
 
 
         public void incluiDieta(int id_usuario, Dieta dieta)
         {            
             int result = new DietaBLL().incluirDietaUsuario(id_usuario, dieta);
-            if (result == -1)
+            if (result == 0)
             {
                 MessageBox.Show("Usuario já possui uma dieta deste tipo");
             }
-            else if (result > 1)
+            else if (result > 0)
             {
                 MessageBox.Show("Dieta cadastrada com Sucesso");
             }
@@ -186,10 +280,6 @@ namespace tcc
             if (result == 1)
             {
                 MessageBox.Show("Dieta excluída com Sucesso");
-            }
-            else if (result == -1)
-            {
-                MessageBox.Show("Erro no processo de referencia a dieta");
             }
             else
             {
@@ -206,50 +296,6 @@ namespace tcc
             else
             {
                 MessageBox.Show("Dieta não alterada");
-            }
-        }
-        public void buscaDieta( int id)
-        {
-            gridManha.DataSource = null;
-            gridAlmoco.DataSource = null;
-            gridTarde.DataSource = null;
-            gridJanta.DataSource = null;
-
-            IList<Dieta> dietas = new List<Dieta>();
-            dietas = new DietaBLL().carregaDietasDeUsuario(id);
-            if (dietas.Count == 0)
-            {
-                MessageBox.Show("Sem dietas para este usuário!");
-            }
-            else
-            {
-                foreach (Dieta dieta in dietas)
-                {
-                    if(dieta.tipo_refeicao.Equals("Café da Manhã"))
-                    {
-                        IList<Dieta> exibeDieta = new List<Dieta>();
-                        exibeDieta.Add(dieta);
-                        gridManha.DataSource = exibeDieta;
-                    }
-                    else if (dieta.tipo_refeicao.Equals("Almoço"))
-                    {
-                        IList<Dieta> exibeDieta = new List<Dieta>();
-                        exibeDieta.Add(dieta);
-                        gridAlmoco.DataSource = exibeDieta;
-                    }
-                    else if (dieta.tipo_refeicao.Equals("Café da Tarde"))
-                    {
-                        IList<Dieta> exibeDieta = new List<Dieta>();
-                        exibeDieta.Add(dieta);
-                        gridTarde.DataSource = exibeDieta;
-                    }
-                    else if (dieta.tipo_refeicao.Equals("Janta"))
-                    {
-                        IList<Dieta> exibeDieta = new List<Dieta>();
-                        exibeDieta.Add(dieta);
-                        gridJanta.DataSource = exibeDieta;
-                    }
-                }
             }
         }
         public void carregaAlimentosDieta(int id_usuario)
@@ -293,6 +339,57 @@ namespace tcc
                     }
                 }
             }
+        }
+
+        public void incluiAlimentoDieta(int id_dieta, int id_alimento)
+        {
+            int result = new AlimentosBLL().incluiAlimentoDieta(id_dieta, id_alimento);
+            if (result == 1) MessageBox.Show("Alimento incluído com sucesso!");
+            else if (result == -1) MessageBox.Show("Alimento já presente na dieta");
+            else MessageBox.Show("Erro ao incluir alimento!");
+        }
+        public void excluiAlimentoDieta(int id_dieta, int id_alimento)
+        {
+            int result = new AlimentosBLL().excluiAlimentoDieta(id_dieta, id_alimento);
+            if (result == 1) MessageBox.Show("Alimento excluído com sucesso!");
+            else if (result == -1) MessageBox.Show("Alimento não encontrado na dieta");
+            else MessageBox.Show("Erro ao excluir alimento!");
+        }
+
+        public void listaEspecificaALIMENTO()
+        {
+            IList<Alimento> listaAlimentos = new List<Alimento>();
+            ArrayList id_alimentos = new ArrayList { 1, 2, 3, 4 };
+            listaAlimentos = new AlimentosBLL().buscaListaDeAlimentosEspecificos(id_alimentos);
+            gridTabela.DataSource = listaAlimentos;
+        }
+        public void unicoALIMENTO()
+        {
+            Alimento alimento = new Alimento();
+
+            int id_alimento = 2;
+            alimento = new AlimentosBLL().buscaUnicoAlimento(id_alimento);
+
+            //cria lista apenas para inserir no grid
+            IList<Alimento> alimentoGrid = new List<Alimento>();
+            alimentoGrid.Add(alimento);
+            gridTabela.DataSource = alimentoGrid;
+        }
+        public void todosALIMENTO()
+        {
+            IList<Alimento> listaAlimentos = new List<Alimento>();
+
+            listaAlimentos = new AlimentosBLL().buscaTodosAlimentos();
+            gridTabela.DataSource = listaAlimentos;
+        }
+
+
+        public void tirarSelecao()
+        {
+            gridManha.ClearSelection();
+            gridAlmoco.ClearSelection();
+            gridTarde.ClearSelection();
+            gridJanta.ClearSelection();
         }
     }
 }

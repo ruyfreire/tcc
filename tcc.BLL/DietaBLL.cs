@@ -22,10 +22,15 @@ namespace tcc.BLL
             return new DietaDAL().excluiDietaUnicaUsuario(id_usuario, id_dieta);
         }
 
-
-        public IList<Dieta> carregaDietasDeUsuario(int id)
+        public int excluiTodasdietasEsuario(int id_usuario)
         {
-            return new DietaDAL().carregaDietasDeUsuario(id);
+            return new DietaDAL().excluiTodasDietasUsuario(id_usuario);
+        }
+
+
+        public IList<Dieta> carregaDietasDeUsuario(int id_usuario)
+        {
+            return new DietaDAL().carregaDietasDeUsuario(id_usuario);
         }
 
 

@@ -15,17 +15,12 @@ namespace tcc.DAL
         {
             try
             {
-                if (existeLinkExercicioTreino(id_treino, id_exercicio) == 1)
-                {
-                    return -1;
-                }
-
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "INSERT INTO treino_exericio (link_treino, link_exericio) " +
+                cm.CommandText = "INSERT INTO treino_exercicio (link_treino, link_exercicio) " +
                     "VALUES (@link_treino, @link_exericio)";
 
                 //Parametros irá substituir os valores dentro do campo
@@ -53,17 +48,12 @@ namespace tcc.DAL
         {
             try
             {
-                if (existeLinkExercicioTreino(id_treino, id_exercicio) == 0)
-                {
-                    return -1;
-                }
-
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "DELETE FROM treino_exercicio WHERE link_treino=" + id_treino + " AND " + "link_exericio=" + id_exercicio;
+                cm.CommandText = "DELETE FROM treino_exercicio WHERE link_treino=" + id_treino + " AND " + "link_exercicio=" + id_exercicio;
 
                 cm.Connection = con;
                 con.Open();
@@ -71,34 +61,6 @@ namespace tcc.DAL
                 int qtd = cm.ExecuteNonQuery();
 
                 if (qtd > 0) return 1;
-                else return 0;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        /* Verifica na tabela/dicionario treino_exercicio se possui o link do treino e exercicio informado,
-         retorna 1 se encontrar,
-         retorna 0 se não encontrar */
-        public int existeLinkExercicioTreino(int id_treino, int id_exercicio)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Properties.Settings.Default.CST;
-                SqlCommand cm = new SqlCommand();
-                cm.CommandType = System.Data.CommandType.Text;
-                SqlDataReader er;
-
-                cm.CommandText = "SELECT * FROM treino_exericicio WHERE link_treino=" + id_treino + " AND " + "link_exercicio=" + id_exercicio;
-
-                cm.Connection = con;
-                con.Open();
-
-                er = cm.ExecuteReader();
-                if (er.HasRows) return 1;
                 else return 0;
             }
             catch (Exception ex)
@@ -207,6 +169,58 @@ namespace tcc.DAL
                 SqlDataReader er;
 
                 cm.CommandText = "SELECT * FROM exercicios";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Exercicio> listaExercicios = new List<Exercicio>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Exercicio exercicio = new Exercicio
+                        {
+                            id_exercicio = Convert.ToInt32(er["id_exercicio"]),
+                            nome = Convert.ToString(er["nome"]),
+                            grupo_muscular = Convert.ToString(er["grupo_muscular"]),
+                            execucao = Convert.ToString(er["execucao"]),
+                            queima_calorica = Convert.ToInt32(er["queima_calorica"]),
+                            tempo = Convert.ToInt32(er["tempo"])
+                        };
+
+                        listaExercicios.Add(exercicio);
+                    }
+                }
+
+                return listaExercicios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        /* Busca os exercicios, de acordo com o id do treino,
+         e retorna uma lista de todos exercicios neste treino */
+        public IList<Exercicio> carregaExerciciosTreino(int id_treino)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT tbExercicios.* FROM exercicios AS tbExercicios " +
+                                "INNER JOIN treino_exercicio AS LinkTreino " +
+                                "ON tbExercicios.id_exercicio = LinkTreino.link_exercicio " +
+                                "INNER JOIN treino AS tbTreino " +
+                                "ON LinkTreino.link_treino = tbTreino.id_treino " +
+                                "WHERE tbTreino.id_treino = " + id_treino;
 
                 cm.Connection = con;
                 con.Open();

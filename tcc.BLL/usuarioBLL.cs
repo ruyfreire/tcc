@@ -63,5 +63,10 @@ namespace tcc.BLL
             }
         }
 
+
+        public int atualizaPersonal(Usuario usuario, int id_gym_personal)
+        {
+            return new UsuarioDAL().atualizaPersonal(usuario, id_gym_personal);
+        }
     }
 }
