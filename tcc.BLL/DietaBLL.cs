@@ -34,9 +34,9 @@ namespace tcc.BLL
         }
 
 
-        public int alteraDietasDeUsuario(Dieta dieta)
+        public int alteraDietasDeUsuario(Dieta dieta, int id_usuario)
         {
-            return new DietaDAL().alteraDietasDeUsuario(dieta);
+            return new DietaDAL().alteraDietasDeUsuario(dieta, id_usuario);
         }
 
         

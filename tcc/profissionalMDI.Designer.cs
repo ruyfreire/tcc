@@ -37,9 +37,7 @@
             this.alimentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exercíciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Configuracoes = new System.Windows.Forms.ToolStripMenuItem();
-            this.notificaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosCadatraisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -89,29 +87,22 @@
             // alimentosToolStripMenuItem
             // 
             this.alimentosToolStripMenuItem.Name = "alimentosToolStripMenuItem";
-            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alimentosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.alimentosToolStripMenuItem.Text = "Alimentos";
             // 
             // exercíciosToolStripMenuItem
             // 
             this.exercíciosToolStripMenuItem.Name = "exercíciosToolStripMenuItem";
-            this.exercíciosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exercíciosToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.exercíciosToolStripMenuItem.Text = "Exercícios";
             // 
             // Configuracoes
             // 
             this.Configuracoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.notificaçõesToolStripMenuItem,
             this.dadosCadatraisToolStripMenuItem});
             this.Configuracoes.Name = "Configuracoes";
             this.Configuracoes.Size = new System.Drawing.Size(96, 20);
             this.Configuracoes.Text = "Configurações";
-            // 
-            // notificaçõesToolStripMenuItem
-            // 
-            this.notificaçõesToolStripMenuItem.Name = "notificaçõesToolStripMenuItem";
-            this.notificaçõesToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.notificaçõesToolStripMenuItem.Text = "Notificações";
             // 
             // dadosCadatraisToolStripMenuItem
             // 
@@ -119,20 +110,11 @@
             this.dadosCadatraisToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.dadosCadatraisToolStripMenuItem.Text = "Dados Cadatrais";
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
             // profissionalMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
-            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -148,7 +130,6 @@
 
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem Clientes;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
@@ -157,7 +138,6 @@
         private System.Windows.Forms.ToolStripMenuItem alimentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exercíciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Configuracoes;
-        private System.Windows.Forms.ToolStripMenuItem notificaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosCadatraisToolStripMenuItem;
     }
 }

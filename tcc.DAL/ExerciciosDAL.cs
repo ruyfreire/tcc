@@ -95,9 +95,7 @@ namespace tcc.DAL
                     id_exercicio = Convert.ToInt32(er["id_exercicio"]),
                     nome = Convert.ToString(er["nome"]),
                     grupo_muscular = Convert.ToString(er["grupo_muscular"]),
-                    execucao = Convert.ToString(er["execucao"]),
-                    queima_calorica = Convert.ToInt32(er["queima_calorica"]),
-                    tempo = Convert.ToInt32(er["tempo"])
+                    tipo_exercicio = Convert.ToString(er["tipo_exercicio"])
                 };
 
                 return exercicio;
@@ -137,9 +135,7 @@ namespace tcc.DAL
                         id_exercicio = Convert.ToInt32(er["id_exercicio"]),
                         nome = Convert.ToString(er["nome"]),
                         grupo_muscular = Convert.ToString(er["grupo_muscular"]),
-                        execucao = Convert.ToString(er["execucao"]),
-                        queima_calorica = Convert.ToInt32(er["queima_calorica"]),
-                        tempo = Convert.ToInt32(er["tempo"])
+                        tipo_exercicio = Convert.ToString(er["tipo_exercicio"])
                     };
 
                     lista_Exercicios.Add(exercicio);
@@ -185,9 +181,7 @@ namespace tcc.DAL
                             id_exercicio = Convert.ToInt32(er["id_exercicio"]),
                             nome = Convert.ToString(er["nome"]),
                             grupo_muscular = Convert.ToString(er["grupo_muscular"]),
-                            execucao = Convert.ToString(er["execucao"]),
-                            queima_calorica = Convert.ToInt32(er["queima_calorica"]),
-                            tempo = Convert.ToInt32(er["tempo"])
+                            tipo_exercicio = Convert.ToString(er["tipo_exercicio"])
                         };
 
                         listaExercicios.Add(exercicio);
@@ -237,9 +231,7 @@ namespace tcc.DAL
                             id_exercicio = Convert.ToInt32(er["id_exercicio"]),
                             nome = Convert.ToString(er["nome"]),
                             grupo_muscular = Convert.ToString(er["grupo_muscular"]),
-                            execucao = Convert.ToString(er["execucao"]),
-                            queima_calorica = Convert.ToInt32(er["queima_calorica"]),
-                            tempo = Convert.ToInt32(er["tempo"])
+                            tipo_exercicio = Convert.ToString(er["tipo_exercicio"])
                         };
 
                         listaExercicios.Add(exercicio);

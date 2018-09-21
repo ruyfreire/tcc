@@ -10,7 +10,8 @@ namespace tcc.DAL
     {
         /* Verifica se ja existe uma treino do mesmo dia da semana, e cancela caso já tenha,
          * inclui um novo treino do usuario,
-         e passa o ID do trieno criado, para o metodo que atualiza o dicionario usuario_treino */         
+         e passa o ID do trieno criado, para o metodo que atualiza o dicionario usuario_treino
+         retorna -1 se tentar repetir mesmo dia da semana */         
         public int incluirTreinoUsuario(int id_usuario, Treino novoTreino)
         {
             try
@@ -21,7 +22,7 @@ namespace tcc.DAL
                 {
                     if (treinoSeleciona.diaSemana.Equals(novoTreino.diaSemana))
                     {
-                        return 0; // retorna -1 para informar cancelamento de cadastro
+                        return -1; // retorna -1 para informar cancelamento de cadastro
                     }
                 }
 
@@ -394,17 +395,39 @@ namespace tcc.DAL
         }
 
 
-        /* Recebe um objeto TREINO junto com ID_treino, e altera a informações no banco */
-        public int alteraTreinoDeUsuario(Treino treino)
+        /* Recebe um objeto TREINO junto com ID_treino, e altera a informações no banco
+         retorna -1 se tentar repetir mesmo dia da semana */
+        public int alteraTreinoDeUsuario(Treino treino, int id_usuario)
         {
             try
             {
+                // Chama função para verificar se este tipo de treino ja existe no banco de dados
+                IList<Treino> treinosUsuario = carregaTreinosDeUsuario(id_usuario);
+                foreach (Treino treinoSeleciona in treinosUsuario)
+                {
+                    if (treinoSeleciona.id_treino == treino.id_treino)
+                    {
+                        if (treinoSeleciona.diaSemana.Equals(treino.diaSemana) && treinoSeleciona.serie.Equals(treino.serie) && treinoSeleciona.duracao.Equals(treino.duracao) )
+                        {
+                            return -2; // retorna -2 se dados forem iguais
+                        }
+                    }
+
+                    if (treinoSeleciona.id_treino != treino.id_treino)
+                    {
+                        if (treinoSeleciona.diaSemana.Equals(treino.diaSemana))
+                        {
+                            return -1; // retorna -1 para informar cancelamento de cadastro
+                        }
+                    }
+                }
+
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "UPDATE treino  SET dia_semana=@diaSemana, serie=@serie, duracao=@duracao " +
+                cm.CommandText = "UPDATE treino  SET dia_semana=@dia_semana, serie=@serie, duracao=@duracao " +
                                     "WHERE id_treino=" + treino.id_treino;
 
                 //Parametros irá substituir os valores dentro do campo

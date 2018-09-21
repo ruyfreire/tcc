@@ -33,9 +33,9 @@ namespace tcc.BLL
         }
 
 
-        public int alteraTreinoDeUsuario(Treino treino)
+        public int alteraTreinoDeUsuario(Treino treino, int id_usuario)
         {
-            return new TreinoDAL().alteraTreinoDeUsuario(treino);
+            return new TreinoDAL().alteraTreinoDeUsuario(treino, id_usuario);
         }
     }
 }

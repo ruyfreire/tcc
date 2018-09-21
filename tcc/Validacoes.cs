@@ -32,7 +32,7 @@ namespace tcc
                         MessageBox.Show("Nome menor que 3 letras", "Nome");
                         return false;
                     }
-                    break;
+                break;
                 //valida e-mail com expressao regular para carecteres paermitidos
                 case "email":
                     Regex testaEmail = new Regex(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
@@ -42,6 +42,25 @@ namespace tcc
                         return false;
                     }
                     break;
+                case "login":
+                    if(campo.Length > 15) { MessageBox.Show("Máximo de 15 caracteres", "Login"); return false; }
+                    Regex testaLogin = new Regex(@"^[a-z]+$", RegexOptions.IgnoreCase);
+                    if (!testaLogin.IsMatch(campo))
+                    {
+                        MessageBox.Show("Apenas letras para o login", "Login");
+                        return false;
+                    }
+                    if ((campo.Equals("")))
+                    {
+                        MessageBox.Show("Campo login vazio!", "Login");
+                        return false;
+                    }
+                    if (campo.Length < 3)
+                    {
+                        MessageBox.Show("Login menor que 3 letras", "Login");
+                        return false;
+                    }
+                break;
                 case "senha":
                     //valda senha entre 6 e 8
                     if (campo.Length < 6 || campo.Length > 8)
@@ -115,7 +134,41 @@ namespace tcc
                         return false;
                     }
                     break;
-                default:
+
+                case "serie":
+                    Regex testaSerie = new Regex(@"^[0-9]{1,2}$");
+                    if (!testaSerie.IsMatch(campo))
+                    {
+                        MessageBox.Show("Digite números inteiros entre 1 e 20", "Serie");
+                        return false;
+                    }
+                    else
+                    {
+                        int serie = Convert.ToInt32(campo);
+                        if (serie <= 0 || serie > 20)
+                        {
+                            MessageBox.Show("Número permitido entre 1 e 20", "Serie");
+                            return false;
+                        }
+                    }
+                    break;
+
+                case "duracao":
+                    Regex testaDuracao = new Regex(@"^[0-9]{1,3}$");
+                    if (!testaDuracao.IsMatch(campo))
+                    {
+                        MessageBox.Show("Digite números inteiros entre 1 e 500", "Duração");
+                        return false;
+                    }
+                    else
+                    {
+                        int duracao = Convert.ToInt32(campo);
+                        if (duracao <= 0 || duracao > 500)
+                        {
+                            MessageBox.Show("Número permitido entre 1 e 500", "Duração");
+                            return false;
+                        }
+                    }
                     break;
             }
             return true;

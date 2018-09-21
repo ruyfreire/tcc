@@ -21,12 +21,34 @@ namespace tcc
 
         private void btnCarregaTodos_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario { id_usuario = 1, login = "ruy" };
-            int result = new UsuarioBLL().atualizaPersonal(usuario, 1);
+            Usuario usuario = new Usuario { id_usuario = 1, id_gym_personal = 0, id_nutricionista = 0 };
 
-            if (result > 0) MessageBox.Show("Personal atualizado com sucesso");
-            else if (result == -1) MessageBox.Show("Usuario já possui personal");
-            else MessageBox.Show("Erro ao atualizar Personal");
+            /*
+            Personal personal = new UsuarioBLL().carregaPersonal(usuario);
+            if (personal.id_personal == 0) MessageBox.Show("Usuario não possui Personal");
+            else
+            {
+                MessageBox.Show("Nome: "+personal.nome+
+                    "\ne-mail: "+personal.email+
+                    "\nnascimento: "+personal.nascimento.ToShortDateString()+
+                    "\ncrn: "+personal.crea+
+                    "\nendereço: "+personal.endereco+
+                    "\ncpf/cnpj: "+personal.cpf_cnpj);
+            }
+
+            Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario);
+            if (nutricionista.id_nutricionista == 0) MessageBox.Show("Usuario não possui Nutricionista");
+            else
+            {
+                MessageBox.Show("Nome: " + nutricionista.nome +
+                    "\ne-mail: " + nutricionista.email +
+                    "\nnascimento: " + nutricionista.nascimento.ToShortDateString() +
+                    "\ncrn: " + nutricionista.crn +
+                    "\nendereço: " + nutricionista.endereco +
+                    "\ncpf/cnpj: " + nutricionista.cpf_cnpj);
+            }
+             */
+
 
             /*
             // ======  INCLUI UM TREINO   =======
@@ -34,9 +56,9 @@ namespace tcc
             Treino treino = new Treino { diaSemana = "quarta", serie = 7, duracao = 20 };
             incluiTreino(id_usuario, treino);
              */
-            
 
-            
+
+
             /*
             // ======  INCLUI UMA DIETA   =======
             int id_usuario = 1;
@@ -160,9 +182,9 @@ namespace tcc
                 MessageBox.Show("Treino não excluído ou não encontrado");
             }
         }
-        public void alteraTreino(Treino treino)
+        public void alteraTreino(Treino treino, int id_usuario)
         {
-            int result = new TreinoBLL().alteraTreinoDeUsuario(treino);
+            int result = new TreinoBLL().alteraTreinoDeUsuario(treino, id_usuario);
             if (result == 1)
             {
                 MessageBox.Show("Treino alterado com Sucesso");
@@ -286,9 +308,9 @@ namespace tcc
                 MessageBox.Show("Dieta não excluída ou não encontrada");
             }
         }
-        public void alteraDieta(Dieta dieta)
+        public void alteraDieta(Dieta dieta, int id_usuario)
         {            
-            int result = new DietaBLL().alteraDietasDeUsuario(dieta);
+            int result = new DietaBLL().alteraDietasDeUsuario(dieta, id_usuario);
             if (result == 1)
             {
                 MessageBox.Show("Dieta alterada com Sucesso");

@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tcc.DTO;
 
 namespace tcc
 {
     public partial class profissionalMDI : Form
     {
         private int childFormNumber = 0;
+        public Profissional profissional;
 
-        public profissionalMDI()
+        public profissionalMDI(Profissional profissional)
         {
             InitializeComponent();
+            this.profissional = profissional;
         }
 
         private void ShowNewForm(object sender, EventArgs e)

@@ -9,7 +9,7 @@ namespace tcc.DTO
    public class Dieta
     {
         public int id_dieta { get; set; }
+        public string dia_semana { get; set; }
         public string tipo_refeicao { get; set; }
-        public int qtde_porcao { get; set; }
     }
 }

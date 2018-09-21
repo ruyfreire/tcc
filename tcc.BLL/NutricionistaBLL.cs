@@ -22,17 +22,18 @@ namespace tcc.BLL
             }
         }
 
-        public int autenticaNutricionista(String email, String senha)
+
+        public int autenticaNutricionista(String login, String senha)
         {
             try
             {
                 //verifica se nutricionista existe, antes de autenticar senha
-                int existeNutricionista = new NutricionistaDAL().existeNutricionista(email);
+                int existeNutricionista = new NutricionistaDAL().existeNutricionista("confereLogin", login);
 
                 // se encontrar nutricionista, verifica a resposta de retorno
                 if (existeNutricionista == 1)
                 {
-                    return new NutricionistaDAL().autenticaNutricionista(email, senha);
+                    return new NutricionistaDAL().autenticaNutricionista(login, senha);
                 }
 
                 //se nao encontrar nutricionista, retorna 0
@@ -48,11 +49,11 @@ namespace tcc.BLL
         }
 
 
-        public Nutricionista carregaNutricionista(String email)
+        public Nutricionista carregaNutricionista(String login)
         {
             try
             {
-                return new NutricionistaDAL().carregaNutricionista(email);
+                return new NutricionistaDAL().carregaNutricionista(login);
             }
             catch (Exception ex)
             {
@@ -60,5 +61,15 @@ namespace tcc.BLL
             }
         }
 
+
+        public int alteraNutricionista(Nutricionista nutricionista)
+        {
+            return new NutricionistaDAL().alteraNutricionista(nutricionista);
+        }
+
+        public Nutricionista recuperaSenha(Nutricionista nutricionista)
+        {
+            return new NutricionistaDAL().recuperaSenha(nutricionista);
+        }
     }
 }
