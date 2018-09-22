@@ -45,6 +45,7 @@ namespace tcc
                     && validar.validaCampos("login", txtlogin.Text.ToLower())
                     && validar.validaCampos("senha", txtsenha.Text)
                     && validar.validaCampos("nascimento", maskednascimento.Text)
+                    && validar.validaCampos("idade", maskednascimento.Text)
                     && validar.validaCampos("sexo", comboBoxsexo.Text)
                     && validar.validaCampos("peso", txtpeso.Text)
                     && validar.validaCampos("altura", txtaltura.Text)

@@ -213,7 +213,7 @@ namespace tcc
         /* Menu Configurações */
         private void configDados_Click(object sender, EventArgs e)
         {
-
+            abreJanela(new Dados_Cadastrais());
         }
     }
 }

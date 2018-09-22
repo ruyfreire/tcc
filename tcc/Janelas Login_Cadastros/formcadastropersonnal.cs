@@ -27,6 +27,15 @@ namespace tcc
             maskednascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);
         }
 
+        private void txtcpf_cnpj_Enter(Object sender, EventArgs e)
+        {
+            if (cboCPF_CNPJ.Text.Equals(""))
+            {
+                MessageBox.Show("Escolha o tipo do documento primeiro", "CPF / CNPJ");
+                cboCPF_CNPJ.Focus();
+            }
+        }
+
         private void btnlimpar_Click(object sender, EventArgs e)
         {
             limpar_camposCadastro();
@@ -55,7 +64,7 @@ namespace tcc
                     && validar.validaCampos("login", txtlogin.Text.ToLower())
                     && validar.validaCampos("email", txtemail.Text.ToLower())
                     && validar.validaCampos("senha", txtsenha.Text)
-                    && validar.validaCampos("cpf", txtcpf_cnpj.Text)
+                    && validar.validaCampos("cpf_cnpj", txtcpf_cnpj.Text)
                     && validar.validaCampos("crea", txtcrea.Text)
                     && validar.validaCampos("nascimento", maskednascimento.Text)
                     && validar.validaCampos("sexo", comboBoxsexo.Text)
@@ -70,7 +79,7 @@ namespace tcc
                         email = txtemail.Text.ToLower(),
                         senha = txtsenha.Text,
                         cpf_cnpj = txtcpf_cnpj.Text,
-                        crea = Convert.ToString(txtcrea.Text),
+                        crea = txtcrea.Text,
                         nascimento = Convert.ToDateTime(maskednascimento.Text),
                         sexo = comboBoxsexo.Text,
                         endereco = txtendereco.Text
@@ -123,6 +132,23 @@ namespace tcc
         {
             login telaLogin = new login();
             telaLogin.Show();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cboCPF_CNPJ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCPF_CNPJ.Text.Equals("CPF"))
+            {
+                txtcpf_cnpj.Mask = "000,000,000-00";
+            }
+            else if (cboCPF_CNPJ.Text.Equals("CNPJ"))
+            {
+                txtcpf_cnpj.Mask = "00,000,000/0000-00";
+            }
         }
     } 
 }

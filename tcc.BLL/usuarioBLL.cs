@@ -64,9 +64,9 @@ namespace tcc.BLL
         }
 
 
-        public int alteraUsuario(Usuario usuario)
-        {
-            return new UsuarioDAL().alteraUsuario(usuario);
+        public int alteraUsuario(Usuario usuario, Usuario usuarioAntigo)
+        {            
+            return new UsuarioDAL().alteraUsuario(usuario, usuarioAntigo);
         }
 
         public Usuario recuperaSenha(Usuario usuario)

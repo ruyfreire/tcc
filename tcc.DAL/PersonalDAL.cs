@@ -230,10 +230,22 @@ namespace tcc.DAL
 
 
         /* Recebe objeto personal, e atualiza as informações no banco */
-        public int alteraPersonal(Personal personal)
+        public int alteraPersonal(Personal personal, Personal personalAntigo)
         {
             try
             {
+                if (!personal.login.Equals(personalAntigo.login) || !personal.email.Equals(personalAntigo.email))
+                {
+                    //Chama função para verificar se email e login ja existe no banco de dados
+                    switch (Convert.ToString(existePersonal(personal.email, personal.login)))
+                    {
+                        case "1":
+                            return 1; // login ja existente
+                        case "2":
+                            return 2; // e-mail ja existente
+                    }
+                }
+
                 //Conexão com BD
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
@@ -257,7 +269,8 @@ namespace tcc.DAL
                 con.Open();
                 int qtd = cm.ExecuteNonQuery();
 
-                return qtd;
+                if (qtd > 0) return 3;
+                else return 0;
             }
             catch (Exception ex)
             {
@@ -292,6 +305,100 @@ namespace tcc.DAL
                     Personal user = new Personal { id_personal = 0 };
                     return user;
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public IList<Personal> buscaPersonalNome(String nome_personal)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM gym_personal WHERE nome LIKE '%" + nome_personal + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Personal> listaPersonal = new List<Personal>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Personal personal = new Personal
+                        {
+                            id_personal = Convert.ToInt32(er["id_personal"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            nascimento = Convert.ToDateTime(er["nascimento"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            crea = Convert.ToString(er["crea"]),
+                            endereco = Convert.ToString(er["endereco"]),
+                            cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                        };
+
+                        listaPersonal.Add(personal);
+                    }
+                }
+
+                return listaPersonal;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public IList<Personal> buscaTodosPersonal()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM gym_personal";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Personal> listaPersonal = new List<Personal>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Personal personal = new Personal
+                        {
+                            id_personal = Convert.ToInt32(er["id_personal"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            nascimento = Convert.ToDateTime(er["nascimento"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            crea = Convert.ToString(er["crea"]),
+                            endereco = Convert.ToString(er["endereco"]),
+                            cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                        };
+
+                        listaPersonal.Add(personal);
+                    }
+                }
+
+                return listaPersonal;
             }
             catch (Exception ex)
             {

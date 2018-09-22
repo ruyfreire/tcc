@@ -25,6 +25,16 @@ namespace tcc
             */
             maskednascimento.ValidatingType = typeof(System.DateTime);
             maskednascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);
+
+        }
+
+        private void txtcpf_cnpj_Enter(Object sender, EventArgs e)
+        {
+            if (cboCPF_CNPJ.Text.Equals(""))
+            {
+                MessageBox.Show("Escolha o tipo do documento primeiro", "CPF / CNPJ");
+                cboCPF_CNPJ.Focus();
+            }
         }
 
         private void btnlimpar_Click(object sender, EventArgs e)
@@ -55,9 +65,10 @@ namespace tcc
                     && validar.validaCampos("login", txtlogin.Text.ToLower())
                     && validar.validaCampos("email", txtemail.Text.ToLower())
                     && validar.validaCampos("senha", txtsenha.Text)
-                    && validar.validaCampos("cpf", txtcpf_cnpj.Text)
+                    && validar.validaCampos("cpf_cnpj", txtcpf_cnpj.Text)
                     && validar.validaCampos("crn", txtcrn.Text)
                     && validar.validaCampos("nascimento", maskednascimento.Text)
+                    && validar.validaCampos("idade", maskednascimento.Text)
                     && validar.validaCampos("sexo", comboBoxsexo.Text)
                     && validar.validaCampos("endereço", txtendereco.Text)
                     )
@@ -70,7 +81,7 @@ namespace tcc
                         email = txtemail.Text.ToLower(),
                         senha = txtsenha.Text,
                         cpf_cnpj = txtcpf_cnpj.Text,
-                        crn = Convert.ToString(txtcrn.Text),
+                        crn = txtcrn.Text,
                         nascimento = Convert.ToDateTime(maskednascimento.Text),
                         sexo = comboBoxsexo.Text,
                         endereco = txtendereco.Text
@@ -103,6 +114,7 @@ namespace tcc
 
             }
         }
+
         private void Formcadastronutricionista_Formclosed(object sender, FormClosedEventArgs e)
         {
             telaLogin(); //volta para tela de login
@@ -116,8 +128,7 @@ namespace tcc
                 maskednascimento.Focus();
             }
         }
-
-
+        
         private void telaLogin()
         {
             login telaLogin = new login();
@@ -126,8 +137,22 @@ namespace tcc
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            telaLogin();
+            Close();
         }
+
+        private void cboCPF_CNPJ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboCPF_CNPJ.Text.Equals("CPF"))
+            {
+                txtcpf_cnpj.Mask = "000,000,000-00";
+            }
+            else if (cboCPF_CNPJ.Text.Equals("CNPJ"))
+            {
+                txtcpf_cnpj.Mask = "00,000,000/0000-00";
+            }
+        }
+
+
     }
 }
 

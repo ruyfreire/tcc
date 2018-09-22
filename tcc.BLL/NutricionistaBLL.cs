@@ -62,14 +62,26 @@ namespace tcc.BLL
         }
 
 
-        public int alteraNutricionista(Nutricionista nutricionista)
+        public int alteraNutricionista(Nutricionista nutricionista, Nutricionista nutricionistaAntigo)
         {
-            return new NutricionistaDAL().alteraNutricionista(nutricionista);
+            return new NutricionistaDAL().alteraNutricionista(nutricionista, nutricionistaAntigo);
         }
 
         public Nutricionista recuperaSenha(Nutricionista nutricionista)
         {
             return new NutricionistaDAL().recuperaSenha(nutricionista);
+        }
+
+
+        public IList<Nutricionista> buscaNutricionistaNome(String nome_nutricionista)
+        {
+            return new NutricionistaDAL().buscaNutricionistaNome(nome_nutricionista);
+        }
+
+
+        public IList<Nutricionista> buscaTodosNutricionista()
+        {
+            return new NutricionistaDAL().buscaTodosNutricionista();
         }
     }
 }

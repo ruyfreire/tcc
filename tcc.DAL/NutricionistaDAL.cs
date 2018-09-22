@@ -229,10 +229,22 @@ namespace tcc.DAL
         }
 
 
-        public int alteraNutricionista(Nutricionista nutricionista)
+        public int alteraNutricionista(Nutricionista nutricionista, Nutricionista nutricionistaAntigo)
         {
             try
             {
+                if (!nutricionista.login.Equals(nutricionistaAntigo.login) || !nutricionista.email.Equals(nutricionistaAntigo.email))
+                {
+                    //Chama função para verificar se email e login ja existe no banco de dados
+                    switch (Convert.ToString(existeNutricionista(nutricionista.email, nutricionista.login)))
+                    {
+                        case "1":
+                            return 1; // login ja existente
+                        case "2":
+                            return 2; // e-mail ja existente
+                    }
+                }
+
                 //Conexão com BD
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
@@ -256,7 +268,8 @@ namespace tcc.DAL
                 con.Open();
                 int qtd = cm.ExecuteNonQuery();
 
-                return qtd;
+                if (qtd > 0) return 3;
+                else return 0;
             }
             catch (Exception ex)
             {
@@ -299,5 +312,98 @@ namespace tcc.DAL
             }
         }
 
+
+        public IList<Nutricionista> buscaNutricionistaNome(String nome_nutricionista)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM nutricionista WHERE nome LIKE '%" + nome_nutricionista + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Nutricionista> listaNutricionistas = new List<Nutricionista>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Nutricionista nutricionista = new Nutricionista
+                        {
+                            id_nutricionista = Convert.ToInt32(er["id_nutricionista"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            nascimento = Convert.ToDateTime(er["nascimento"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            crn = Convert.ToString(er["crn"]),
+                            endereco = Convert.ToString(er["endereco"]),
+                            cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                        };
+
+                        listaNutricionistas.Add(nutricionista);
+                    }
+                }
+
+                return listaNutricionistas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public IList<Nutricionista> buscaTodosNutricionista()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM nutricionista";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Nutricionista> listaNutricionistas = new List<Nutricionista>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Nutricionista nutricionista = new Nutricionista
+                        {
+                            id_nutricionista = Convert.ToInt32(er["id_nutricionista"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            nascimento = Convert.ToDateTime(er["nascimento"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            crn = Convert.ToString(er["crn"]),
+                            endereco = Convert.ToString(er["endereco"]),
+                            cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                        };
+
+                        listaNutricionistas.Add(nutricionista);
+                    }
+                }
+
+                return listaNutricionistas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -62,14 +62,26 @@ namespace tcc.BLL
         }
 
 
-        public int alteraPersonal(Personal personal)
+        public int alteraPersonal(Personal personal, Personal personalAntigo)
         {
-            return new PersonalDAL().alteraPersonal(personal);
+            return new PersonalDAL().alteraPersonal(personal, personalAntigo);
         }
 
         public Personal recuperaSenha(Personal personal)
         {
             return new PersonalDAL().recuperaSenha(personal);
+        }
+
+
+        public IList<Personal> buscaPersonalNome(String nome_personal)
+        {
+            return new PersonalDAL().buscaPersonalNome(nome_personal);
+        }
+
+
+        public IList<Personal> buscaTodosPersonal()
+        {
+            return new PersonalDAL().buscaTodosPersonal();
         }
     }
 }

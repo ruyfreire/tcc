@@ -233,10 +233,22 @@ namespace tcc.DAL
         
 
         /* Recebe onjeto usuário, e atualiza as informações no banco */
-        public int alteraUsuario(Usuario usuario)
+        public int alteraUsuario(Usuario usuario, Usuario usuarioAntigo)
         {
             try
             {
+                if (!usuario.login.Equals(usuarioAntigo.login) || !usuario.email.Equals(usuarioAntigo.email) )
+                {
+                    //Chama função para verificar se email e login ja existe no banco de dados
+                    switch (Convert.ToString(existeUsuario(usuario.email, usuario.login)))
+                    {
+                        case "1":
+                            return 1; // login ja existente
+                        case "2":
+                            return 2; // e-mail ja existente
+                    }
+                }
+
                 //Conexão com BD
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Properties.Settings.Default.CST;
@@ -258,8 +270,8 @@ namespace tcc.DAL
                 cm.Connection = con;
                 con.Open();
                 int qtd = cm.ExecuteNonQuery();
-
-                return qtd;
+                if (qtd > 0) return 3;
+                else return 0;
             }
             catch (Exception ex)
             {
@@ -301,6 +313,7 @@ namespace tcc.DAL
                 throw ex;
             }
         }
+
 
         /* Recebe objeto usuario, verifica se possue id_personal, se for vazio, retorna objeto Personal com id 0
           se tiver id, busca personal, e retorna dados em objeto personal */

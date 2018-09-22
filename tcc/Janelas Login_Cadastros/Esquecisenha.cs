@@ -39,9 +39,15 @@ namespace tcc
         
         private void btnrecuperar_Click(object sender, EventArgs e)
         {
+            Validacoes valida = new Validacoes();
+
             if (txtlogin.Text.Equals("") || txtemail.Text.Equals("") || maskednascimento.Text.Replace("/", "").Replace(" ", "").Equals(""))
             {
                 MessageBox.Show("Preencha todos os campos", "Recuperação de senha");
+            }
+            else if(!valida.validaCampos("login", txtlogin.Text) || !valida.validaCampos("email", txtemail.Text) || !valida.validaCampos("nascimento", maskednascimento.Text) || !valida.validaCampos("idade", maskednascimento.Text) )
+            {
+                return;
             }
             else
             {
@@ -125,17 +131,18 @@ namespace tcc
         private void btnsalvar_Click(object sender, EventArgs e)
         {
             int salvo;
-            if ( !txtnovasenha.Text.Equals(txtrepetesenha.Text) )
-            {
-                MessageBox.Show("As senhas não são iguais");
-            }
+
+            if ( !txtnovasenha.Text.Equals(txtrepetesenha.Text) ) MessageBox.Show("As senhas não são iguais");
+
+            else if(! new Validacoes().validaCampos("senha", txtnovasenha.Text)) return;
+
             else
             {
                 switch (perfil)
                 {
                     case "Usuário":
                         usuarioRecuperado.senha = txtnovasenha.Text;
-                        salvo = new UsuarioBLL().alteraUsuario(usuarioRecuperado);
+                        salvo = new UsuarioBLL().alteraUsuario(usuarioRecuperado, usuarioRecuperado);
                         if (salvo > 0) { MessageBox.Show("Senha atualizada com sucesso"); telaLogin(); }
                         else MessageBox.Show("Erro ao atualizar dados");
                     break;
@@ -143,7 +150,7 @@ namespace tcc
 
                     case "Personal":
                         personalRecuperado.senha = txtnovasenha.Text;
-                        salvo = new PersonalBLL().alteraPersonal(personalRecuperado);
+                        salvo = new PersonalBLL().alteraPersonal(personalRecuperado, personalRecuperado);
                         if (salvo > 0) { MessageBox.Show("Senha atualizada com sucesso"); telaLogin(); }
                         else MessageBox.Show("Erro ao atualizar dados");
                     break;
@@ -151,7 +158,7 @@ namespace tcc
 
                     case "Nutricionista":
                         nutricionistaRecuperado.senha = txtnovasenha.Text;
-                        salvo = new NutricionistaBLL().alteraNutricionista(nutricionistaRecuperado);
+                        salvo = new NutricionistaBLL().alteraNutricionista(nutricionistaRecuperado, nutricionistaRecuperado);
                         if (salvo > 0) { MessageBox.Show("Senha atualizada com sucesso"); telaLogin(); }
                         else MessageBox.Show("Erro ao atualizar dados");
                     break;
