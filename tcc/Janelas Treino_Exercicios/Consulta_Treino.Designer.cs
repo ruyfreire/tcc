@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboDiaSemana = new System.Windows.Forms.ComboBox();
             this.gridTreino = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.TipoExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerieExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridTreino)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,19 +58,43 @@
             this.TipoExercicio,
             this.SerieExercicio,
             this.NomeExercicio});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridTreino.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTreino.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridTreino.Location = new System.Drawing.Point(3, 89);
             this.gridTreino.Name = "gridTreino";
+            this.gridTreino.ReadOnly = true;
             this.gridTreino.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTreino.Size = new System.Drawing.Size(487, 107);
             this.gridTreino.TabIndex = 68;
+            // 
+            // TipoExercicio
+            // 
+            this.TipoExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TipoExercicio.HeaderText = "Nome do Exercicio";
+            this.TipoExercicio.Name = "TipoExercicio";
+            this.TipoExercicio.ReadOnly = true;
+            // 
+            // SerieExercicio
+            // 
+            this.SerieExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SerieExercicio.HeaderText = "Grupo Muscular";
+            this.SerieExercicio.Name = "SerieExercicio";
+            this.SerieExercicio.ReadOnly = true;
+            this.SerieExercicio.Width = 98;
+            // 
+            // NomeExercicio
+            // 
+            this.NomeExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NomeExercicio.HeaderText = "Tipo";
+            this.NomeExercicio.Name = "NomeExercicio";
+            this.NomeExercicio.ReadOnly = true;
+            this.NomeExercicio.Width = 53;
             // 
             // panel1
             // 
@@ -92,26 +116,6 @@
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 72;
             this.label1.Text = "DIA DA SEMANA :";
-            // 
-            // TipoExercicio
-            // 
-            this.TipoExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TipoExercicio.HeaderText = "Nome do Exercicio";
-            this.TipoExercicio.Name = "TipoExercicio";
-            // 
-            // SerieExercicio
-            // 
-            this.SerieExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SerieExercicio.HeaderText = "Grupo Muscular";
-            this.SerieExercicio.Name = "SerieExercicio";
-            this.SerieExercicio.Width = 98;
-            // 
-            // NomeExercicio
-            // 
-            this.NomeExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NomeExercicio.HeaderText = "Tipo";
-            this.NomeExercicio.Name = "NomeExercicio";
-            this.NomeExercicio.Width = 53;
             // 
             // Consulta_Treino
             // 

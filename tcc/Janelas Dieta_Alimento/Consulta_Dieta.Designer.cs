@@ -98,6 +98,7 @@
             this.Kcal});
             this.gridManha.Location = new System.Drawing.Point(58, 61);
             this.gridManha.Name = "gridManha";
+            this.gridManha.ReadOnly = true;
             this.gridManha.Size = new System.Drawing.Size(346, 107);
             this.gridManha.TabIndex = 56;
             // 
@@ -128,6 +129,7 @@
             this.dataGridViewTextBoxColumn3});
             this.gridAlmoco.Location = new System.Drawing.Point(58, 194);
             this.gridAlmoco.Name = "gridAlmoco";
+            this.gridAlmoco.ReadOnly = true;
             this.gridAlmoco.Size = new System.Drawing.Size(346, 107);
             this.gridAlmoco.TabIndex = 57;
             // 
@@ -158,6 +160,7 @@
             this.dataGridViewTextBoxColumn6});
             this.gridTarde.Location = new System.Drawing.Point(58, 335);
             this.gridTarde.Name = "gridTarde";
+            this.gridTarde.ReadOnly = true;
             this.gridTarde.Size = new System.Drawing.Size(346, 107);
             this.gridTarde.TabIndex = 58;
             // 
@@ -188,6 +191,7 @@
             this.dataGridViewTextBoxColumn9});
             this.gridJanta.Location = new System.Drawing.Point(58, 476);
             this.gridJanta.Name = "gridJanta";
+            this.gridJanta.ReadOnly = true;
             this.gridJanta.Size = new System.Drawing.Size(346, 107);
             this.gridJanta.TabIndex = 60;
             // 
@@ -227,6 +231,7 @@
             this.dataGridViewTextBoxColumn12});
             this.gridCeia.Location = new System.Drawing.Point(58, 607);
             this.gridCeia.Name = "gridCeia";
+            this.gridCeia.ReadOnly = true;
             this.gridCeia.Size = new System.Drawing.Size(346, 107);
             this.gridCeia.TabIndex = 62;
             // 

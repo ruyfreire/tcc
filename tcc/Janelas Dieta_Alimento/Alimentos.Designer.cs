@@ -87,6 +87,7 @@
             this.gridAlimentos.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridAlimentos.Location = new System.Drawing.Point(80, 178);
             this.gridAlimentos.Name = "gridAlimentos";
+            this.gridAlimentos.ReadOnly = true;
             this.gridAlimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridAlimentos.Size = new System.Drawing.Size(506, 230);
             this.gridAlimentos.TabIndex = 11;
@@ -96,12 +97,14 @@
             this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             // 
             // grupo_nutricional
             // 
             this.grupo_nutricional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.grupo_nutricional.HeaderText = "Grupo Nutricional";
             this.grupo_nutricional.Name = "grupo_nutricional";
+            this.grupo_nutricional.ReadOnly = true;
             this.grupo_nutricional.Width = 105;
             // 
             // calorias
@@ -109,6 +112,7 @@
             this.calorias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.calorias.HeaderText = "Calorias";
             this.calorias.Name = "calorias";
+            this.calorias.ReadOnly = true;
             this.calorias.Width = 69;
             // 
             // porcao
@@ -116,6 +120,7 @@
             this.porcao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.porcao.HeaderText = "Porção";
             this.porcao.Name = "porcao";
+            this.porcao.ReadOnly = true;
             this.porcao.Width = 66;
             // 
             // btnBuscarTodos
