@@ -11,7 +11,7 @@ namespace tcc.DAL
         /* Recebe id da dieta e do alimento, e vincula os dois na tabela/dicionario DIETA_ALIMENTOS 
          retorna 1 se inserir corretamente,
          retorna 0 se falhar */
-        public int incluiAlimentoDieta(int id_dieta, int id_alimento)
+        public int incluiAlimentoDieta(int id_dieta, int id_alimento, Decimal porcao_alimento)
         {
             try
             {
@@ -20,12 +20,13 @@ namespace tcc.DAL
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "INSERT INTO dieta_alimentos (link_dieta, link_alimento) " +
-                    "VALUES (@link_dieta, @link_alimento)";
+                cm.CommandText = "INSERT INTO dieta_alimentos (link_dieta, link_alimento, porcao_alimento) " +
+                    "VALUES (@link_dieta, @link_alimento, @porcao_alimento)";
 
                 //Parametros irá substituir os valores dentro do campo
                 cm.Parameters.Add("link_dieta", System.Data.SqlDbType.Int).Value = id_dieta;
                 cm.Parameters.Add("link_alimento", System.Data.SqlDbType.Int).Value = id_alimento;
+                cm.Parameters.Add("porcao_alimento", System.Data.SqlDbType.Real).Value = porcao_alimento;
 
                 cm.Connection = con;
                 con.Open();
@@ -199,6 +200,50 @@ namespace tcc.DAL
         }
 
 
+        public IList<Alimento> buscaAlimentoNome(String nome_alimento)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM alimentos WHERE nome LIKE '%" + nome_alimento + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Alimento> listaAlimentos = new List<Alimento>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Alimento alimento = new Alimento
+                        {
+                            id_alimento = Convert.ToInt32(er["id_alimento"]),
+                            nome = Convert.ToString(er["nome"]),
+                            grupo_nutricional = Convert.ToString(er["grupo_nutricional"]),
+                            calorias = Convert.ToInt32(er["calorias"]),
+                            porcao = Convert.ToInt32(er["porcao"])
+                        };
+
+                        listaAlimentos.Add(alimento);
+                    }
+                }
+
+                return listaAlimentos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         /* Busca os alimentos, de acordo com o id da dieta,
          e retorna uma lista de todos alimentos nesta dieta */
         public IList<Alimento> carregaAlimentosDieta(int id_Dieta)
@@ -237,6 +282,39 @@ namespace tcc.DAL
                 }
 
                 return listaAlimentos;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /* Busca no dicionario dieta_alimentos, a porcao do alimento na dieta,
+         retorna a porcao se encontrar,
+         retorna 0 se não encontrar */
+        public Decimal porcaoAlimento(int id_dieta, int id_alimento)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT porcao_alimento FROM dieta_alimentos WHERE link_dieta ="+ id_dieta +" AND link_alimento=" + id_alimento;
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                if (er.HasRows)
+                {
+                    er.Read();
+                    return Convert.ToDecimal(er["porcao_alimento"]);
+                }
+                return 0;
             }
             catch (Exception ex)
             {

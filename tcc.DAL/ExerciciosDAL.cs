@@ -197,6 +197,48 @@ namespace tcc.DAL
         }
 
 
+        public IList<Exercicio> buscaExerciciosNome( String nome_exercicio)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT * FROM exercicios WHERE nome LIKE '%" + nome_exercicio + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Exercicio> listaExercicios = new List<Exercicio>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Exercicio exercicio = new Exercicio
+                        {
+                            id_exercicio = Convert.ToInt32(er["id_exercicio"]),
+                            nome = Convert.ToString(er["nome"]),
+                            grupo_muscular = Convert.ToString(er["grupo_muscular"]),
+                            tipo_exercicio = Convert.ToString(er["tipo_exercicio"])
+                        };
+
+                        listaExercicios.Add(exercicio);
+                    }
+                }
+
+                return listaExercicios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /* Busca os exercicios, de acordo com o id do treino,
          e retorna uma lista de todos exercicios neste treino */
         public IList<Exercicio> carregaExerciciosTreino(int id_treino)

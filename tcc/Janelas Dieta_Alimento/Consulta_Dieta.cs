@@ -67,37 +67,58 @@ namespace tcc
                     IList<Alimento> alimetosDieta = new List<Alimento>();
                     alimetosDieta = new AlimentosBLL().carregaAlimentosDieta(dieta.id_dieta);
 
+                    if(alimetosDieta.Count == 0)
+                    {
+                        MessageBox.Show("Dieta não possui nenhum alimento vinculado", "Dieta");
+                        return;
+                    }
+
                     /* Verifica qual o tipo da refeição, e inclui os dados da dieta no grid correto */
                     switch (dieta.tipo_refeicao)
                     {
                         case "Café da Manhã":
                             foreach(Alimento alimento in alimetosDieta)
                             {
-                                gridManha.Rows.Add(alimento.nome, alimento.porcao, alimento.calorias);
+                                Decimal porcao_alimento = new AlimentosBLL().porcaoAlimento(dieta.id_dieta, alimento.id_alimento);
+                                Decimal caloriasTotais = (porcao_alimento * alimento.calorias) / alimento.porcao;
+
+                                gridManha.Rows.Add(alimento.nome, porcao_alimento, caloriasTotais);
                             }
                             break;
                         case "Almoço":
                             foreach (Alimento alimento in alimetosDieta)
                             {
-                                gridAlmoco.Rows.Add(alimento.nome, alimento.porcao, alimento.calorias);
+                                Decimal porcao_alimento = new AlimentosBLL().porcaoAlimento(dieta.id_dieta, alimento.id_alimento);
+                                Decimal caloriasTotais = (porcao_alimento * alimento.calorias) / alimento.porcao;
+
+                                gridAlmoco.Rows.Add(alimento.nome, porcao_alimento, alimento.calorias);
                             }
                             break;
                         case "Café da Tarde":
                             foreach (Alimento alimento in alimetosDieta)
                             {
-                                gridTarde.Rows.Add(alimento.nome, alimento.porcao, alimento.calorias);
+                                Decimal porcao_alimento = new AlimentosBLL().porcaoAlimento(dieta.id_dieta, alimento.id_alimento);
+                                Decimal caloriasTotais = (porcao_alimento * alimento.calorias) / alimento.porcao;
+
+                                gridTarde.Rows.Add(alimento.nome, porcao_alimento, caloriasTotais);
                             }
                             break;
                         case "Janta":
                             foreach (Alimento alimento in alimetosDieta)
                             {
-                                gridJanta.Rows.Add(alimento.nome, alimento.porcao, alimento.calorias);
+                                Decimal porcao_alimento = new AlimentosBLL().porcaoAlimento(dieta.id_dieta, alimento.id_alimento);
+                                Decimal caloriasTotais = (porcao_alimento * alimento.calorias) / alimento.porcao;
+
+                                gridJanta.Rows.Add(alimento.nome, porcao_alimento, caloriasTotais);
                             }
                             break;
                         case "Ceia":
                             foreach (Alimento alimento in alimetosDieta)
                             {
-                                gridCeia.Rows.Add(alimento.nome, alimento.porcao, alimento.calorias);
+                                Decimal porcao_alimento = new AlimentosBLL().porcaoAlimento(dieta.id_dieta, alimento.id_alimento);
+                                Decimal caloriasTotais = (porcao_alimento * alimento.calorias) / alimento.porcao;
+
+                                gridCeia.Rows.Add(alimento.nome, porcao_alimento, caloriasTotais);
                             }
                             break;
                     }

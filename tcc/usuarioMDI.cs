@@ -22,11 +22,6 @@ namespace tcc
             this.usuario = usuario;
         }
 
-        public Usuario pegaPerfil()
-        {
-            return usuario;
-        }
-
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -127,7 +122,7 @@ namespace tcc
         /* Menu pagina inicial */
         private void menuInicio_Click(object sender, EventArgs e)
         {
-            abreJanela(new InicioUsuario(this));
+            abreJanela(new InicioUsuario());
         }
 
         /* Menu cadastrar dieta */

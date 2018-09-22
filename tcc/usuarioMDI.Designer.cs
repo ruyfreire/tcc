@@ -49,12 +49,12 @@
             this.Informacoes = new System.Windows.Forms.ToolStripMenuItem();
             this.informacaoAlimentos = new System.Windows.Forms.ToolStripMenuItem();
             this.informacaoExercicios = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.buscarProfissionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscaNutricionista = new System.Windows.Forms.ToolStripMenuItem();
             this.buscaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configDados = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +96,7 @@
             this.cadastrarDietaAlterar,
             this.cadastrarDietaExcluir});
             this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
-            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
+            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
             this.dietaToolStripMenuItem2.Text = "Dieta";
             // 
             // cadatrarDietaCadastrar
@@ -127,7 +127,7 @@
             this.cadastrarTreinoAlterar,
             this.cadastrarTreinoExcluir});
             this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
-            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
+            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
             this.treinoToolStripMenuItem2.Text = "Treino";
             // 
             // cadastrarTreinoCadastrar
@@ -233,14 +233,14 @@
             // buscaNutricionista
             // 
             this.buscaNutricionista.Name = "buscaNutricionista";
-            this.buscaNutricionista.Size = new System.Drawing.Size(180, 22);
+            this.buscaNutricionista.Size = new System.Drawing.Size(142, 22);
             this.buscaNutricionista.Text = "Nutricionista";
             this.buscaNutricionista.Click += new System.EventHandler(this.buscaNutricionista_Click);
             // 
             // buscaPersonal
             // 
             this.buscaPersonal.Name = "buscaPersonal";
-            this.buscaPersonal.Size = new System.Drawing.Size(180, 22);
+            this.buscaPersonal.Size = new System.Drawing.Size(142, 22);
             this.buscaPersonal.Text = "Personal";
             this.buscaPersonal.Click += new System.EventHandler(this.buscaPersonal_Click);
             // 
@@ -255,7 +255,7 @@
             // configDados
             // 
             this.configDados.Name = "configDados";
-            this.configDados.Size = new System.Drawing.Size(180, 22);
+            this.configDados.Size = new System.Drawing.Size(164, 22);
             this.configDados.Text = "Dados Cadastrais";
             this.configDados.Click += new System.EventHandler(this.configDados_Click);
             // 

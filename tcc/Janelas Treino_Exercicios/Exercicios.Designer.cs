@@ -28,108 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grupomuscular = new System.Windows.Forms.Label();
-            this.nome = new System.Windows.Forms.Label();
-            this.execucao = new System.Windows.Forms.Label();
-            this.queimacalorica = new System.Windows.Forms.Label();
-            this.txtgrupoalimentar = new System.Windows.Forms.TextBox();
-            this.txtexercicio = new System.Windows.Forms.TextBox();
-            this.txtexecucao = new System.Windows.Forms.TextBox();
-            this.txtqueimacalorica = new System.Windows.Forms.TextBox();
-            this.fechar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.gridExercicios = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupo_muscular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_exercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.btnBuscarTodos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExercicios)).BeginInit();
             this.SuspendLayout();
             // 
-            // grupomuscular
+            // gridExercicios
             // 
-            this.grupomuscular.AutoSize = true;
-            this.grupomuscular.Location = new System.Drawing.Point(147, 56);
-            this.grupomuscular.Name = "grupomuscular";
-            this.grupomuscular.Size = new System.Drawing.Size(88, 13);
-            this.grupomuscular.TabIndex = 0;
-            this.grupomuscular.Text = "Grupo Muscular :";
-            this.grupomuscular.Click += new System.EventHandler(this.label1_Click);
+            this.gridExercicios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridExercicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridExercicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.grupo_muscular,
+            this.tipo_exercicio});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridExercicios.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridExercicios.Location = new System.Drawing.Point(72, 182);
+            this.gridExercicios.Name = "gridExercicios";
+            this.gridExercicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridExercicios.Size = new System.Drawing.Size(506, 230);
+            this.gridExercicios.TabIndex = 15;
             // 
             // nome
             // 
-            this.nome.AutoSize = true;
-            this.nome.Location = new System.Drawing.Point(174, 102);
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
-            this.nome.Size = new System.Drawing.Size(58, 13);
-            this.nome.TabIndex = 1;
-            this.nome.Text = "Exercício :";
             // 
-            // execucao
+            // grupo_muscular
             // 
-            this.execucao.AutoSize = true;
-            this.execucao.Location = new System.Drawing.Point(174, 146);
-            this.execucao.Name = "execucao";
-            this.execucao.Size = new System.Drawing.Size(61, 13);
-            this.execucao.TabIndex = 2;
-            this.execucao.Text = "Execução :";
+            this.grupo_muscular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.grupo_muscular.HeaderText = "Grupo Muscular";
+            this.grupo_muscular.Name = "grupo_muscular";
+            this.grupo_muscular.Width = 98;
             // 
-            // queimacalorica
+            // tipo_exercicio
             // 
-            this.queimacalorica.AutoSize = true;
-            this.queimacalorica.Location = new System.Drawing.Point(145, 189);
-            this.queimacalorica.Name = "queimacalorica";
-            this.queimacalorica.Size = new System.Drawing.Size(90, 13);
-            this.queimacalorica.TabIndex = 3;
-            this.queimacalorica.Text = "Queima Calorica :";
+            this.tipo_exercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tipo_exercicio.HeaderText = "Tipo de Exercício";
+            this.tipo_exercicio.Name = "tipo_exercicio";
+            this.tipo_exercicio.Width = 106;
             // 
-            // txtgrupoalimentar
+            // label1
             // 
-            this.txtgrupoalimentar.Location = new System.Drawing.Point(241, 53);
-            this.txtgrupoalimentar.Name = "txtgrupoalimentar";
-            this.txtgrupoalimentar.Size = new System.Drawing.Size(227, 20);
-            this.txtgrupoalimentar.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Nome do exercício :";
             // 
-            // txtexercicio
+            // btnBuscar
             // 
-            this.txtexercicio.Location = new System.Drawing.Point(241, 99);
-            this.txtexercicio.Name = "txtexercicio";
-            this.txtexercicio.Size = new System.Drawing.Size(227, 20);
-            this.txtexercicio.TabIndex = 5;
+            this.btnBuscar.Location = new System.Drawing.Point(503, 66);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtexecucao
+            // txtBusca
             // 
-            this.txtexecucao.Location = new System.Drawing.Point(241, 143);
-            this.txtexecucao.Name = "txtexecucao";
-            this.txtexecucao.Size = new System.Drawing.Size(227, 20);
-            this.txtexecucao.TabIndex = 6;
+            this.txtBusca.Location = new System.Drawing.Point(217, 68);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(266, 20);
+            this.txtBusca.TabIndex = 12;
             // 
-            // txtqueimacalorica
+            // btnBuscarTodos
             // 
-            this.txtqueimacalorica.Location = new System.Drawing.Point(241, 189);
-            this.txtqueimacalorica.Name = "txtqueimacalorica";
-            this.txtqueimacalorica.Size = new System.Drawing.Size(227, 20);
-            this.txtqueimacalorica.TabIndex = 7;
-            // 
-            // fechar
-            // 
-            this.fechar.Location = new System.Drawing.Point(322, 256);
-            this.fechar.Name = "fechar";
-            this.fechar.Size = new System.Drawing.Size(75, 23);
-            this.fechar.TabIndex = 8;
-            this.fechar.Text = "Fechar";
-            this.fechar.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Location = new System.Drawing.Point(233, 124);
+            this.btnBuscarTodos.Name = "btnBuscarTodos";
+            this.btnBuscarTodos.Size = new System.Drawing.Size(152, 23);
+            this.btnBuscarTodos.TabIndex = 16;
+            this.btnBuscarTodos.Text = "Buscar lista completa";
+            this.btnBuscarTodos.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
             // 
             // Exercicios
             // 
+            this.AcceptButton = this.btnBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(730, 450);
-            this.Controls.Add(this.fechar);
-            this.Controls.Add(this.txtqueimacalorica);
-            this.Controls.Add(this.txtexecucao);
-            this.Controls.Add(this.txtexercicio);
-            this.Controls.Add(this.txtgrupoalimentar);
-            this.Controls.Add(this.queimacalorica);
-            this.Controls.Add(this.execucao);
-            this.Controls.Add(this.nome);
-            this.Controls.Add(this.grupomuscular);
+            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.Controls.Add(this.btnBuscarTodos);
+            this.Controls.Add(this.gridExercicios);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBusca);
             this.Name = "Exercicios";
             this.Text = "Exercicio: ";
-            this.Load += new System.EventHandler(this.Exercicios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridExercicios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,14 +140,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label grupomuscular;
-        private System.Windows.Forms.Label nome;
-        private System.Windows.Forms.Label execucao;
-        private System.Windows.Forms.Label queimacalorica;
-        private System.Windows.Forms.TextBox txtgrupoalimentar;
-        private System.Windows.Forms.TextBox txtexercicio;
-        private System.Windows.Forms.TextBox txtexecucao;
-        private System.Windows.Forms.TextBox txtqueimacalorica;
-        private System.Windows.Forms.Button fechar;
+        private System.Windows.Forms.DataGridView gridExercicios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupo_muscular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_exercicio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.Button btnBuscarTodos;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using tcc.DTO;
 using tcc.DAL;
 using System.Collections;
@@ -7,9 +8,9 @@ namespace tcc.BLL
 {
     public class AlimentosBLL
     {
-        public int incluiAlimentoDieta(int id_dieta, int id_alimento)
+        public int incluiAlimentoDieta(int id_dieta, int id_alimento, Decimal porcao_alimento)
         {
-            return new AlimentoDAL().incluiAlimentoDieta(id_dieta, id_alimento);
+            return new AlimentoDAL().incluiAlimentoDieta(id_dieta, id_alimento, porcao_alimento);
         }
 
 
@@ -42,5 +43,15 @@ namespace tcc.BLL
             return new AlimentoDAL().buscaTodosAlimentos();
         }
 
+
+        public IList<Alimento> buscaAlimentoNome(String nome_alimento)
+        {
+            return new AlimentoDAL().buscaAlimentoNome(nome_alimento);
+        }
+
+        public Decimal porcaoAlimento(int id_dieta, int id_alimento)
+        {
+            return new AlimentoDAL().porcaoAlimento(id_dieta, id_alimento);
+        }
     }
 }

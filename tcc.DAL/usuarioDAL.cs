@@ -36,8 +36,8 @@ namespace tcc.DAL
                 SqlCommand cm = new SqlCommand();
                 cm.CommandType = System.Data.CommandType.Text;
 
-                cm.CommandText = "INSERT INTO usuario (email, nome, senha, nascimento, sexo, peso, altura, objetivo)" +
-                                    "VALUES (@email, @nome, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
+                cm.CommandText = "INSERT INTO usuario (email, nome, login, senha, nascimento, sexo, peso, altura, objetivo)" +
+                                    "VALUES (@email, @nome, @login, @senha, @nascimento, @sexo, @peso, @altura, @objetivo)";
 
                 //Parametros irá substituir os valores dentro do campo
                 cm.Parameters.Add("email", System.Data.SqlDbType.VarChar).Value = novoUser.email;
@@ -329,19 +329,24 @@ namespace tcc.DAL
 
                 er = cm.ExecuteReader();
 
-                er.Read();
-                Personal personal = new Personal
+                if (er.HasRows)
                 {
-                    id_personal = Convert.ToInt32(er["id_personal"]),
-                    email = Convert.ToString(er["email"]),
-                    nome = Convert.ToString(er["nome"]),
-                    nascimento = Convert.ToDateTime(er["nascimento"]),
-                    sexo = Convert.ToString(er["sexo"]),
-                    crea = Convert.ToString(er["crea"]),
-                    endereco = Convert.ToString(er["endereco"]),
-                    cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
-                };
-                return personal;
+                    er.Read();
+                    Personal personal = new Personal
+                    {
+                        id_personal = Convert.ToInt32(er["id_personal"]),
+                        email = Convert.ToString(er["email"]),
+                        nome = Convert.ToString(er["nome"]),
+                        nascimento = Convert.ToDateTime(er["nascimento"]),
+                        sexo = Convert.ToString(er["sexo"]),
+                        crea = Convert.ToString(er["crea"]),
+                        endereco = Convert.ToString(er["endereco"]),
+                        cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                    };
+                    return personal;
+                }
+
+                return new Personal { id_personal = 0 };
             }
             catch (Exception ex)
             {
@@ -376,19 +381,23 @@ namespace tcc.DAL
 
                 er = cm.ExecuteReader();
 
-                er.Read();
-                Nutricionista nutricionista = new Nutricionista
+                if (er.HasRows)
                 {
-                    id_nutricionista = Convert.ToInt32(er["id_nutricionista"]),
-                    email = Convert.ToString(er["email"]),
-                    nome = Convert.ToString(er["nome"]),
-                    nascimento = Convert.ToDateTime(er["nascimento"]),
-                    sexo = Convert.ToString(er["sexo"]),
-                    crn = Convert.ToString(er["crn"]),
-                    endereco = Convert.ToString(er["endereco"]),
-                    cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
-                };
-                return nutricionista;
+                    er.Read();
+                    Nutricionista nutricionista = new Nutricionista
+                    {
+                        id_nutricionista = Convert.ToInt32(er["id_nutricionista"]),
+                        email = Convert.ToString(er["email"]),
+                        nome = Convert.ToString(er["nome"]),
+                        nascimento = Convert.ToDateTime(er["nascimento"]),
+                        sexo = Convert.ToString(er["sexo"]),
+                        crn = Convert.ToString(er["crn"]),
+                        endereco = Convert.ToString(er["endereco"]),
+                        cpf_cnpj = Convert.ToString(er["cpf_cnpj"])
+                    };
+                    return nutricionista;
+                }
+                return new Nutricionista { id_nutricionista = 0 };
             }
             catch (Exception ex)
             {

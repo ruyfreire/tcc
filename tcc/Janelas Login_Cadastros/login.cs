@@ -65,7 +65,7 @@ namespace tcc
 
                         /* Cria janela inicial e mdi */
                         usuarioMDI mdi = new usuarioMDI(usuario);
-                        InicioUsuario telaInicial = new InicioUsuario(mdi);
+                        InicioUsuario telaInicial = new InicioUsuario();
 
                         /* coloca tela inicial dentro de mdi */
                         telaInicial.MdiParent = mdi;
@@ -95,7 +95,7 @@ namespace tcc
 
                         /* Cria janela inicial e mdi */
                         profissionalMDI mdi = new profissionalMDI(personal);
-                        InicioProfissional telaInicial = new InicioProfissional(mdi);
+                        InicioProfissional telaInicial = new InicioProfissional();
 
                         /* coloca tela inicial dentro de mdi */
                         telaInicial.MdiParent = mdi;
@@ -125,7 +125,7 @@ namespace tcc
                         
                         /* Cria janela inicial e mdi */
                         profissionalMDI mdi = new profissionalMDI(nutricionista);
-                        InicioProfissional telaInicial = new InicioProfissional(mdi);
+                        InicioProfissional telaInicial = new InicioProfissional();
 
                         /* coloca tela inicial dentro de mdi */
                         telaInicial.MdiParent = mdi;

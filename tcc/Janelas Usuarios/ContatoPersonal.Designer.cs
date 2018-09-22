@@ -32,29 +32,27 @@
             this.CREA = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.endereco = new System.Windows.Forms.Label();
-            this.telefone = new System.Windows.Forms.Label();
-            this.txtnome = new System.Windows.Forms.TextBox();
             this.txtcrea = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.txtendereco = new System.Windows.Forms.TextBox();
-            this.txttelefone = new System.Windows.Forms.TextBox();
-            this.fechar = new System.Windows.Forms.Button();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.txtnome = new System.Windows.Forms.TextBox();
+            this.lblSemPersonal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // personal
             // 
             this.personal.AutoSize = true;
-            this.personal.Location = new System.Drawing.Point(170, 64);
+            this.personal.Location = new System.Drawing.Point(97, 161);
             this.personal.Name = "personal";
             this.personal.Size = new System.Drawing.Size(54, 13);
             this.personal.TabIndex = 0;
             this.personal.Text = "Personal :";
-            this.personal.Click += new System.EventHandler(this.label1_Click);
             // 
             // CREA
             // 
             this.CREA.AutoSize = true;
-            this.CREA.Location = new System.Drawing.Point(182, 104);
+            this.CREA.Location = new System.Drawing.Point(109, 199);
             this.CREA.Name = "CREA";
             this.CREA.Size = new System.Drawing.Size(42, 13);
             this.CREA.TabIndex = 1;
@@ -63,7 +61,7 @@
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(183, 152);
+            this.email.Location = new System.Drawing.Point(110, 239);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(41, 13);
             this.email.TabIndex = 2;
@@ -72,86 +70,89 @@
             // endereco
             // 
             this.endereco.AutoSize = true;
-            this.endereco.Location = new System.Drawing.Point(165, 196);
+            this.endereco.Location = new System.Drawing.Point(92, 280);
             this.endereco.Name = "endereco";
             this.endereco.Size = new System.Drawing.Size(59, 13);
             this.endereco.TabIndex = 3;
             this.endereco.Text = "Endereço :";
-            this.endereco.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // telefone
-            // 
-            this.telefone.AutoSize = true;
-            this.telefone.Location = new System.Drawing.Point(169, 244);
-            this.telefone.Name = "telefone";
-            this.telefone.Size = new System.Drawing.Size(55, 13);
-            this.telefone.TabIndex = 4;
-            this.telefone.Text = "Telefone :";
-            this.telefone.Click += new System.EventHandler(this.telefone_Click);
-            // 
-            // txtnome
-            // 
-            this.txtnome.Location = new System.Drawing.Point(231, 61);
-            this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(309, 20);
-            this.txtnome.TabIndex = 5;
-            this.txtnome.TextChanged += new System.EventHandler(this.txtnome_TextChanged);
             // 
             // txtcrea
             // 
-            this.txtcrea.Location = new System.Drawing.Point(231, 101);
+            this.txtcrea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcrea.Location = new System.Drawing.Point(176, 194);
             this.txtcrea.Name = "txtcrea";
-            this.txtcrea.Size = new System.Drawing.Size(309, 20);
-            this.txtcrea.TabIndex = 6;
-            // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(231, 149);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(309, 20);
-            this.txtemail.TabIndex = 7;
+            this.txtcrea.ReadOnly = true;
+            this.txtcrea.Size = new System.Drawing.Size(351, 22);
+            this.txtcrea.TabIndex = 14;
             // 
             // txtendereco
             // 
-            this.txtendereco.Location = new System.Drawing.Point(231, 193);
+            this.txtendereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtendereco.Location = new System.Drawing.Point(176, 275);
+            this.txtendereco.Multiline = true;
             this.txtendereco.Name = "txtendereco";
-            this.txtendereco.Size = new System.Drawing.Size(309, 20);
-            this.txtendereco.TabIndex = 8;
+            this.txtendereco.ReadOnly = true;
+            this.txtendereco.Size = new System.Drawing.Size(351, 67);
+            this.txtendereco.TabIndex = 13;
             // 
-            // txttelefone
+            // txtemail
             // 
-            this.txttelefone.Location = new System.Drawing.Point(230, 241);
-            this.txttelefone.Name = "txttelefone";
-            this.txttelefone.Size = new System.Drawing.Size(309, 20);
-            this.txttelefone.TabIndex = 9;
+            this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemail.Location = new System.Drawing.Point(176, 234);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.ReadOnly = true;
+            this.txtemail.Size = new System.Drawing.Size(351, 22);
+            this.txtemail.TabIndex = 12;
             // 
-            // fechar
+            // txtnome
             // 
-            this.fechar.Location = new System.Drawing.Point(398, 310);
-            this.fechar.Name = "fechar";
-            this.fechar.Size = new System.Drawing.Size(75, 23);
-            this.fechar.TabIndex = 10;
-            this.fechar.Text = "Fechar";
-            this.fechar.UseVisualStyleBackColor = true;
+            this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnome.Location = new System.Drawing.Point(176, 156);
+            this.txtnome.Name = "txtnome";
+            this.txtnome.ReadOnly = true;
+            this.txtnome.Size = new System.Drawing.Size(351, 22);
+            this.txtnome.TabIndex = 11;
+            // 
+            // lblSemPersonal
+            // 
+            this.lblSemPersonal.AutoSize = true;
+            this.lblSemPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemPersonal.ForeColor = System.Drawing.Color.Red;
+            this.lblSemPersonal.Location = new System.Drawing.Point(215, 82);
+            this.lblSemPersonal.Name = "lblSemPersonal";
+            this.lblSemPersonal.Size = new System.Drawing.Size(193, 16);
+            this.lblSemPersonal.TabIndex = 15;
+            this.lblSemPersonal.Text = "Você não possui personal!";
+            this.lblSemPersonal.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(195, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "CONTATO DO PERSONAL";
             // 
             // ContatoPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 450);
-            this.Controls.Add(this.fechar);
-            this.Controls.Add(this.txttelefone);
+            this.ClientSize = new System.Drawing.Size(629, 441);
+            this.Controls.Add(this.lblSemPersonal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtcrea);
             this.Controls.Add(this.txtendereco);
             this.Controls.Add(this.txtemail);
-            this.Controls.Add(this.txtcrea);
             this.Controls.Add(this.txtnome);
-            this.Controls.Add(this.telefone);
             this.Controls.Add(this.endereco);
             this.Controls.Add(this.email);
             this.Controls.Add(this.CREA);
             this.Controls.Add(this.personal);
             this.Name = "ContatoPersonal";
             this.Text = "ContatoPersonal";
+            this.Load += new System.EventHandler(this.ContatoPersonal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,12 +164,11 @@
         private System.Windows.Forms.Label CREA;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label endereco;
-        private System.Windows.Forms.Label telefone;
-        private System.Windows.Forms.TextBox txtnome;
         private System.Windows.Forms.TextBox txtcrea;
-        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtendereco;
-        private System.Windows.Forms.TextBox txttelefone;
-        private System.Windows.Forms.Button fechar;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.TextBox txtnome;
+        private System.Windows.Forms.Label lblSemPersonal;
+        private System.Windows.Forms.Label label1;
     }
 }

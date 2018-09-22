@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InicioProfissional.cs">
+    <Compile Include="Janelas Profissional\InicioProfissional.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioProfissional.Designer.cs">
+    <Compile Include="Janelas Profissional\InicioProfissional.Designer.cs">
       <DependentUpon>InicioProfissional.cs</DependentUpon>
     </Compile>
     <Compile Include="Janelas Dieta_Alimento\Alimentos.cs">
@@ -197,7 +197,7 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InicioProfissional.resx">
+    <EmbeddedResource Include="Janelas Profissional\InicioProfissional.resx">
       <DependentUpon>InicioProfissional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas Dieta_Alimento\Alimentos.resx">

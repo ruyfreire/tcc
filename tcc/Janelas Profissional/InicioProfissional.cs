@@ -13,20 +13,20 @@ namespace tcc
 {
     public partial class InicioProfissional : Form
     {
-        profissionalMDI mdi;
+        Profissional profissional;
 
-        public InicioProfissional(profissionalMDI mdi)
+        public InicioProfissional()
         {
             InitializeComponent();
-            this.mdi = mdi;
+            profissional = ((profissionalMDI)MdiParent).profissional;
         }
 
         private void InicioProfissional_Load(object sender, EventArgs e)
         {
-            if( mdi.profissional.GetType() == typeof(Personal) )lbltitulo.Text = "TELA INICIAL DE PERSONAL";
+            if( profissional.GetType() == typeof(Personal) )lbltitulo.Text = "TELA INICIAL DE PERSONAL";
             else lbltitulo.Text = "TELA INICIAL DE NUTRICIONISTA";
 
-            txtnome.Text = mdi.profissional.nome.ToUpper();
+            txtnome.Text = profissional.nome.ToUpper();
         }
     }
 }

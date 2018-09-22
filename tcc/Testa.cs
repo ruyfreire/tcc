@@ -97,12 +97,12 @@ namespace tcc
             int id_treino = 4;
             int id_usuario = 1;
             excluiTreino(id_usuario, id_treino);
-            
+
 
             /*
             //incluir alimento em dieta
-            int id_dieta = 1; int id_alimento = 10;
-            incluiAlimentoDieta(id_dieta, id_alimento);
+            int id_dieta = 1; int id_alimento = 10; Decimal porcao_alimento = 150m;
+            incluiAlimentoDieta(id_dieta, id_alimento, porcao_alimento);
              */
 
             /*
@@ -363,9 +363,9 @@ namespace tcc
             }
         }
 
-        public void incluiAlimentoDieta(int id_dieta, int id_alimento)
+        public void incluiAlimentoDieta(int id_dieta, int id_alimento, Decimal porcao_alimento)
         {
-            int result = new AlimentosBLL().incluiAlimentoDieta(id_dieta, id_alimento);
+            int result = new AlimentosBLL().incluiAlimentoDieta(id_dieta, id_alimento, porcao_alimento);
             if (result == 1) MessageBox.Show("Alimento incluído com sucesso!");
             else if (result == -1) MessageBox.Show("Alimento já presente na dieta");
             else MessageBox.Show("Erro ao incluir alimento!");

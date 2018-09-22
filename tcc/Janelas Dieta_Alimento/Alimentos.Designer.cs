@@ -28,125 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.alimento = new System.Windows.Forms.Label();
-            this.gruponutricional = new System.Windows.Forms.Label();
-            this.calorias = new System.Windows.Forms.Label();
-            this.porcao = new System.Windows.Forms.Label();
-            this.txtalimento = new System.Windows.Forms.TextBox();
-            this.txtgrupoalimentar = new System.Windows.Forms.TextBox();
-            this.txtcalorias = new System.Windows.Forms.TextBox();
-            this.txtporcao = new System.Windows.Forms.TextBox();
-            this.fechar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gridAlimentos = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupo_nutricional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calorias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscarTodos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlimentos)).BeginInit();
             this.SuspendLayout();
             // 
-            // alimento
+            // txtBusca
             // 
-            this.alimento.AutoSize = true;
-            this.alimento.Location = new System.Drawing.Point(138, 58);
-            this.alimento.Name = "alimento";
-            this.alimento.Size = new System.Drawing.Size(53, 13);
-            this.alimento.TabIndex = 0;
-            this.alimento.Text = "Alimento :";
-            this.alimento.Click += new System.EventHandler(this.alimento_Click);
+            this.txtBusca.Location = new System.Drawing.Point(225, 63);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(266, 20);
+            this.txtBusca.TabIndex = 8;
             // 
-            // gruponutricional
+            // btnBuscar
             // 
-            this.gruponutricional.AutoSize = true;
-            this.gruponutricional.Location = new System.Drawing.Point(103, 102);
-            this.gruponutricional.Name = "gruponutricional";
-            this.gruponutricional.Size = new System.Drawing.Size(88, 13);
-            this.gruponutricional.TabIndex = 1;
-            this.gruponutricional.Text = "Grupo Alimentar :";
-            this.gruponutricional.Click += new System.EventHandler(this.gruponutricional_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(511, 61);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(77, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Nome do alimento :";
+            // 
+            // gridAlimentos
+            // 
+            this.gridAlimentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAlimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.grupo_nutricional,
+            this.calorias,
+            this.porcao});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlimentos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gridAlimentos.Location = new System.Drawing.Point(80, 178);
+            this.gridAlimentos.Name = "gridAlimentos";
+            this.gridAlimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridAlimentos.Size = new System.Drawing.Size(506, 230);
+            this.gridAlimentos.TabIndex = 11;
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // grupo_nutricional
+            // 
+            this.grupo_nutricional.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.grupo_nutricional.HeaderText = "Grupo Nutricional";
+            this.grupo_nutricional.Name = "grupo_nutricional";
+            this.grupo_nutricional.Width = 105;
             // 
             // calorias
             // 
-            this.calorias.AutoSize = true;
-            this.calorias.Location = new System.Drawing.Point(141, 147);
+            this.calorias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.calorias.HeaderText = "Calorias";
             this.calorias.Name = "calorias";
-            this.calorias.Size = new System.Drawing.Size(50, 13);
-            this.calorias.TabIndex = 2;
-            this.calorias.Text = "Calorias :";
-            this.calorias.Click += new System.EventHandler(this.calorias_Click);
+            this.calorias.Width = 69;
             // 
             // porcao
             // 
-            this.porcao.AutoSize = true;
-            this.porcao.Location = new System.Drawing.Point(144, 190);
+            this.porcao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.porcao.HeaderText = "Porção";
             this.porcao.Name = "porcao";
-            this.porcao.Size = new System.Drawing.Size(47, 13);
-            this.porcao.TabIndex = 3;
-            this.porcao.Text = "Porção :";
+            this.porcao.Width = 66;
             // 
-            // txtalimento
+            // btnBuscarTodos
             // 
-            this.txtalimento.Location = new System.Drawing.Point(197, 55);
-            this.txtalimento.Name = "txtalimento";
-            this.txtalimento.Size = new System.Drawing.Size(266, 20);
-            this.txtalimento.TabIndex = 4;
-            // 
-            // txtgrupoalimentar
-            // 
-            this.txtgrupoalimentar.Location = new System.Drawing.Point(197, 95);
-            this.txtgrupoalimentar.Name = "txtgrupoalimentar";
-            this.txtgrupoalimentar.Size = new System.Drawing.Size(266, 20);
-            this.txtgrupoalimentar.TabIndex = 5;
-            this.txtgrupoalimentar.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // txtcalorias
-            // 
-            this.txtcalorias.Location = new System.Drawing.Point(197, 140);
-            this.txtcalorias.Name = "txtcalorias";
-            this.txtcalorias.Size = new System.Drawing.Size(266, 20);
-            this.txtcalorias.TabIndex = 6;
-            // 
-            // txtporcao
-            // 
-            this.txtporcao.Location = new System.Drawing.Point(197, 187);
-            this.txtporcao.Name = "txtporcao";
-            this.txtporcao.Size = new System.Drawing.Size(266, 20);
-            this.txtporcao.TabIndex = 7;
-            // 
-            // fechar
-            // 
-            this.fechar.Location = new System.Drawing.Point(299, 256);
-            this.fechar.Name = "fechar";
-            this.fechar.Size = new System.Drawing.Size(75, 23);
-            this.fechar.TabIndex = 8;
-            this.fechar.Text = "Fechar";
-            this.fechar.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Location = new System.Drawing.Point(259, 119);
+            this.btnBuscarTodos.Name = "btnBuscarTodos";
+            this.btnBuscarTodos.Size = new System.Drawing.Size(152, 23);
+            this.btnBuscarTodos.TabIndex = 12;
+            this.btnBuscarTodos.Text = "Buscar lista completa";
+            this.btnBuscarTodos.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
             // 
             // Alimentos
             // 
+            this.AcceptButton = this.btnBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 450);
-            this.Controls.Add(this.fechar);
-            this.Controls.Add(this.txtporcao);
-            this.Controls.Add(this.txtcalorias);
-            this.Controls.Add(this.txtgrupoalimentar);
-            this.Controls.Add(this.txtalimento);
-            this.Controls.Add(this.porcao);
-            this.Controls.Add(this.calorias);
-            this.Controls.Add(this.gruponutricional);
-            this.Controls.Add(this.alimento);
+            this.Controls.Add(this.btnBuscarTodos);
+            this.Controls.Add(this.gridAlimentos);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBusca);
             this.Name = "Alimentos";
             this.Text = "Alimentos";
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlimentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label alimento;
-        private System.Windows.Forms.Label gruponutricional;
-        private System.Windows.Forms.Label calorias;
-        private System.Windows.Forms.Label porcao;
-        private System.Windows.Forms.TextBox txtalimento;
-        private System.Windows.Forms.TextBox txtgrupoalimentar;
-        private System.Windows.Forms.TextBox txtcalorias;
-        private System.Windows.Forms.TextBox txtporcao;
-        private System.Windows.Forms.Button fechar;
+        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView gridAlimentos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupo_nutricional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calorias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcao;
+        private System.Windows.Forms.Button btnBuscarTodos;
     }
 }

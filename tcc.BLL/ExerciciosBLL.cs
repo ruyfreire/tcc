@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using tcc.DAL;
 using tcc.DTO;
@@ -39,6 +40,12 @@ namespace tcc.BLL
         public IList<Exercicio> buscaTodosExercicios()
         {
             return new ExerciciosDAL().buscaTodosExercicios();
+        }
+        
+
+        public IList<Exercicio> buscaExerciciosNome(String nome_exercicio)
+        {
+            return new ExerciciosDAL().buscaExerciciosNome(nome_exercicio);
         }
     }
 }

@@ -7,44 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tcc.BLL;
+using tcc.DTO;
 
 namespace tcc
 {
     public partial class ContatoNutricionista : Form
     {
+        Usuario usuario;        
+
         public ContatoNutricionista()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Contato_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Endereço_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ContatoNutricionista_Load(object sender, EventArgs e)
         {
+            usuario = ((usuarioMDI)MdiParent).usuario;
+            Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario);
 
-        }
-
-        private void Email_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
+            if(nutricionista.id_nutricionista == 0) lblSemNutricionista.Visible = true;
+            else
+            {
+                txtnome.Text = nutricionista.nome.ToUpper();
+                txtcrn.Text = nutricionista.crn.ToUpper();
+                txtemail.Text = nutricionista.email.ToUpper();
+                txtendereco.Text = nutricionista.endereco.ToUpper();
+            }
         }
     }
 }

@@ -14,19 +14,19 @@ namespace tcc
 {
     public partial class InicioUsuario : Form
     {
-        usuarioMDI mdi;
+        Usuario usuario;
 
-        public InicioUsuario(usuarioMDI mdi)
+        public InicioUsuario()
         {
             InitializeComponent();
-            this.mdi = mdi;
         }
 
         private void InicioUsuario_Load(object sender, EventArgs e)
         {
-            txtnome.Text = mdi.usuario.nome.ToUpper();
+            usuario = ((usuarioMDI)MdiParent).usuario;
+            txtnome.Text = usuario.nome.ToUpper();
             calculaIMC();
-            calculaTaxaBasal(mdi.usuario.sexo);
+            calculaTaxaBasal(usuario.sexo);
             carregaProfissional();
         }
 
@@ -39,8 +39,8 @@ namespace tcc
             Decimal obesidade = 34.99m;
             Decimal obesidadeSevera = 39.99m;
 
-            Decimal peso = Convert.ToDecimal(mdi.usuario.peso);
-            Decimal altura = Convert.ToDecimal(mdi.usuario.altura);
+            Decimal peso = Convert.ToDecimal(usuario.peso);
+            Decimal altura = Convert.ToDecimal(usuario.altura);
             Decimal imc = peso / (altura * altura);
             String textoImc = Convert.ToString(imc);
 
@@ -56,10 +56,10 @@ namespace tcc
         private void calculaTaxaBasal(String sexo)
         {
             Decimal taxaBasal;
-            Decimal peso = Convert.ToDecimal(mdi.usuario.peso);
-            Decimal altura = Convert.ToDecimal(mdi.usuario.altura);
+            Decimal peso = Convert.ToDecimal(usuario.peso);
+            Decimal altura = Convert.ToDecimal(usuario.altura)*100;
             DateTime hoje = DateTime.Now;
-            DateTime nascimento = mdi.usuario.nascimento;
+            DateTime nascimento = usuario.nascimento;
             int idade = hoje.Year - nascimento.Year;
             if (nascimento > hoje.AddYears(-idade)) idade--;
 
@@ -77,17 +77,17 @@ namespace tcc
 
         private void carregaProfissional()
         {
-            if (mdi.usuario.id_gym_personal != 0)
+            if (usuario.id_gym_personal != 0)
             {
-                Personal personal = new UsuarioBLL().carregaPersonal(mdi.usuario);
-                txtpersonal.Text = personal.nome.ToUpper();
+                Personal personal = new UsuarioBLL().carregaPersonal(usuario);
+                if(personal.id_personal != 0) txtpersonal.Text = personal.nome.ToUpper();
             }
             else txtpersonal.Text = "Não possui um personal";
 
-            if(mdi.usuario.id_nutricionista != 0)
+            if(usuario.id_nutricionista != 0)
             {
-                Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(mdi.usuario);
-                txtnutricionista.Text = nutricionista.nome.ToUpper();
+                Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario);
+                if(nutricionista.id_nutricionista != 0) txtnutricionista.Text = nutricionista.nome.ToUpper();
             }
             else txtnutricionista.Text = "Não possui um nutricionista";
         }

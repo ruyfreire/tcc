@@ -7,34 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tcc.BLL;
+using tcc.DTO;
 
 namespace tcc
 {
     public partial class ContatoPersonal : Form
     {
+        Usuario usuario;
+
         public ContatoPersonal()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ContatoPersonal_Load(object sender, EventArgs e)
         {
+            usuario = ((usuarioMDI)MdiParent).usuario;
+            Personal personal = new UsuarioBLL().carregaPersonal(usuario);
 
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void telefone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtnome_TextChanged(object sender, EventArgs e)
-        {
-
+            if (personal.id_personal == 0) lblSemPersonal.Visible = true;
+            else
+            {
+                txtnome.Text = personal.nome.ToUpper();
+                txtcrea.Text = personal.crea.ToUpper();
+                txtemail.Text = personal.email.ToUpper();
+                txtendereco.Text = personal.endereco.ToUpper();
+            }
         }
     }
 }

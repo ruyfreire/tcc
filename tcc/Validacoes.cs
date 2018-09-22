@@ -170,7 +170,27 @@ namespace tcc
                         }
                     }
                     break;
+
+                case "porcao_alimento":
+                    Regex testaPorcao = new Regex(@"^[0-9]+,?([0-9]){0,2}$");
+                    if (!testaPorcao.IsMatch(campo))
+                    {
+                        MessageBox.Show("Use valor entre 1 e 5000 e virgula para decimal com duas casas", "Porção de alimento");
+                        return false;
+                    }
+                    else
+                    {
+                        Decimal porcao = Convert.ToDecimal(campo);
+                        if(porcao < 0 || porcao > 5000)
+                        {
+                            MessageBox.Show("Entre com um valor entre 1 e 5000 gramas", "Porção de alimento");
+                            return false;
+                        }
+                    }
+                    break;
             }
+
+            //retorna true se a validação passar direto sem encontrar erro
             return true;
         }
     }

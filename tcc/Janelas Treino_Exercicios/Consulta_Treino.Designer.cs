@@ -28,102 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TipoExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerieExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cboDiaSemana = new System.Windows.Forms.ComboBox();
+            this.gridTreino = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TipoExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerieExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeExercicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTreino)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnConsultar
+            // cboDiaSemana
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(255, 13);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(141, 21);
-            this.btnConsultar.TabIndex = 72;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.cboDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDiaSemana.FormattingEnabled = true;
+            this.cboDiaSemana.Location = new System.Drawing.Point(210, 14);
+            this.cboDiaSemana.Name = "cboDiaSemana";
+            this.cboDiaSemana.Size = new System.Drawing.Size(231, 21);
+            this.cboDiaSemana.TabIndex = 71;
+            this.cboDiaSemana.SelectedIndexChanged += new System.EventHandler(this.cboDiaSemana_SelectedIndexChanged);
             // 
-            // comboBox1
+            // gridTreino
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Domingo",
-            "Segunda-feira",
-            "Terça-feira",
-            "Quarta-feira",
-            "Quinta-feira",
-            "Sexta-feira",
-            "Sábado"});
-            this.comboBox1.Location = new System.Drawing.Point(14, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 21);
-            this.comboBox1.TabIndex = 71;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridTreino.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gridTreino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTreino.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoExercicio,
-            this.NomeExercicio,
-            this.SerieExercicio});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(346, 107);
-            this.dataGridView1.TabIndex = 68;
-            // 
-            // TipoExercicio
-            // 
-            this.TipoExercicio.HeaderText = "Grupo Muscular";
-            this.TipoExercicio.Name = "TipoExercicio";
-            // 
-            // NomeExercicio
-            // 
-            this.NomeExercicio.HeaderText = "Nome";
-            this.NomeExercicio.Name = "NomeExercicio";
-            // 
-            // SerieExercicio
-            // 
-            this.SerieExercicio.HeaderText = "Série";
-            this.SerieExercicio.Name = "SerieExercicio";
+            this.SerieExercicio,
+            this.NomeExercicio});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridTreino.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridTreino.Location = new System.Drawing.Point(3, 89);
+            this.gridTreino.Name = "gridTreino";
+            this.gridTreino.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridTreino.Size = new System.Drawing.Size(487, 107);
+            this.gridTreino.TabIndex = 68;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.btnConsultar);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 55);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cboDiaSemana);
+            this.panel1.Controls.Add(this.gridTreino);
+            this.panel1.Location = new System.Drawing.Point(43, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 269);
+            this.panel1.Size = new System.Drawing.Size(493, 269);
             this.panel1.TabIndex = 73;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "DIA DA SEMANA :";
+            // 
+            // TipoExercicio
+            // 
+            this.TipoExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TipoExercicio.HeaderText = "Nome do Exercicio";
+            this.TipoExercicio.Name = "TipoExercicio";
+            // 
+            // SerieExercicio
+            // 
+            this.SerieExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SerieExercicio.HeaderText = "Grupo Muscular";
+            this.SerieExercicio.Name = "SerieExercicio";
+            this.SerieExercicio.Width = 98;
+            // 
+            // NomeExercicio
+            // 
+            this.NomeExercicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NomeExercicio.HeaderText = "Tipo";
+            this.NomeExercicio.Name = "NomeExercicio";
+            this.NomeExercicio.Width = 53;
             // 
             // Consulta_Treino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 509);
+            this.ClientSize = new System.Drawing.Size(589, 509);
             this.Controls.Add(this.panel1);
             this.Name = "Consulta_Treino";
             this.Text = "Consultar Treino";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Consulta_Treino_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTreino)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoExercicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeExercicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SerieExercicio;
+        private System.Windows.Forms.ComboBox cboDiaSemana;
+        private System.Windows.Forms.DataGridView gridTreino;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoExercicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerieExercicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeExercicio;
     }
 }
