@@ -159,7 +159,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Name = "InicioUsuario";
-            this.Text = "InicioUsuario";
+            this.Text = "Inicio Usuario";
             this.Load += new System.EventHandler(this.InicioUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -645,5 +645,54 @@ namespace tcc.DAL
                 throw ex;
             }
         }
+
+
+        public IList<Usuario> buscaUsuariosNome(String nome_usuario)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT id_usuario, nome, email, sexo, objetivo, id_gym_personal, id_nutricionista FROM usuario WHERE nome LIKE '%" + nome_usuario + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Usuario> listausuarios = new List<Usuario>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Usuario usuario = new Usuario
+                        {
+                            id_usuario = Convert.ToInt32(er["id_usuario"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            objetivo = Convert.ToString(er["objetivo"])
+                        };
+                        if (er["id_gym_personal"].ToString().Equals("")) usuario.id_gym_personal = 0;
+                        else usuario.id_gym_personal = Convert.ToInt32(er["id_gym_personal"]);
+
+                        if (er["id_nutricionista"].ToString().Equals("")) usuario.id_nutricionista = 0;
+                        else usuario.id_nutricionista = Convert.ToInt32(er["id_nutricionista"]);
+
+                        listausuarios.Add(usuario);
+                    }
+                }
+
+                return listausuarios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

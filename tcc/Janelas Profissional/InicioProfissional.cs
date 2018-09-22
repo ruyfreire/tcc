@@ -18,13 +18,24 @@ namespace tcc
         public InicioProfissional()
         {
             InitializeComponent();
-            profissional = ((profissionalMDI)MdiParent).profissional;
         }
 
         private void InicioProfissional_Load(object sender, EventArgs e)
         {
-            if( profissional.GetType() == typeof(Personal) )lbltitulo.Text = "TELA INICIAL DE PERSONAL";
-            else lbltitulo.Text = "TELA INICIAL DE NUTRICIONISTA";
+            profissional = ((profissionalMDI)MdiParent).profissional;
+
+            if (profissional.GetType() == typeof(Personal))
+            {
+                lbltitulo.Text = "TELA INICIAL DE PERSONAL";
+                lblcrn_crea.Text = "CREA :";
+                txtcrn_crea.Text = ((Personal)profissional).crea;
+            }
+            else
+            {
+                lbltitulo.Text = "TELA INICIAL DE NUTRICIONISTA";
+                lblcrn_crea.Text = "CRN :";
+                txtcrn_crea.Text = ((Nutricionista)profissional).crn;
+            }
 
             txtnome.Text = profissional.nome.ToUpper();
         }

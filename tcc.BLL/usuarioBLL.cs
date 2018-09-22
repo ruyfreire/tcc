@@ -101,5 +101,11 @@ namespace tcc.BLL
         {
             return new UsuarioDAL().excluiUsuario(usuario);
         }
+
+
+        public IList<Usuario> buscaUsuariosNome(String nome_usuario)
+        {
+            return new UsuarioDAL().buscaUsuariosNome(nome_usuario);
+        }
     }
 }
