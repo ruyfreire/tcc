@@ -43,7 +43,7 @@ namespace tcc
 
                 //carrega usuarios da busca
                 usuarios = new UsuarioBLL().buscaUsuariosNome(txtNome.Text);
-                if (usuarios.Count == 0) MessageBox.Show("Nenhum alimento encontrado!", "Busca Clientes");
+                if (usuarios.Count == 0) MessageBox.Show("Nenhum cliente encontrado!", "Busca Clientes");
                 else
                 {
                     foreach (Usuario usuario in usuarios)
@@ -73,17 +73,7 @@ namespace tcc
 
         private void confirmaVinculo()
         {
-            if (profissional.GetType() == typeof(Personal) && usuario.id_gym_personal != 0)
-            {
-                MessageBox.Show("Usuário ja possui um personal");
-                return;
-            }
-            else if (profissional.GetType() == typeof(Nutricionista) && usuario.id_nutricionista != 0)
-            {
-                MessageBox.Show("Usuário ja possui um nutricionista");
-                return;
-            }
-            else if (usuario != null)
+            if (usuario != null)
             {
                 var resp = MessageBox.Show("Deseja vincular este cliente ao seu perfil?\n\n" +
                     "Nome: " + usuario.nome +
@@ -95,10 +85,16 @@ namespace tcc
                 {
                     if (profissional.GetType() == typeof(Personal))
                     {
-                        int vinculado = new UsuarioBLL().atualizaPersonal(usuario, ((Personal)profissional).id_personal);
+                        int vinculado = new UsuarioBLL().incluiPersonal(usuario.id_usuario, ((Personal)profissional).id_personal);
                         if(vinculado > 0)
                         {
                             MessageBox.Show("Cliente Vinculado com sucesso", "Novo Cliente");
+                            //limpa linhas do grid
+                            gridclientes.Rows.Clear();
+                        }
+                        else if (vinculado == -1)
+                        {
+                            MessageBox.Show("Cliente já possui Personal", "Novo Cliente");
                             //limpa linhas do grid
                             gridclientes.Rows.Clear();
                         }
@@ -109,10 +105,16 @@ namespace tcc
                     }
                     else
                     {
-                        int vinculado = new UsuarioBLL().atualizaPersonal(usuario, ((Nutricionista)profissional).id_nutricionista);
+                        int vinculado = new UsuarioBLL().incluiNutricionista(usuario.id_usuario, ((Nutricionista)profissional).id_nutricionista);
                         if (vinculado > 0)
                         {
                             MessageBox.Show("Cliente Vinculado com sucesso", "Novo Cliente");
+                            //limpa linhas do grid
+                            gridclientes.Rows.Clear();
+                        }
+                        else if (vinculado == -1)
+                        {
+                            MessageBox.Show("Cliente já possui Nutricionista", "Novo Cliente");
                             //limpa linhas do grid
                             gridclientes.Rows.Clear();
                         }

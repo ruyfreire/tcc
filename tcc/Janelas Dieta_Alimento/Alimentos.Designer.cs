@@ -43,6 +43,7 @@
             // 
             // txtBusca
             // 
+            this.txtBusca.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBusca.Location = new System.Drawing.Point(225, 63);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(266, 20);
@@ -50,6 +51,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscar.Location = new System.Drawing.Point(511, 61);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
@@ -60,6 +62,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(77, 64);
@@ -70,6 +73,7 @@
             // 
             // gridAlimentos
             // 
+            this.gridAlimentos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridAlimentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlimentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,6 +129,7 @@
             // 
             // btnBuscarTodos
             // 
+            this.btnBuscarTodos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnBuscarTodos.Location = new System.Drawing.Point(259, 119);
             this.btnBuscarTodos.Name = "btnBuscarTodos";
             this.btnBuscarTodos.Size = new System.Drawing.Size(152, 23);

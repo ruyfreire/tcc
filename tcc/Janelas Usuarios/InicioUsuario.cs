@@ -77,18 +77,13 @@ namespace tcc
 
         private void carregaProfissional()
         {
-            if (usuario.id_gym_personal != 0)
-            {
-                Personal personal = new UsuarioBLL().carregaPersonal(usuario);
-                if(personal.id_personal != 0) txtpersonal.Text = personal.nome.ToUpper();
-            }
+            Personal personal = new UsuarioBLL().carregaPersonal(usuario.id_usuario);
+            if(personal.id_personal != 0) txtpersonal.Text = personal.nome.ToUpper();
             else txtpersonal.Text = "Não possui um personal";
 
-            if(usuario.id_nutricionista != 0)
-            {
-                Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario);
-                if(nutricionista.id_nutricionista != 0) txtnutricionista.Text = nutricionista.nome.ToUpper();
-            }
+
+            Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario.id_usuario);
+            if(nutricionista.id_nutricionista != 0) txtnutricionista.Text = nutricionista.nome.ToUpper();
             else txtnutricionista.Text = "Não possui um nutricionista";
         }
     }

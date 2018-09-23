@@ -27,11 +27,9 @@ namespace tcc
             * que é executado automaticamente no campo maskedtextbox quando perde o foco
             */
             masknascimento.ValidatingType = typeof(System.DateTime);
-            masknascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);
+            masknascimento.TypeValidationCompleted += new TypeValidationEventHandler(validaData);            
 
-            usuario = ((usuarioMDI)MdiParent).usuario;
-
-            preebcheCampo();
+            preencheCampo();
         }
 
         private void validaData(object sender, TypeValidationEventArgs e)
@@ -43,8 +41,10 @@ namespace tcc
             }
         }
 
-        private void preebcheCampo()
+        private void preencheCampo()
         {
+            usuario = ((usuarioMDI)MdiParent).usuario;
+
             txtnome.Text = usuario.nome;
             txtemail.Text = usuario.email;
             txtlogin.Text = usuario.login;
@@ -97,7 +97,7 @@ namespace tcc
 
         private void cancelando()
         {
-            preebcheCampo();
+            preencheCampo();
             bloqueiaCampos();
             btnEditar.Text = "Editar";
             btnSalvar.Visible = false;

@@ -83,5 +83,15 @@ namespace tcc.BLL
         {
             return new NutricionistaDAL().buscaTodosNutricionista();
         }
+
+        public IList<Usuario> buscaClientesNome(int id_nutricionista, String nome_usuario)
+        {
+            return new NutricionistaDAL().buscaClientesNome(id_nutricionista, nome_usuario);
+        }
+
+        public IList<Usuario> buscaTodosClientes(int id_nutricionista)
+        {
+            return new NutricionistaDAL().buscaTodosClientes(id_nutricionista);
+        }
     }
 }

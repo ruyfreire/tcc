@@ -74,26 +74,37 @@ namespace tcc.BLL
             return new UsuarioDAL().recuperaSenha(usuario);
         }
 
-        public Personal carregaPersonal(Usuario usuario)
+        public Personal carregaPersonal(int id_usuario)
         {
-            return new UsuarioDAL().carregaPersonal(usuario);
+            return new UsuarioDAL().carregaPersonal(id_usuario);
         }
 
 
-        public Nutricionista carregaNutricionista(Usuario usuario)
+        public Nutricionista carregaNutricionista(int id_usuario)
         {
-            return new UsuarioDAL().carregaNutricionista(usuario);
+            return new UsuarioDAL().carregaNutricionista(id_usuario);
         }
 
-        public int atualizaPersonal(Usuario usuario, int id_gym_personal)
+        public int incluiPersonal(int id_usuario, int id_gym_personal)
         {
-            return new UsuarioDAL().atualizaPersonal(usuario, id_gym_personal);
+            return new UsuarioDAL().insereDicionarioGymPersonalUsuario(id_usuario, id_gym_personal);
+        }
+
+        public int removePersonal(int id_usuario)
+        {
+            return new UsuarioDAL().removeDicionarioGymPersonalUsuario(id_usuario);
         }
 
 
-        public int atualizaNutricionista(Usuario usuario, int id_nutricionista)
+        public int incluiNutricionista(int id_usuario, int id_nutricionista)
         {
-            return new UsuarioDAL().atualizaNutricionista(usuario, id_nutricionista);
+            return new UsuarioDAL().insereDicionarioNutricionistaUsuario(id_usuario, id_nutricionista);
+        }
+
+
+        public int removeNutricionista(int id_usuario)
+        {
+            return new UsuarioDAL().removeDicionarioNutricionistaUsuario(id_usuario);
         }
 
 

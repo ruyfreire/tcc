@@ -135,6 +135,7 @@
             // cbosexo
             // 
             this.cbosexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbosexo.Enabled = false;
             this.cbosexo.FormattingEnabled = true;
             this.cbosexo.Items.AddRange(new object[] {
             "F",

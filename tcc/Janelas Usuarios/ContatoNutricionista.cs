@@ -24,7 +24,7 @@ namespace tcc
         private void ContatoNutricionista_Load(object sender, EventArgs e)
         {
             usuario = ((usuarioMDI)MdiParent).usuario;
-            Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario);
+            Nutricionista nutricionista = new UsuarioBLL().carregaNutricionista(usuario.id_usuario);
 
             if(nutricionista.id_nutricionista == 0) lblSemNutricionista.Visible = true;
             else

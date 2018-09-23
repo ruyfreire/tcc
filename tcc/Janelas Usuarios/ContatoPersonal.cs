@@ -24,7 +24,7 @@ namespace tcc
         private void ContatoPersonal_Load(object sender, EventArgs e)
         {
             usuario = ((usuarioMDI)MdiParent).usuario;
-            Personal personal = new UsuarioBLL().carregaPersonal(usuario);
+            Personal personal = new UsuarioBLL().carregaPersonal(usuario.id_usuario);
 
             if (personal.id_personal == 0) lblSemPersonal.Visible = true;
             else

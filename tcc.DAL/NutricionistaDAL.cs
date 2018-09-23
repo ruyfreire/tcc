@@ -405,5 +405,105 @@ namespace tcc.DAL
                 throw ex;
             }
         }
+
+
+        public IList<Usuario> buscaClientesNome(int id_nutricionista, String nome_usuario)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT tbClientes.id_usuario, tbClientes.nome, tbClientes.email, tbClientes.sexo, tbClientes.objetivo " +
+                    "FROM usuario AS tbClientes " +
+                    "INNER JOIN nutricionista_usuario AS LinkNutricionista " +
+                    "ON tbClientes.id_usuario = LinkNutricionista.link_usuario " +
+                    "INNER JOIN nutricionista AS tbNutricionista " +
+                    "ON LinkNutricionista.link_nutricionista = tbNutricionista.id_nutricionista " +
+                    "WHERE tbNutricionista.id_nutricionista = " + id_nutricionista + " AND tbClientes.nome LIKE '%" + nome_usuario + "%'";
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Usuario> listausuarios = new List<Usuario>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Usuario usuario = new Usuario
+                        {
+                            id_usuario = Convert.ToInt32(er["id_usuario"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            objetivo = Convert.ToString(er["objetivo"])
+                        };
+
+                        listausuarios.Add(usuario);
+                    }
+                }
+
+                return listausuarios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public IList<Usuario> buscaTodosClientes(int id_nutricionista)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.CST;
+                SqlCommand cm = new SqlCommand();
+                cm.CommandType = System.Data.CommandType.Text;
+                SqlDataReader er;
+
+                cm.CommandText = "SELECT tbClientes.id_usuario, tbClientes.nome, tbClientes.email, tbClientes.sexo, tbClientes.objetivo " +
+                    "FROM usuario AS tbClientes " +
+                    "INNER JOIN nutricionista_usuario AS LinkNutricionista " +
+                    "ON tbClientes.id_usuario = LinkNutricionista.link_usuario " +
+                    "INNER JOIN nutricionista AS tbNutricionista " +
+                    "ON LinkNutricionista.link_nutricionista = tbNutricionista.id_nutricionista " +
+                    "WHERE tbNutricionista.id_nutricionista = " + id_nutricionista;
+
+                cm.Connection = con;
+                con.Open();
+
+                er = cm.ExecuteReader();
+
+                IList<Usuario> listausuarios = new List<Usuario>();
+                if (er.HasRows)
+                {
+                    while (er.Read())
+                    {
+                        Usuario usuario = new Usuario
+                        {
+                            id_usuario = Convert.ToInt32(er["id_usuario"]),
+                            nome = Convert.ToString(er["nome"]),
+                            email = Convert.ToString(er["email"]),
+                            sexo = Convert.ToString(er["sexo"]),
+                            objetivo = Convert.ToString(er["objetivo"])
+                        };
+
+                        listausuarios.Add(usuario);
+                    }
+                }
+
+                return listausuarios;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

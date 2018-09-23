@@ -83,5 +83,16 @@ namespace tcc.BLL
         {
             return new PersonalDAL().buscaTodosPersonal();
         }
+
+
+        public IList<Usuario> buscaClientesNome(int id_personal, String nome_usuario)
+        {
+            return new PersonalDAL().buscaClientesNome(id_personal, nome_usuario);
+        }
+
+        public IList<Usuario> buscaTodosClientes(int id_personal)
+        {
+            return new PersonalDAL().buscaTodosClientes(id_personal);
+        }
     }
 }

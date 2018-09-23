@@ -117,7 +117,7 @@ namespace tcc
                         MessageBox.Show("CREA inválido, digite apenas numeros, e com 10 digitos", "CREA");
                         return false;
                     }
-                    break;
+                    break;                    
                 case "nascimento":
                     String nascimento = campo.Replace("/", "");
                     nascimento = nascimento.Replace(" ", "");
@@ -192,6 +192,21 @@ namespace tcc
                     if (campo == "")
                     {
                         MessageBox.Show("Selecione um objetivo", "Objetivo");
+                        return false;
+                    }
+                    break;
+
+                case "endereco":
+                    if (campo.Length < 10 || campo.Length > 100)
+                    {
+                        MessageBox.Show("Conprimento de endereço permitido entre 10 e 100 caracteres", "Endereço");
+                        return false;
+                    }
+                    Regex bloqueiaEndereco = new Regex(@"[\%]+");
+                    Regex testaEndereco = new Regex(@"^[a-zA-Z0-9 -_',.^~´`]+$");
+                    if (!testaEndereco.IsMatch(campo) || bloqueiaEndereco.IsMatch(campo))
+                    {
+                        MessageBox.Show("Caracteres em endereço inválido, não coloque acento", "Endereço");
                         return false;
                     }
                     break;

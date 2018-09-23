@@ -18,7 +18,5 @@ namespace tcc.DTO
         public Decimal peso { get; set; }
         public Decimal altura { get; set; }
         public string objetivo { get; set; }
-        public int id_gym_personal { get; set; }
-        public int id_nutricionista { get; set; }
     }
 }
