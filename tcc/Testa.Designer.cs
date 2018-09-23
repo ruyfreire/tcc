@@ -90,7 +90,9 @@
             // 
             this.gridManha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridManha.Location = new System.Drawing.Point(12, 77);
+            this.gridManha.MultiSelect = false;
             this.gridManha.Name = "gridManha";
+            this.gridManha.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridManha.Size = new System.Drawing.Size(506, 110);
             this.gridManha.TabIndex = 2;
             // 
@@ -108,6 +110,7 @@
             this.gridAlmoco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlmoco.Location = new System.Drawing.Point(12, 205);
             this.gridAlmoco.Name = "gridAlmoco";
+            this.gridAlmoco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridAlmoco.Size = new System.Drawing.Size(506, 90);
             this.gridAlmoco.TabIndex = 2;
             // 
@@ -125,6 +128,7 @@
             this.gridTarde.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTarde.Location = new System.Drawing.Point(12, 324);
             this.gridTarde.Name = "gridTarde";
+            this.gridTarde.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTarde.Size = new System.Drawing.Size(506, 101);
             this.gridTarde.TabIndex = 2;
             // 
@@ -133,6 +137,7 @@
             this.gridJanta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridJanta.Location = new System.Drawing.Point(12, 444);
             this.gridJanta.Name = "gridJanta";
+            this.gridJanta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridJanta.Size = new System.Drawing.Size(506, 100);
             this.gridJanta.TabIndex = 2;
             // 

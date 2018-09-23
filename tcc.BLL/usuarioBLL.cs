@@ -30,7 +30,7 @@ namespace tcc.BLL
             try
             {
                 //verifica se usuario existe, antes de autenticar senha
-                int existeUsuario = new UsuarioDAL().existeUsuario(login);
+                int existeUsuario = new UsuarioDAL().existeUsuario("confereLogin", login);
                     
                 // se encontrar usuario, verifica a resposta de retorno
                 if (existeUsuario == 1)
@@ -63,5 +63,49 @@ namespace tcc.BLL
             }
         }
 
+
+        public int alteraUsuario(Usuario usuario, Usuario usuarioAntigo)
+        {            
+            return new UsuarioDAL().alteraUsuario(usuario, usuarioAntigo);
+        }
+
+        public Usuario recuperaSenha(Usuario usuario)
+        {
+            return new UsuarioDAL().recuperaSenha(usuario);
+        }
+
+        public Personal carregaPersonal(Usuario usuario)
+        {
+            return new UsuarioDAL().carregaPersonal(usuario);
+        }
+
+
+        public Nutricionista carregaNutricionista(Usuario usuario)
+        {
+            return new UsuarioDAL().carregaNutricionista(usuario);
+        }
+
+        public int atualizaPersonal(Usuario usuario, int id_gym_personal)
+        {
+            return new UsuarioDAL().atualizaPersonal(usuario, id_gym_personal);
+        }
+
+
+        public int atualizaNutricionista(Usuario usuario, int id_nutricionista)
+        {
+            return new UsuarioDAL().atualizaNutricionista(usuario, id_nutricionista);
+        }
+
+
+        public int excluiUsuario(Usuario usuario)
+        {
+            return new UsuarioDAL().excluiUsuario(usuario);
+        }
+
+
+        public IList<Usuario> buscaUsuariosNome(String nome_usuario)
+        {
+            return new UsuarioDAL().buscaUsuariosNome(nome_usuario);
+        }
     }
 }

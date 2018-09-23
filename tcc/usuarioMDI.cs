@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tcc.DTO;
 
 namespace tcc
 {
     public partial class usuarioMDI : Form
     {
         private int childFormNumber = 0;
+        public Usuario usuario;
 
-        public usuarioMDI()
+        public usuarioMDI(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -52,6 +55,7 @@ namespace tcc
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            ActiveMdiChild.Close();
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +96,124 @@ namespace tcc
             {
                 childForm.Close();
             }
+        }
+
+        private void fechaJanelas()
+        {
+            /* fecha janelas abertas no mdi */
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void abreJanela(Form janela)
+        {
+            /* fecha janelas abertas no mdi */
+            fechaJanelas();
+
+            /* Inclui janela no mdi, maximiza e exibe */
+            janela.MdiParent = this;
+            janela.WindowState = FormWindowState.Maximized;
+            janela.Show();
+        }
+
+
+        /* Menu pagina inicial */
+        private void menuInicio_Click(object sender, EventArgs e)
+        {
+            abreJanela(new InicioUsuario());
+        }
+
+        /* Menu cadastrar dieta */
+        private void cadastrarDietaCadastrar_Click(object sender, EventArgs e)
+        {
+            /* Cria janela a ser chamada */
+            abreJanela(new CadastrarDieta());
+        }
+
+        private void cadastrarDietaAlterar_Click(object sender, EventArgs e)
+        {
+            abreJanela(new AlterarDieta());
+        }
+
+        private void cadastrarDietaExcluir_Click(object sender, EventArgs e)
+        {
+            abreJanela(new ExcluirDieta());
+        }
+
+
+        /* Menu cadastrar treino */
+        private void cadastrarTreinoCadastrar_Click(object sender, EventArgs e)
+        {
+            /* Cria janela a ser chamada */
+            abreJanela(new CadastrarTreino());
+        }
+
+        private void cadastrarTreinoAlterar_Click(object sender, EventArgs e)
+        {
+            abreJanela(new AlterarTreino());
+        }
+
+        private void cadastrarTreinoExcluir_Click(object sender, EventArgs e)
+        {
+            abreJanela(new ExcluirTreino());
+        }
+
+
+        /* Menu consulta dieta, treino, profissional */
+        private void consultarDieta_Click(object sender, EventArgs e)
+        {
+            /* Cria janela a ser chamada */
+            abreJanela(new Consulta_Dieta());
+        }
+
+        private void consultarTreino_Click(object sender, EventArgs e)
+        {
+            /* Cria janela a ser chamada */
+            abreJanela(new Consulta_Treino());
+        }
+
+        private void consultarProfissionalNutricionista_Click(object sender, EventArgs e)
+        {
+            /* Cria janela a ser chamada */
+            abreJanela(new ContatoNutricionista());
+        }
+
+        private void consultarProfissionalPersonal_Click(object sender, EventArgs e)
+        {
+            abreJanela(new ContatoPersonal());
+        }
+
+
+        /* Menu informações Alimentos e Exercicios */
+        private void informacaoAlimentos_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Alimentos());
+        }
+
+        private void informacaoExercicios_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Exercicios());
+        }
+
+
+        /* Menu Busca profissional */
+        private void buscaNutricionista_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Busca_Nutricionista());
+        }
+
+        private void buscaPersonal_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Busca_Personal());
+        }
+
+
+        /* Menu Configurações */
+        private void configDados_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Dados_Cadastrais());
         }
     }
 }

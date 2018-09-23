@@ -7,17 +7,83 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tcc.DTO;
 
 namespace tcc
 {
     public partial class profissionalMDI : Form
     {
         private int childFormNumber = 0;
+        public Profissional profissional;
 
-        public profissionalMDI()
+        public profissionalMDI(Profissional profissional)
         {
             InitializeComponent();
+            this.profissional = profissional;
         }
+
+        /* Menu Inicial */
+        private void menuInicio_Click(object sender, EventArgs e)
+        {
+            abreJanela(new InicioProfissional());
+        }
+
+
+        /* Menus Clientes */
+        private void clientesCadastrar_Click(object sender, EventArgs e)
+        {
+            abreJanela(new cadastrocliente());
+        }
+
+        private void clientesConsultar_Click(object sender, EventArgs e)
+        {
+            abreJanela(new ConsultaCliente());
+        }
+
+
+        /* Menus Informações */
+        private void informacoesAlimentos_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Alimentos());
+        }
+
+        private void informacoesExercicios_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Exercicios());
+        }
+
+
+        /* Menus Configuração */
+        private void configDadosCadastrar_Click(object sender, EventArgs e)
+        {
+            abreJanela(new Dados_Cadastrais_Profissional());
+        }
+
+
+        private void fechaJanelas()
+        {
+            /* fecha janelas abertas no mdi */
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void abreJanela(Form janela)
+        {
+            /* fecha janelas abertas no mdi */
+            fechaJanelas();
+
+            /* Inclui janela no mdi, maximiza e exibe */
+            janela.MdiParent = this;
+            janela.WindowState = FormWindowState.Maximized;
+            janela.Show();
+        }
+
+
+
+
+
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -93,5 +159,6 @@ namespace tcc
                 childForm.Close();
             }
         }
+
     }
 }
