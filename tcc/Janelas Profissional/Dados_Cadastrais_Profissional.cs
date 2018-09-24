@@ -51,8 +51,16 @@ namespace tcc
             txtsenha.Text = profissional.senha;
             txtcpf_cnpj.Text = profissional.cpf_cnpj;
 
-            if (profissional.GetType() == typeof(Personal)) txtcrea_crn.Text = ((Personal)profissional).crea;
-            else txtcrea_crn.Text = ((Nutricionista)profissional).crn;
+            if (profissional.GetType() == typeof(Personal))
+            {
+                lblcrea_crn.Text = "CREA :";
+                txtcrea_crn.Text = ((Personal)profissional).crea;
+            }
+            else
+            {
+                lblcrea_crn.Text = "CRN :";
+                txtcrea_crn.Text = ((Nutricionista)profissional).crn;
+            }
 
             maskednascimento.Text = Convert.ToString(profissional.nascimento);
             cbosexo.Text = Convert.ToString(profissional.sexo);

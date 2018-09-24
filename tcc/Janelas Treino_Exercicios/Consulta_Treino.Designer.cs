@@ -52,6 +52,7 @@
             // 
             // gridTreino
             // 
+            this.gridTreino.AllowUserToAddRows = false;
             this.gridTreino.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridTreino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTreino.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -67,6 +68,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridTreino.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridTreino.Location = new System.Drawing.Point(3, 89);
+            this.gridTreino.MultiSelect = false;
             this.gridTreino.Name = "gridTreino";
             this.gridTreino.ReadOnly = true;
             this.gridTreino.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

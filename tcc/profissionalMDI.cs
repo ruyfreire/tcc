@@ -60,6 +60,19 @@ namespace tcc
         }
 
 
+        /* Menus Sair */
+        private void menuSair_Click(object sender, EventArgs e)
+        {
+            var sair = MessageBox.Show("Deseja fazer logoff do sistema?", "Logoff", MessageBoxButtons.YesNo);
+            if (sair.ToString().Equals("Yes"))
+            {
+                fechaJanelas();
+                login telaLogin = new login();
+                telaLogin.Show();
+                Close();
+            }
+        }
+
         private void fechaJanelas()
         {
             /* fecha janelas abertas no mdi */

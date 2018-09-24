@@ -36,10 +36,12 @@
             this.cadatrarDietaCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarDietaAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarDietaExcluir = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarAlimentosDieta = new System.Windows.Forms.ToolStripMenuItem();
             this.treinoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarTreinoCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarTreinoAlterar = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarTreinoExcluir = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarExerciciosTreino = new System.Windows.Forms.ToolStripMenuItem();
             this.Consultar = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarDieta = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTreino = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +56,7 @@
             this.buscaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configDados = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +69,8 @@
             this.Consultar,
             this.Informacoes,
             this.buscarProfissionalToolStripMenuItem,
-            this.configuraçõesToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem,
+            this.menuSair});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(634, 24);
@@ -84,7 +88,9 @@
             // 
             this.Cadastrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dietaToolStripMenuItem2,
-            this.treinoToolStripMenuItem2});
+            this.cadastrarAlimentosDieta,
+            this.treinoToolStripMenuItem2,
+            this.cadastrarExerciciosTreino});
             this.Cadastrar.Name = "Cadastrar";
             this.Cadastrar.Size = new System.Drawing.Size(69, 20);
             this.Cadastrar.Text = "Cadastrar";
@@ -96,7 +102,7 @@
             this.cadastrarDietaAlterar,
             this.cadastrarDietaExcluir});
             this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
-            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.dietaToolStripMenuItem2.Text = "Dieta";
             // 
             // cadatrarDietaCadastrar
@@ -120,6 +126,13 @@
             this.cadastrarDietaExcluir.Text = "Excluir";
             this.cadastrarDietaExcluir.Click += new System.EventHandler(this.cadastrarDietaExcluir_Click);
             // 
+            // cadastrarAlimentosDieta
+            // 
+            this.cadastrarAlimentosDieta.Name = "cadastrarAlimentosDieta";
+            this.cadastrarAlimentosDieta.Size = new System.Drawing.Size(177, 22);
+            this.cadastrarAlimentosDieta.Text = "Alimento em Dieta";
+            this.cadastrarAlimentosDieta.Click += new System.EventHandler(this.cadastrarAlimentosDieta_Click);
+            // 
             // treinoToolStripMenuItem2
             // 
             this.treinoToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -127,7 +140,7 @@
             this.cadastrarTreinoAlterar,
             this.cadastrarTreinoExcluir});
             this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
-            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.treinoToolStripMenuItem2.Text = "Treino";
             // 
             // cadastrarTreinoCadastrar
@@ -151,6 +164,13 @@
             this.cadastrarTreinoExcluir.Text = "Excluir";
             this.cadastrarTreinoExcluir.Click += new System.EventHandler(this.cadastrarTreinoExcluir_Click);
             // 
+            // cadastrarExerciciosTreino
+            // 
+            this.cadastrarExerciciosTreino.Name = "cadastrarExerciciosTreino";
+            this.cadastrarExerciciosTreino.Size = new System.Drawing.Size(177, 22);
+            this.cadastrarExerciciosTreino.Text = "Exercício em Treino";
+            this.cadastrarExerciciosTreino.Click += new System.EventHandler(this.cadastrarExerciciosTreino_Click);
+            // 
             // Consultar
             // 
             this.Consultar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -164,14 +184,14 @@
             // consultarDieta
             // 
             this.consultarDieta.Name = "consultarDieta";
-            this.consultarDieta.Size = new System.Drawing.Size(180, 22);
+            this.consultarDieta.Size = new System.Drawing.Size(135, 22);
             this.consultarDieta.Text = "Dieta";
             this.consultarDieta.Click += new System.EventHandler(this.consultarDieta_Click);
             // 
             // consultarTreino
             // 
             this.consultarTreino.Name = "consultarTreino";
-            this.consultarTreino.Size = new System.Drawing.Size(180, 22);
+            this.consultarTreino.Size = new System.Drawing.Size(135, 22);
             this.consultarTreino.Text = "Treino";
             this.consultarTreino.Click += new System.EventHandler(this.consultarTreino_Click);
             // 
@@ -181,7 +201,7 @@
             this.consultarProfissionalNutricionista,
             this.consultarProfissionalPersonal});
             this.profissionalToolStripMenuItem.Name = "profissionalToolStripMenuItem";
-            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.profissionalToolStripMenuItem.Text = "Profissional";
             // 
             // consultarProfissionalNutricionista
@@ -259,6 +279,13 @@
             this.configDados.Text = "Dados Cadastrais";
             this.configDados.Click += new System.EventHandler(this.configDados_Click);
             // 
+            // menuSair
+            // 
+            this.menuSair.Name = "menuSair";
+            this.menuSair.Size = new System.Drawing.Size(38, 20);
+            this.menuSair.Text = "Sair";
+            this.menuSair.Click += new System.EventHandler(this.menuSair_Click);
+            // 
             // usuarioMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +295,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "usuarioMDI";
-            this.Text = "usuarioMDI";
+            this.Text = "Sistema Usuário";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -304,6 +331,9 @@
         private System.Windows.Forms.ToolStripMenuItem buscaPersonal;
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configDados;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarAlimentosDieta;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarExerciciosTreino;
+        private System.Windows.Forms.ToolStripMenuItem menuSair;
     }
 }
 

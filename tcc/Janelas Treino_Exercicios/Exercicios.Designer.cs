@@ -42,6 +42,7 @@
             // 
             // gridExercicios
             // 
+            this.gridExercicios.AllowUserToAddRows = false;
             this.gridExercicios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridExercicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridExercicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -57,6 +58,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridExercicios.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridExercicios.Location = new System.Drawing.Point(72, 182);
+            this.gridExercicios.MultiSelect = false;
             this.gridExercicios.Name = "gridExercicios";
             this.gridExercicios.ReadOnly = true;
             this.gridExercicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

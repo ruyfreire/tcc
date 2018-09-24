@@ -248,6 +248,11 @@ namespace tcc
                     break;
 
                 case "porcao_alimento":
+                    if (campo.Length == 0)
+                    {
+                        MessageBox.Show("Coloque a quantidade em gramas do alimento", "Porção de alimento");
+                        return false;
+                    }
                     Regex testaPorcao = new Regex(@"^[0-9]+,?([0-9]){0,2}$");
                     if (!testaPorcao.IsMatch(campo))
                     {

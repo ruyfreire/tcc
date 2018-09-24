@@ -73,6 +73,7 @@
             // 
             // gridAlimentos
             // 
+            this.gridAlimentos.AllowUserToAddRows = false;
             this.gridAlimentos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridAlimentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridAlimentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -90,6 +91,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridAlimentos.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridAlimentos.Location = new System.Drawing.Point(80, 178);
+            this.gridAlimentos.MultiSelect = false;
             this.gridAlimentos.Name = "gridAlimentos";
             this.gridAlimentos.ReadOnly = true;
             this.gridAlimentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

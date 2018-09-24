@@ -125,10 +125,11 @@ namespace tcc
             abreJanela(new InicioUsuario());
         }
 
+
+
         /* Menu cadastrar dieta */
         private void cadastrarDietaCadastrar_Click(object sender, EventArgs e)
         {
-            /* Cria janela a ser chamada */
             abreJanela(new CadastrarDieta());
         }
 
@@ -141,6 +142,12 @@ namespace tcc
         {
             abreJanela(new ExcluirDieta());
         }
+
+        private void cadastrarAlimentosDieta_Click(object sender, EventArgs e)
+        {
+            abreJanela(new AlimentoDieta());
+        }
+
 
 
         /* Menu cadastrar treino */
@@ -160,23 +167,26 @@ namespace tcc
             abreJanela(new ExcluirTreino());
         }
 
+        private void cadastrarExerciciosTreino_Click(object sender, EventArgs e)
+        {
+            abreJanela(new ExercicioTreino());
+        }
+
+
 
         /* Menu consulta dieta, treino, profissional */
         private void consultarDieta_Click(object sender, EventArgs e)
         {
-            /* Cria janela a ser chamada */
             abreJanela(new Consulta_Dieta());
         }
 
         private void consultarTreino_Click(object sender, EventArgs e)
         {
-            /* Cria janela a ser chamada */
             abreJanela(new Consulta_Treino());
         }
 
         private void consultarProfissionalNutricionista_Click(object sender, EventArgs e)
         {
-            /* Cria janela a ser chamada */
             abreJanela(new ContatoNutricionista());
         }
 
@@ -184,6 +194,8 @@ namespace tcc
         {
             abreJanela(new ContatoPersonal());
         }
+
+
 
 
         /* Menu informações Alimentos e Exercicios */
@@ -198,6 +210,8 @@ namespace tcc
         }
 
 
+
+
         /* Menu Busca profissional */
         private void buscaNutricionista_Click(object sender, EventArgs e)
         {
@@ -210,10 +224,28 @@ namespace tcc
         }
 
 
+
+
         /* Menu Configurações */
         private void configDados_Click(object sender, EventArgs e)
         {
             abreJanela(new Dados_Cadastrais());
+        }
+
+
+
+        /* Menu Sair */
+        private void menuSair_Click(object sender, EventArgs e)
+        {
+            var sair = MessageBox.Show("Deseja fazer logoff do sistema?", "Logoff", MessageBoxButtons.YesNo);
+            if (sair.ToString().Equals("Yes"))
+            {
+                fechaJanelas();
+                login telaLogin = new login();
+                telaLogin.Show();
+                Close();
+            }
+
         }
     }
 }

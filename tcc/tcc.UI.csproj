@@ -20,7 +20,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlimentoDieta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlimentoDieta.Designer.cs">
+      <DependentUpon>AlimentoDieta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExercicioTreino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExercicioTreino.Designer.cs">
+      <DependentUpon>ExercicioTreino.cs</DependentUpon>
+    </Compile>
     <Compile Include="Janelas Profissional\Dados_Cadastrais_Profissional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,12 +215,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="usuarioMDI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlimentoDieta.resx">
+      <DependentUpon>AlimentoDieta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExercicioTreino.resx">
+      <DependentUpon>ExercicioTreino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Janelas Profissional\Dados_Cadastrais_Profissional.resx">
       <DependentUpon>Dados_Cadastrais_Profissional.cs</DependentUpon>
     </EmbeddedResource>

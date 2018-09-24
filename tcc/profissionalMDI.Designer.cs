@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.menuInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.Clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesConsultar = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.Configuracoes = new System.Windows.Forms.ToolStripMenuItem();
             this.configDadosCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.menuInicio = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,12 +50,20 @@
             this.menuInicio,
             this.Clientes,
             this.Informacoes,
-            this.Configuracoes});
+            this.Configuracoes,
+            this.menuSair});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(634, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // menuInicio
+            // 
+            this.menuInicio.Name = "menuInicio";
+            this.menuInicio.Size = new System.Drawing.Size(48, 20);
+            this.menuInicio.Text = "Início";
+            this.menuInicio.Click += new System.EventHandler(this.menuInicio_Click);
             // 
             // Clientes
             // 
@@ -117,12 +126,12 @@
             this.configDadosCadastrar.Text = "Dados Cadatrais";
             this.configDadosCadastrar.Click += new System.EventHandler(this.configDadosCadastrar_Click);
             // 
-            // menuInicio
+            // menuSair
             // 
-            this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Size = new System.Drawing.Size(48, 20);
-            this.menuInicio.Text = "Início";
-            this.menuInicio.Click += new System.EventHandler(this.menuInicio_Click);
+            this.menuSair.Name = "menuSair";
+            this.menuSair.Size = new System.Drawing.Size(38, 20);
+            this.menuSair.Text = "Sair";
+            this.menuSair.Click += new System.EventHandler(this.menuSair_Click);
             // 
             // profissionalMDI
             // 
@@ -154,6 +163,7 @@
         private System.Windows.Forms.ToolStripMenuItem Configuracoes;
         private System.Windows.Forms.ToolStripMenuItem configDadosCadastrar;
         private System.Windows.Forms.ToolStripMenuItem menuInicio;
+        private System.Windows.Forms.ToolStripMenuItem menuSair;
     }
 }
 

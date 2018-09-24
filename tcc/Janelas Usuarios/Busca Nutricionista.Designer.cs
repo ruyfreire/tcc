@@ -38,6 +38,9 @@
             this.crn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMeuNutricionista = new System.Windows.Forms.Button();
+            this.btnContratar = new System.Windows.Forms.Button();
+            this.btnDispensar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridNutricionista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             // 
             // btnpesquisartudo
             // 
-            this.btnpesquisartudo.Location = new System.Drawing.Point(244, 104);
+            this.btnpesquisartudo.Location = new System.Drawing.Point(148, 96);
             this.btnpesquisartudo.Name = "btnpesquisartudo";
             this.btnpesquisartudo.Size = new System.Drawing.Size(151, 23);
             this.btnpesquisartudo.TabIndex = 3;
@@ -79,6 +82,7 @@
             // 
             // gridNutricionista
             // 
+            this.gridNutricionista.AllowUserToAddRows = false;
             this.gridNutricionista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridNutricionista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridNutricionista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,8 +98,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridNutricionista.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gridNutricionista.Location = new System.Drawing.Point(68, 166);
+            this.gridNutricionista.Location = new System.Drawing.Point(68, 144);
+            this.gridNutricionista.MultiSelect = false;
             this.gridNutricionista.Name = "gridNutricionista";
+            this.gridNutricionista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridNutricionista.Size = new System.Drawing.Size(496, 221);
             this.gridNutricionista.TabIndex = 4;
             // 
@@ -126,12 +132,45 @@
             this.endereco.HeaderText = "Endereço";
             this.endereco.Name = "endereco";
             // 
+            // btnMeuNutricionista
+            // 
+            this.btnMeuNutricionista.Location = new System.Drawing.Point(359, 96);
+            this.btnMeuNutricionista.Name = "btnMeuNutricionista";
+            this.btnMeuNutricionista.Size = new System.Drawing.Size(102, 23);
+            this.btnMeuNutricionista.TabIndex = 16;
+            this.btnMeuNutricionista.Text = "Meu Nutricionista";
+            this.btnMeuNutricionista.UseVisualStyleBackColor = true;
+            this.btnMeuNutricionista.Click += new System.EventHandler(this.btnMeuNutricionista_Click);
+            // 
+            // btnContratar
+            // 
+            this.btnContratar.Location = new System.Drawing.Point(332, 386);
+            this.btnContratar.Name = "btnContratar";
+            this.btnContratar.Size = new System.Drawing.Size(151, 23);
+            this.btnContratar.TabIndex = 17;
+            this.btnContratar.Text = "Contratar Nutricionista";
+            this.btnContratar.UseVisualStyleBackColor = true;
+            this.btnContratar.Click += new System.EventHandler(this.btnContratar_Click);
+            // 
+            // btnDispensar
+            // 
+            this.btnDispensar.Location = new System.Drawing.Point(148, 386);
+            this.btnDispensar.Name = "btnDispensar";
+            this.btnDispensar.Size = new System.Drawing.Size(151, 23);
+            this.btnDispensar.TabIndex = 18;
+            this.btnDispensar.Text = "Dispensar Nutricionista";
+            this.btnDispensar.UseVisualStyleBackColor = true;
+            this.btnDispensar.Click += new System.EventHandler(this.btnDispensar_Click);
+            // 
             // Busca_Nutricionista
             // 
             this.AcceptButton = this.btnpesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 441);
+            this.Controls.Add(this.btnContratar);
+            this.Controls.Add(this.btnDispensar);
+            this.Controls.Add(this.btnMeuNutricionista);
             this.Controls.Add(this.gridNutricionista);
             this.Controls.Add(this.btnpesquisartudo);
             this.Controls.Add(this.btnpesquisar);
@@ -139,6 +178,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Busca_Nutricionista";
             this.Text = "Busca Nutricionista";
+            this.Load += new System.EventHandler(this.Busca_Nutricionista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridNutricionista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,5 +196,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn crn;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn endereco;
+        private System.Windows.Forms.Button btnMeuNutricionista;
+        private System.Windows.Forms.Button btnContratar;
+        private System.Windows.Forms.Button btnDispensar;
     }
 }
