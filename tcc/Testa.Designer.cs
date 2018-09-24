@@ -49,6 +49,7 @@
             // 
             // gridTabela
             // 
+            this.gridTabela.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridTabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTabela.Location = new System.Drawing.Point(12, 2);
@@ -58,6 +59,7 @@
             // 
             // btnCarregaTodos
             // 
+            this.btnCarregaTodos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCarregaTodos.Location = new System.Drawing.Point(11, 28);
             this.btnCarregaTodos.Name = "btnCarregaTodos";
             this.btnCarregaTodos.Size = new System.Drawing.Size(104, 23);
@@ -68,6 +70,7 @@
             // 
             // btnCarregaEspecifico
             // 
+            this.btnCarregaEspecifico.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCarregaEspecifico.Location = new System.Drawing.Point(212, 28);
             this.btnCarregaEspecifico.Name = "btnCarregaEspecifico";
             this.btnCarregaEspecifico.Size = new System.Drawing.Size(104, 23);
@@ -78,6 +81,7 @@
             // 
             // btnCarregaLista
             // 
+            this.btnCarregaLista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCarregaLista.Location = new System.Drawing.Point(413, 28);
             this.btnCarregaLista.Name = "btnCarregaLista";
             this.btnCarregaLista.Size = new System.Drawing.Size(104, 23);
@@ -88,6 +92,7 @@
             // 
             // gridManha
             // 
+            this.gridManha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridManha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridManha.Location = new System.Drawing.Point(12, 77);
             this.gridManha.MultiSelect = false;
@@ -98,6 +103,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(222, 61);
             this.label1.Name = "label1";
@@ -107,6 +113,7 @@
             // 
             // gridAlmoco
             // 
+            this.gridAlmoco.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridAlmoco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlmoco.Location = new System.Drawing.Point(12, 205);
             this.gridAlmoco.Name = "gridAlmoco";
@@ -116,6 +123,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(241, 189);
             this.label2.Name = "label2";
@@ -125,6 +133,7 @@
             // 
             // gridTarde
             // 
+            this.gridTarde.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridTarde.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTarde.Location = new System.Drawing.Point(12, 324);
             this.gridTarde.Name = "gridTarde";
@@ -134,6 +143,7 @@
             // 
             // gridJanta
             // 
+            this.gridJanta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridJanta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridJanta.Location = new System.Drawing.Point(12, 444);
             this.gridJanta.Name = "gridJanta";
@@ -143,6 +153,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(225, 308);
             this.label3.Name = "label3";
@@ -152,6 +163,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(246, 428);
             this.label4.Name = "label4";
@@ -163,7 +175,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 548);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);

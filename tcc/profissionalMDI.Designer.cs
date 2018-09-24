@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.menuInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.Clientes = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesConsultar = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,6 @@
             this.Configuracoes = new System.Windows.Forms.ToolStripMenuItem();
             this.configDadosCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.menuInicio = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +52,16 @@
             this.Configuracoes});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(634, 24);
+            this.menuStrip.Size = new System.Drawing.Size(629, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // menuInicio
+            // 
+            this.menuInicio.Name = "menuInicio";
+            this.menuInicio.Size = new System.Drawing.Size(48, 20);
+            this.menuInicio.Text = "Início";
+            this.menuInicio.Click += new System.EventHandler(this.menuInicio_Click);
             // 
             // Clientes
             // 
@@ -117,18 +124,12 @@
             this.configDadosCadastrar.Text = "Dados Cadatrais";
             this.configDadosCadastrar.Click += new System.EventHandler(this.configDadosCadastrar_Click);
             // 
-            // menuInicio
-            // 
-            this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Size = new System.Drawing.Size(48, 20);
-            this.menuInicio.Text = "Início";
-            this.menuInicio.Click += new System.EventHandler(this.menuInicio_Click);
-            // 
             // profissionalMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;

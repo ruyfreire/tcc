@@ -69,7 +69,7 @@
             this.configuraçõesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(634, 24);
+            this.menuStrip.Size = new System.Drawing.Size(629, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -96,7 +96,7 @@
             this.cadastrarDietaAlterar,
             this.cadastrarDietaExcluir});
             this.dietaToolStripMenuItem2.Name = "dietaToolStripMenuItem2";
-            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.dietaToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
             this.dietaToolStripMenuItem2.Text = "Dieta";
             // 
             // cadatrarDietaCadastrar
@@ -127,7 +127,7 @@
             this.cadastrarTreinoAlterar,
             this.cadastrarTreinoExcluir});
             this.treinoToolStripMenuItem2.Name = "treinoToolStripMenuItem2";
-            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
+            this.treinoToolStripMenuItem2.Size = new System.Drawing.Size(108, 22);
             this.treinoToolStripMenuItem2.Text = "Treino";
             // 
             // cadastrarTreinoCadastrar
@@ -164,14 +164,14 @@
             // consultarDieta
             // 
             this.consultarDieta.Name = "consultarDieta";
-            this.consultarDieta.Size = new System.Drawing.Size(180, 22);
+            this.consultarDieta.Size = new System.Drawing.Size(135, 22);
             this.consultarDieta.Text = "Dieta";
             this.consultarDieta.Click += new System.EventHandler(this.consultarDieta_Click);
             // 
             // consultarTreino
             // 
             this.consultarTreino.Name = "consultarTreino";
-            this.consultarTreino.Size = new System.Drawing.Size(180, 22);
+            this.consultarTreino.Size = new System.Drawing.Size(135, 22);
             this.consultarTreino.Text = "Treino";
             this.consultarTreino.Click += new System.EventHandler(this.consultarTreino_Click);
             // 
@@ -181,7 +181,7 @@
             this.consultarProfissionalNutricionista,
             this.consultarProfissionalPersonal});
             this.profissionalToolStripMenuItem.Name = "profissionalToolStripMenuItem";
-            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profissionalToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.profissionalToolStripMenuItem.Text = "Profissional";
             // 
             // consultarProfissionalNutricionista
@@ -255,7 +255,7 @@
             // configDados
             // 
             this.configDados.Name = "configDados";
-            this.configDados.Size = new System.Drawing.Size(164, 22);
+            this.configDados.Size = new System.Drawing.Size(180, 22);
             this.configDados.Text = "Dados Cadastrais";
             this.configDados.Click += new System.EventHandler(this.configDados_Click);
             // 
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 453);
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;

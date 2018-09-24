@@ -43,8 +43,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(122, 99);
+            this.label1.Location = new System.Drawing.Point(97, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
@@ -52,8 +53,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 179);
+            this.label2.Location = new System.Drawing.Point(106, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 1;
@@ -61,8 +63,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 170);
+            this.label3.Location = new System.Drawing.Point(280, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 26);
             this.label3.TabIndex = 2;
@@ -71,8 +74,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(109, 261);
+            this.label4.Location = new System.Drawing.Point(84, 254);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 3;
@@ -80,8 +84,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 332);
+            this.label5.Location = new System.Drawing.Point(67, 310);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 4;
@@ -89,7 +94,8 @@
             // 
             // txtnome
             // 
-            this.txtnome.Location = new System.Drawing.Point(166, 96);
+            this.txtnome.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtnome.Location = new System.Drawing.Point(141, 138);
             this.txtnome.Name = "txtnome";
             this.txtnome.ReadOnly = true;
             this.txtnome.Size = new System.Drawing.Size(363, 20);
@@ -98,7 +104,8 @@
             // 
             // txtimc
             // 
-            this.txtimc.Location = new System.Drawing.Point(166, 176);
+            this.txtimc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtimc.Location = new System.Drawing.Point(141, 194);
             this.txtimc.Name = "txtimc";
             this.txtimc.ReadOnly = true;
             this.txtimc.Size = new System.Drawing.Size(133, 20);
@@ -107,7 +114,8 @@
             // 
             // txtbasal
             // 
-            this.txtbasal.Location = new System.Drawing.Point(416, 176);
+            this.txtbasal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtbasal.Location = new System.Drawing.Point(391, 194);
             this.txtbasal.Name = "txtbasal";
             this.txtbasal.ReadOnly = true;
             this.txtbasal.Size = new System.Drawing.Size(113, 20);
@@ -116,7 +124,8 @@
             // 
             // txtpersonal
             // 
-            this.txtpersonal.Location = new System.Drawing.Point(166, 258);
+            this.txtpersonal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtpersonal.Location = new System.Drawing.Point(141, 251);
             this.txtpersonal.Name = "txtpersonal";
             this.txtpersonal.ReadOnly = true;
             this.txtpersonal.Size = new System.Drawing.Size(363, 20);
@@ -125,7 +134,8 @@
             // 
             // txtnutricionista
             // 
-            this.txtnutricionista.Location = new System.Drawing.Point(166, 329);
+            this.txtnutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtnutricionista.Location = new System.Drawing.Point(141, 307);
             this.txtnutricionista.Name = "txtnutricionista";
             this.txtnutricionista.ReadOnly = true;
             this.txtnutricionista.Size = new System.Drawing.Size(363, 20);
@@ -134,11 +144,12 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(185, 35);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(203, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(267, 24);
+            this.label6.Size = new System.Drawing.Size(239, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "TELA INICIAL DE USUÁRIO";
             // 
@@ -146,7 +157,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 406);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.txtnutricionista);
             this.Controls.Add(this.txtpersonal);
             this.Controls.Add(this.txtbasal);

@@ -47,50 +47,55 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 66);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(231, 79);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 24);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Login :";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(197, 122);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(223, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Senha :";
             // 
             // txtLogin
             // 
+            this.txtLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(320, 66);
+            this.txtLogin.Location = new System.Drawing.Point(275, 73);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(231, 26);
+            this.txtLogin.Size = new System.Drawing.Size(241, 26);
             this.txtLogin.TabIndex = 2;
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(320, 120);
+            this.txtSenha.Location = new System.Drawing.Point(275, 127);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(231, 26);
+            this.txtSenha.Size = new System.Drawing.Size(241, 26);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnSair
             // 
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(236, 298);
+            this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSair.Location = new System.Drawing.Point(155, 241);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(112, 28);
@@ -101,36 +106,39 @@
             // 
             // btnOk
             // 
-            this.btnOk.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(236, 241);
+            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOk.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnOk.Location = new System.Drawing.Point(343, 241);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(112, 28);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "Ok";
-            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // esqueciSenha
             // 
+            this.esqueciSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.esqueciSenha.AutoSize = true;
-            this.esqueciSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.esqueciSenha.Location = new System.Drawing.Point(424, 150);
+            this.esqueciSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.esqueciSenha.Location = new System.Drawing.Point(428, 170);
             this.esqueciSenha.Name = "esqueciSenha";
-            this.esqueciSenha.Size = new System.Drawing.Size(127, 20);
+            this.esqueciSenha.Size = new System.Drawing.Size(88, 13);
             this.esqueciSenha.TabIndex = 4;
             this.esqueciSenha.TabStop = true;
-            this.esqueciSenha.Text = "Esqueci a senha";
+            this.esqueciSenha.Text = "Esqueci a Senha";
             this.esqueciSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.esqueciSenha_LinkClicked);
             // 
             // criarUsuario
             // 
+            this.criarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.criarUsuario.AutoSize = true;
-            this.criarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criarUsuario.Location = new System.Drawing.Point(14, 378);
+            this.criarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.criarUsuario.Location = new System.Drawing.Point(55, 356);
             this.criarUsuario.Name = "criarUsuario";
-            this.criarUsuario.Size = new System.Drawing.Size(136, 20);
+            this.criarUsuario.Size = new System.Drawing.Size(92, 13);
             this.criarUsuario.TabIndex = 7;
             this.criarUsuario.TabStop = true;
             this.criarUsuario.Text = "Criar novo usuário";
@@ -138,6 +146,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -148,11 +157,12 @@
             // 
             // criarPersonal
             // 
+            this.criarPersonal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.criarPersonal.AutoSize = true;
-            this.criarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criarPersonal.Location = new System.Drawing.Point(222, 378);
+            this.criarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.criarPersonal.Location = new System.Drawing.Point(222, 356);
             this.criarPersonal.Name = "criarPersonal";
-            this.criarPersonal.Size = new System.Drawing.Size(140, 20);
+            this.criarPersonal.Size = new System.Drawing.Size(93, 13);
             this.criarPersonal.TabIndex = 8;
             this.criarPersonal.TabStop = true;
             this.criarPersonal.Text = "Cadastro Personal";
@@ -160,11 +170,12 @@
             // 
             // criarnutricionista
             // 
+            this.criarnutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.criarnutricionista.AutoSize = true;
-            this.criarnutricionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criarnutricionista.Location = new System.Drawing.Point(428, 378);
+            this.criarnutricionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.criarnutricionista.Location = new System.Drawing.Point(395, 356);
             this.criarnutricionista.Name = "criarnutricionista";
-            this.criarnutricionista.Size = new System.Drawing.Size(165, 20);
+            this.criarnutricionista.Size = new System.Drawing.Size(110, 13);
             this.criarnutricionista.TabIndex = 9;
             this.criarnutricionista.TabStop = true;
             this.criarnutricionista.Text = "Cadastro Nutricionista";
@@ -172,25 +183,27 @@
             // 
             // comboperfil
             // 
+            this.comboperfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboperfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboperfil.FormattingEnabled = true;
             this.comboperfil.Items.AddRange(new object[] {
             "Usuário",
             "Personal",
             "Nutricionista"});
-            this.comboperfil.Location = new System.Drawing.Point(320, 20);
+            this.comboperfil.Location = new System.Drawing.Point(279, 27);
             this.comboperfil.Name = "comboperfil";
-            this.comboperfil.Size = new System.Drawing.Size(121, 24);
+            this.comboperfil.Size = new System.Drawing.Size(127, 24);
             this.comboperfil.TabIndex = 1;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(210, 20);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(236, 33);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 24);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Perfil :";
             // 
@@ -199,8 +212,8 @@
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(612, 434);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(625, 448);
             this.Controls.Add(this.comboperfil);
             this.Controls.Add(this.criarnutricionista);
             this.Controls.Add(this.criarPersonal);

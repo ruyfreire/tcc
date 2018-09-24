@@ -44,6 +44,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(241, 20);
@@ -55,26 +56,30 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(82, 283);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(68, 283);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "DIA DA SEMANA :";
+            this.label3.Text = "Dia da Semana:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 323);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(56, 323);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
+            this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "TIPO DE REFEIÇÃO :";
+            this.label4.Text = "Tipo de Refeição :";
             // 
             // txtDiaDaSemana
             // 
+            this.txtDiaDaSemana.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDiaDaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtDiaDaSemana.FormattingEnabled = true;
             this.txtDiaDaSemana.Items.AddRange(new object[] {
@@ -85,13 +90,14 @@
             "Quinta-feira",
             "Sexta-feira",
             "Sábado"});
-            this.txtDiaDaSemana.Location = new System.Drawing.Point(205, 280);
+            this.txtDiaDaSemana.Location = new System.Drawing.Point(156, 280);
             this.txtDiaDaSemana.Name = "txtDiaDaSemana";
             this.txtDiaDaSemana.Size = new System.Drawing.Size(320, 21);
             this.txtDiaDaSemana.TabIndex = 6;
             // 
             // txtTipoDeRefeicao
             // 
+            this.txtTipoDeRefeicao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTipoDeRefeicao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtTipoDeRefeicao.FormattingEnabled = true;
             this.txtTipoDeRefeicao.Items.AddRange(new object[] {
@@ -100,13 +106,14 @@
             "Café da Tarde",
             "Janta",
             "Ceia"});
-            this.txtTipoDeRefeicao.Location = new System.Drawing.Point(205, 320);
+            this.txtTipoDeRefeicao.Location = new System.Drawing.Point(156, 320);
             this.txtTipoDeRefeicao.Name = "txtTipoDeRefeicao";
             this.txtTipoDeRefeicao.Size = new System.Drawing.Size(320, 21);
             this.txtTipoDeRefeicao.TabIndex = 7;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(248, 40);
             this.pictureBox1.Name = "pictureBox1";
@@ -117,20 +124,22 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnAlterar.Location = new System.Drawing.Point(260, 380);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
             this.btnAlterar.TabIndex = 12;
-            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // cboSelecioneDieta
             // 
+            this.cboSelecioneDieta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboSelecioneDieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSelecioneDieta.FormattingEnabled = true;
-            this.cboSelecioneDieta.Location = new System.Drawing.Point(205, 185);
+            this.cboSelecioneDieta.Location = new System.Drawing.Point(156, 185);
             this.cboSelecioneDieta.Name = "cboSelecioneDieta";
             this.cboSelecioneDieta.Size = new System.Drawing.Size(319, 21);
             this.cboSelecioneDieta.TabIndex = 13;
@@ -138,19 +147,21 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(57, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 13);
+            this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "SELECIONE A DIETA :";
+            this.label2.Text = "Selecione a Dieta:";
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(245, 250);
+            this.label5.Location = new System.Drawing.Point(244, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 13);
             this.label5.TabIndex = 2;
@@ -160,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboSelecioneDieta);
             this.Controls.Add(this.btnAlterar);
