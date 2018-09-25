@@ -70,7 +70,6 @@
             this.gridTreino.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridTreino.Size = new System.Drawing.Size(487, 107);
             this.gridTreino.TabIndex = 68;
-            this.gridTreino.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTreino_CellContentClick);
             // 
             // NomeExercicio
             // 

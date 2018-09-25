@@ -71,10 +71,5 @@ namespace tcc
                 }
             }
         }
-
-        private void gridTreino_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

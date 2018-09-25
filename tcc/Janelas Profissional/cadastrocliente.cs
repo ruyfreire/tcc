@@ -124,10 +124,5 @@ namespace tcc
                 }
             }
         }
-
-        private void gridclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -64,7 +64,6 @@
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dia da Semana:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
