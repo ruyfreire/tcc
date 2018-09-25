@@ -56,21 +56,24 @@
             // 
             // txtname
             // 
-            this.txtname.Location = new System.Drawing.Point(147, 27);
+            this.txtname.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtname.Location = new System.Drawing.Point(220, 46);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(249, 20);
             this.txtname.TabIndex = 0;
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(147, 95);
+            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtemail.Location = new System.Drawing.Point(220, 119);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(249, 20);
             this.txtemail.TabIndex = 2;
             // 
             // txtsenha
             // 
-            this.txtsenha.Location = new System.Drawing.Point(147, 129);
+            this.txtsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtsenha.Location = new System.Drawing.Point(220, 156);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(129, 20);
@@ -79,103 +82,114 @@
             // 
             // labname
             // 
+            this.labname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labname.AutoSize = true;
-            this.labname.Location = new System.Drawing.Point(81, 30);
+            this.labname.Location = new System.Drawing.Point(171, 49);
             this.labname.Name = "labname";
-            this.labname.Size = new System.Drawing.Size(35, 13);
+            this.labname.Size = new System.Drawing.Size(41, 13);
             this.labname.TabIndex = 5;
-            this.labname.Text = "Nome";
+            this.labname.Text = "Nome :";
             // 
             // labemail
             // 
+            this.labemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labemail.AutoSize = true;
-            this.labemail.Location = new System.Drawing.Point(81, 98);
+            this.labemail.Location = new System.Drawing.Point(171, 122);
             this.labemail.Name = "labemail";
-            this.labemail.Size = new System.Drawing.Size(35, 13);
+            this.labemail.Size = new System.Drawing.Size(41, 13);
             this.labemail.TabIndex = 6;
-            this.labemail.Text = "E-mail";
+            this.labemail.Text = "E-mail :";
             // 
             // labsenha
             // 
+            this.labsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labsenha.AutoSize = true;
-            this.labsenha.Location = new System.Drawing.Point(81, 132);
+            this.labsenha.Location = new System.Drawing.Point(171, 159);
             this.labsenha.Name = "labsenha";
-            this.labsenha.Size = new System.Drawing.Size(38, 13);
+            this.labsenha.Size = new System.Drawing.Size(44, 13);
             this.labsenha.TabIndex = 7;
-            this.labsenha.Text = "Senha";
+            this.labsenha.Text = "Senha :";
             // 
             // labnascimento
             // 
+            this.labnascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labnascimento.AutoSize = true;
-            this.labnascimento.Location = new System.Drawing.Point(15, 166);
+            this.labnascimento.Location = new System.Drawing.Point(105, 195);
             this.labnascimento.Name = "labnascimento";
-            this.labnascimento.Size = new System.Drawing.Size(104, 13);
+            this.labnascimento.Size = new System.Drawing.Size(110, 13);
             this.labnascimento.TabIndex = 8;
-            this.labnascimento.Text = "Data de Nascimento";
+            this.labnascimento.Text = "Data de Nascimento :";
             // 
             // labsexo
             // 
+            this.labsexo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labsexo.AutoSize = true;
-            this.labsexo.Location = new System.Drawing.Point(85, 200);
+            this.labsexo.Location = new System.Drawing.Point(175, 232);
             this.labsexo.Name = "labsexo";
-            this.labsexo.Size = new System.Drawing.Size(31, 13);
+            this.labsexo.Size = new System.Drawing.Size(37, 13);
             this.labsexo.TabIndex = 9;
-            this.labsexo.Text = "Sexo";
+            this.labsexo.Text = "Sexo :";
             // 
             // labpeso
             // 
+            this.labpeso.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labpeso.AutoSize = true;
-            this.labpeso.Location = new System.Drawing.Point(85, 235);
+            this.labpeso.Location = new System.Drawing.Point(175, 267);
             this.labpeso.Name = "labpeso";
-            this.labpeso.Size = new System.Drawing.Size(31, 13);
+            this.labpeso.Size = new System.Drawing.Size(37, 13);
             this.labpeso.TabIndex = 12;
-            this.labpeso.Text = "Peso";
+            this.labpeso.Text = "Peso :";
             // 
             // labaltura
             // 
+            this.labaltura.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labaltura.AutoSize = true;
-            this.labaltura.Location = new System.Drawing.Point(85, 272);
+            this.labaltura.Location = new System.Drawing.Point(175, 307);
             this.labaltura.Name = "labaltura";
-            this.labaltura.Size = new System.Drawing.Size(34, 13);
+            this.labaltura.Size = new System.Drawing.Size(40, 13);
             this.labaltura.TabIndex = 13;
-            this.labaltura.Text = "Altura";
+            this.labaltura.Text = "Altura :";
             // 
             // labobjetivo
             // 
+            this.labobjetivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labobjetivo.AutoSize = true;
-            this.labobjetivo.Location = new System.Drawing.Point(73, 303);
+            this.labobjetivo.Location = new System.Drawing.Point(163, 340);
             this.labobjetivo.Name = "labobjetivo";
-            this.labobjetivo.Size = new System.Drawing.Size(46, 13);
+            this.labobjetivo.Size = new System.Drawing.Size(52, 13);
             this.labobjetivo.TabIndex = 15;
-            this.labobjetivo.Text = "Objetivo";
+            this.labobjetivo.Text = "Objetivo :";
             // 
             // comboBoxsexo
             // 
+            this.comboBoxsexo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxsexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxsexo.FormattingEnabled = true;
             this.comboBoxsexo.Items.AddRange(new object[] {
             "F",
             "M"});
-            this.comboBoxsexo.Location = new System.Drawing.Point(147, 197);
+            this.comboBoxsexo.Location = new System.Drawing.Point(220, 229);
             this.comboBoxsexo.Name = "comboBoxsexo";
             this.comboBoxsexo.Size = new System.Drawing.Size(129, 21);
             this.comboBoxsexo.TabIndex = 5;
             // 
             // comboBoxobjetivo
             // 
+            this.comboBoxobjetivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxobjetivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxobjetivo.FormattingEnabled = true;
             this.comboBoxobjetivo.Items.AddRange(new object[] {
             "Ganhar Peso",
             "Perder Peso"});
-            this.comboBoxobjetivo.Location = new System.Drawing.Point(147, 300);
+            this.comboBoxobjetivo.Location = new System.Drawing.Point(220, 337);
             this.comboBoxobjetivo.Name = "comboBoxobjetivo";
             this.comboBoxobjetivo.Size = new System.Drawing.Size(129, 21);
             this.comboBoxobjetivo.TabIndex = 8;
             // 
             // btnlimpar
             // 
-            this.btnlimpar.Location = new System.Drawing.Point(175, 360);
+            this.btnlimpar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnlimpar.Location = new System.Drawing.Point(248, 397);
             this.btnlimpar.Name = "btnlimpar";
             this.btnlimpar.Size = new System.Drawing.Size(75, 23);
             this.btnlimpar.TabIndex = 10;
@@ -185,7 +199,8 @@
             // 
             // btnsalvar
             // 
-            this.btnsalvar.Location = new System.Drawing.Point(291, 360);
+            this.btnsalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnsalvar.Location = new System.Drawing.Point(364, 397);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
             this.btnsalvar.TabIndex = 9;
@@ -195,7 +210,8 @@
             // 
             // maskednascimento
             // 
-            this.maskednascimento.Location = new System.Drawing.Point(147, 163);
+            this.maskednascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maskednascimento.Location = new System.Drawing.Point(220, 192);
             this.maskednascimento.Mask = "00/00/0000";
             this.maskednascimento.Name = "maskednascimento";
             this.maskednascimento.Size = new System.Drawing.Size(129, 20);
@@ -204,8 +220,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 132);
+            this.label3.Location = new System.Drawing.Point(355, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 16;
@@ -213,22 +230,25 @@
             // 
             // txtpeso
             // 
-            this.txtpeso.Location = new System.Drawing.Point(147, 232);
+            this.txtpeso.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtpeso.Location = new System.Drawing.Point(220, 264);
             this.txtpeso.Name = "txtpeso";
             this.txtpeso.Size = new System.Drawing.Size(129, 20);
             this.txtpeso.TabIndex = 6;
             // 
             // txtaltura
             // 
-            this.txtaltura.Location = new System.Drawing.Point(147, 266);
+            this.txtaltura.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtaltura.Location = new System.Drawing.Point(220, 301);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(129, 20);
             this.txtaltura.TabIndex = 7;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(282, 235);
+            this.label1.Location = new System.Drawing.Point(355, 267);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 16;
@@ -236,8 +256,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(282, 269);
+            this.label2.Location = new System.Drawing.Point(355, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 16;
@@ -245,23 +266,26 @@
             // 
             // txtlogin
             // 
-            this.txtlogin.Location = new System.Drawing.Point(147, 61);
+            this.txtlogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtlogin.Location = new System.Drawing.Point(220, 83);
             this.txtlogin.Name = "txtlogin";
             this.txtlogin.Size = new System.Drawing.Size(249, 20);
             this.txtlogin.TabIndex = 1;
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 64);
+            this.label4.Location = new System.Drawing.Point(173, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Login";
+            this.label4.Text = "Login :";
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(59, 360);
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btncancelar.Location = new System.Drawing.Point(132, 397);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 11;
@@ -273,7 +297,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 405);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);

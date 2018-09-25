@@ -46,6 +46,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(65, 50);
             this.label1.Name = "label1";
@@ -55,6 +56,7 @@
             // 
             // txtnutricionista
             // 
+            this.txtnutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtnutricionista.Location = new System.Drawing.Point(142, 47);
             this.txtnutricionista.Name = "txtnutricionista";
             this.txtnutricionista.Size = new System.Drawing.Size(341, 20);
@@ -62,6 +64,7 @@
             // 
             // btnpesquisar
             // 
+            this.btnpesquisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnpesquisar.Location = new System.Drawing.Point(489, 45);
             this.btnpesquisar.Name = "btnpesquisar";
             this.btnpesquisar.Size = new System.Drawing.Size(75, 23);
@@ -72,7 +75,8 @@
             // 
             // btnpesquisartudo
             // 
-            this.btnpesquisartudo.Location = new System.Drawing.Point(148, 96);
+            this.btnpesquisartudo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnpesquisartudo.Location = new System.Drawing.Point(244, 104);
             this.btnpesquisartudo.Name = "btnpesquisartudo";
             this.btnpesquisartudo.Size = new System.Drawing.Size(151, 23);
             this.btnpesquisartudo.TabIndex = 3;
@@ -82,6 +86,7 @@
             // 
             // gridNutricionista
             // 
+            this.gridNutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridNutricionista.AllowUserToAddRows = false;
             this.gridNutricionista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridNutricionista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -171,6 +176,8 @@
             this.Controls.Add(this.btnContratar);
             this.Controls.Add(this.btnDispensar);
             this.Controls.Add(this.btnMeuNutricionista);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.gridNutricionista);
             this.Controls.Add(this.btnpesquisartudo);
             this.Controls.Add(this.btnpesquisar);

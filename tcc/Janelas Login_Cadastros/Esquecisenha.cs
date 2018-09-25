@@ -183,6 +183,5 @@ namespace tcc
             telaLogin.Show();
             Visible = false;
         }
-
     }
 }

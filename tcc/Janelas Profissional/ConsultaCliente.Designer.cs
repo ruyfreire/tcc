@@ -165,6 +165,8 @@
             this.Controls.Add(this.gridclientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Name = "ConsultaCliente";
             this.Text = "Consulta Cliente";
             this.Load += new System.EventHandler(this.ConsultaCliente_Load);

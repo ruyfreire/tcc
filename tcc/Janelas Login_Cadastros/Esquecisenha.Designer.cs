@@ -47,8 +47,9 @@
             // 
             // lbllogin
             // 
+            this.lbllogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbllogin.AutoSize = true;
-            this.lbllogin.Location = new System.Drawing.Point(104, 67);
+            this.lbllogin.Location = new System.Drawing.Point(192, 89);
             this.lbllogin.Name = "lbllogin";
             this.lbllogin.Size = new System.Drawing.Size(36, 13);
             this.lbllogin.TabIndex = 0;
@@ -56,22 +57,25 @@
             // 
             // txtlogin
             // 
-            this.txtlogin.Location = new System.Drawing.Point(154, 64);
+            this.txtlogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtlogin.Location = new System.Drawing.Point(234, 86);
             this.txtlogin.Name = "txtlogin";
-            this.txtlogin.Size = new System.Drawing.Size(189, 20);
+            this.txtlogin.Size = new System.Drawing.Size(197, 20);
             this.txtlogin.TabIndex = 2;
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(154, 105);
+            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtemail.Location = new System.Drawing.Point(234, 131);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(189, 20);
+            this.txtemail.Size = new System.Drawing.Size(197, 20);
             this.txtemail.TabIndex = 4;
             // 
             // lblemail
             // 
+            this.lblemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblemail.AutoSize = true;
-            this.lblemail.Location = new System.Drawing.Point(102, 108);
+            this.lblemail.Location = new System.Drawing.Point(190, 134);
             this.lblemail.Name = "lblemail";
             this.lblemail.Size = new System.Drawing.Size(38, 13);
             this.lblemail.TabIndex = 3;
@@ -79,8 +83,9 @@
             // 
             // lblnascimento
             // 
+            this.lblnascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblnascimento.AutoSize = true;
-            this.lblnascimento.Location = new System.Drawing.Point(33, 160);
+            this.lblnascimento.Location = new System.Drawing.Point(121, 223);
             this.lblnascimento.Name = "lblnascimento";
             this.lblnascimento.Size = new System.Drawing.Size(107, 13);
             this.lblnascimento.TabIndex = 5;
@@ -88,7 +93,8 @@
             // 
             // btnrecuperar
             // 
-            this.btnrecuperar.Location = new System.Drawing.Point(223, 249);
+            this.btnrecuperar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnrecuperar.Location = new System.Drawing.Point(284, 346);
             this.btnrecuperar.Name = "btnrecuperar";
             this.btnrecuperar.Size = new System.Drawing.Size(75, 23);
             this.btnrecuperar.TabIndex = 7;
@@ -98,7 +104,8 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(103, 249);
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btncancelar.Location = new System.Drawing.Point(184, 346);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 8;
@@ -108,17 +115,19 @@
             // 
             // maskednascimento
             // 
-            this.maskednascimento.Location = new System.Drawing.Point(154, 157);
+            this.maskednascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maskednascimento.Location = new System.Drawing.Point(234, 221);
             this.maskednascimento.Mask = "00/00/0000";
             this.maskednascimento.Name = "maskednascimento";
-            this.maskednascimento.Size = new System.Drawing.Size(65, 20);
+            this.maskednascimento.Size = new System.Drawing.Size(73, 20);
             this.maskednascimento.TabIndex = 21;
             this.maskednascimento.ValidatingType = typeof(System.DateTime);
             // 
             // lblnovasenha
             // 
+            this.lblnovasenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblnovasenha.AutoSize = true;
-            this.lblnovasenha.Location = new System.Drawing.Point(70, 134);
+            this.lblnovasenha.Location = new System.Drawing.Point(158, 178);
             this.lblnovasenha.Name = "lblnovasenha";
             this.lblnovasenha.Size = new System.Drawing.Size(70, 13);
             this.lblnovasenha.TabIndex = 0;
@@ -127,8 +136,9 @@
             // 
             // lblrepetesenha
             // 
+            this.lblrepetesenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblrepetesenha.AutoSize = true;
-            this.lblrepetesenha.Location = new System.Drawing.Point(62, 186);
+            this.lblrepetesenha.Location = new System.Drawing.Point(150, 269);
             this.lblrepetesenha.Name = "lblrepetesenha";
             this.lblrepetesenha.Size = new System.Drawing.Size(78, 13);
             this.lblrepetesenha.TabIndex = 3;
@@ -137,25 +147,28 @@
             // 
             // txtnovasenha
             // 
-            this.txtnovasenha.Location = new System.Drawing.Point(154, 131);
+            this.txtnovasenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtnovasenha.Location = new System.Drawing.Point(234, 175);
             this.txtnovasenha.Name = "txtnovasenha";
-            this.txtnovasenha.Size = new System.Drawing.Size(189, 20);
+            this.txtnovasenha.Size = new System.Drawing.Size(197, 20);
             this.txtnovasenha.TabIndex = 2;
             this.txtnovasenha.UseSystemPasswordChar = true;
             this.txtnovasenha.Visible = false;
             // 
             // txtrepetesenha
             // 
-            this.txtrepetesenha.Location = new System.Drawing.Point(154, 183);
+            this.txtrepetesenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtrepetesenha.Location = new System.Drawing.Point(234, 266);
             this.txtrepetesenha.Name = "txtrepetesenha";
-            this.txtrepetesenha.Size = new System.Drawing.Size(189, 20);
+            this.txtrepetesenha.Size = new System.Drawing.Size(197, 20);
             this.txtrepetesenha.TabIndex = 4;
             this.txtrepetesenha.UseSystemPasswordChar = true;
             this.txtrepetesenha.Visible = false;
             // 
             // btnsalvar
             // 
-            this.btnsalvar.Location = new System.Drawing.Point(232, 249);
+            this.btnsalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnsalvar.Location = new System.Drawing.Point(385, 346);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
             this.btnsalvar.TabIndex = 7;
@@ -166,20 +179,22 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 16);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(209, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.Size = new System.Drawing.Size(128, 13);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Reperar senha de:";
+            this.label1.Text = "Recuperar Senha de:";
             // 
             // lblperfil
             // 
+            this.lblperfil.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblperfil.AutoSize = true;
             this.lblperfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblperfil.ForeColor = System.Drawing.Color.Tomato;
-            this.lblperfil.Location = new System.Drawing.Point(239, 16);
+            this.lblperfil.Location = new System.Drawing.Point(339, 28);
             this.lblperfil.Name = "lblperfil";
             this.lblperfil.Size = new System.Drawing.Size(59, 20);
             this.lblperfil.TabIndex = 23;
@@ -189,7 +204,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 297);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.lblperfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskednascimento);

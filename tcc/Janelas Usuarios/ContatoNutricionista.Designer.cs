@@ -42,9 +42,10 @@
             // 
             // Nome
             // 
+            this.Nome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Nome.AutoSize = true;
             this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nome.Location = new System.Drawing.Point(73, 150);
+            this.Nome.Location = new System.Drawing.Point(69, 150);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(87, 16);
             this.Nome.TabIndex = 0;
@@ -52,9 +53,10 @@
             // 
             // Email
             // 
+            this.Email.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(108, 228);
+            this.Email.Location = new System.Drawing.Point(104, 236);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(52, 16);
             this.Email.TabIndex = 2;
@@ -62,9 +64,10 @@
             // 
             // Endereco
             // 
+            this.Endereco.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Endereco.AutoSize = true;
             this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Endereco.Location = new System.Drawing.Point(87, 269);
+            this.Endereco.Location = new System.Drawing.Point(83, 281);
             this.Endereco.Name = "Endereco";
             this.Endereco.Size = new System.Drawing.Size(73, 16);
             this.Endereco.TabIndex = 3;
@@ -72,8 +75,9 @@
             // 
             // txtnome
             // 
+            this.txtnome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnome.Location = new System.Drawing.Point(176, 147);
+            this.txtnome.Location = new System.Drawing.Point(163, 147);
             this.txtnome.Name = "txtnome";
             this.txtnome.ReadOnly = true;
             this.txtnome.Size = new System.Drawing.Size(351, 22);
@@ -81,8 +85,9 @@
             // 
             // txtemail
             // 
+            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(176, 225);
+            this.txtemail.Location = new System.Drawing.Point(163, 233);
             this.txtemail.Name = "txtemail";
             this.txtemail.ReadOnly = true;
             this.txtemail.Size = new System.Drawing.Size(351, 22);
@@ -90,19 +95,21 @@
             // 
             // txtendereco
             // 
+            this.txtendereco.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtendereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtendereco.Location = new System.Drawing.Point(176, 266);
+            this.txtendereco.Location = new System.Drawing.Point(163, 278);
             this.txtendereco.Multiline = true;
             this.txtendereco.Name = "txtendereco";
             this.txtendereco.ReadOnly = true;
-            this.txtendereco.Size = new System.Drawing.Size(351, 67);
+            this.txtendereco.Size = new System.Drawing.Size(351, 19);
             this.txtendereco.TabIndex = 7;
             // 
             // CRN
             // 
+            this.CRN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CRN.AutoSize = true;
             this.CRN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CRN.Location = new System.Drawing.Point(117, 188);
+            this.CRN.Location = new System.Drawing.Point(113, 192);
             this.CRN.Name = "CRN";
             this.CRN.Size = new System.Drawing.Size(43, 16);
             this.CRN.TabIndex = 9;
@@ -110,8 +117,9 @@
             // 
             // txtcrn
             // 
+            this.txtcrn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcrn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcrn.Location = new System.Drawing.Point(176, 185);
+            this.txtcrn.Location = new System.Drawing.Point(163, 189);
             this.txtcrn.Name = "txtcrn";
             this.txtcrn.ReadOnly = true;
             this.txtcrn.Size = new System.Drawing.Size(351, 22);
@@ -119,9 +127,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 52);
+            this.label1.Location = new System.Drawing.Point(196, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 20);
             this.label1.TabIndex = 11;
@@ -129,10 +138,11 @@
             // 
             // lblSemNutricionista
             // 
+            this.lblSemNutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSemNutricionista.AutoSize = true;
             this.lblSemNutricionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSemNutricionista.ForeColor = System.Drawing.Color.Red;
-            this.lblSemNutricionista.Location = new System.Drawing.Point(192, 100);
+            this.lblSemNutricionista.Location = new System.Drawing.Point(216, 100);
             this.lblSemNutricionista.Name = "lblSemNutricionista";
             this.lblSemNutricionista.Size = new System.Drawing.Size(215, 16);
             this.lblSemNutricionista.TabIndex = 11;
@@ -143,7 +153,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 441);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.lblSemNutricionista);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtcrn);

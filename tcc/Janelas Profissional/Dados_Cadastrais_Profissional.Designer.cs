@@ -54,6 +54,7 @@
             // 
             // txtcpf_cnpj
             // 
+            this.txtcpf_cnpj.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcpf_cnpj.Location = new System.Drawing.Point(200, 177);
             this.txtcpf_cnpj.Name = "txtcpf_cnpj";
             this.txtcpf_cnpj.ReadOnly = true;
@@ -62,15 +63,17 @@
             // 
             // lblcrea_crn
             // 
+            this.lblcrea_crn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblcrea_crn.AutoSize = true;
-            this.lblcrea_crn.Location = new System.Drawing.Point(128, 216);
+            this.lblcrea_crn.Location = new System.Drawing.Point(134, 216);
             this.lblcrea_crn.Name = "lblcrea_crn";
-            this.lblcrea_crn.Size = new System.Drawing.Size(55, 13);
+            this.lblcrea_crn.Size = new System.Drawing.Size(61, 13);
             this.lblcrea_crn.TabIndex = 101;
-            this.lblcrea_crn.Text = "[crea_crn]";
+            this.lblcrea_crn.Text = "[crea_crn] :";
             // 
             // txtcrea_crn
             // 
+            this.txtcrea_crn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtcrea_crn.Location = new System.Drawing.Point(200, 213);
             this.txtcrea_crn.Name = "txtcrea_crn";
             this.txtcrea_crn.ReadOnly = true;
@@ -79,6 +82,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(455, 180);
             this.label4.Name = "label4";
@@ -88,33 +92,37 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 180);
+            this.label2.Location = new System.Drawing.Point(129, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 99;
-            this.label2.Text = "CPF_CNPJ";
+            this.label2.Text = "CPF_CNPJ :";
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 325);
+            this.label1.Location = new System.Drawing.Point(133, 325);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 98;
-            this.label1.Text = "Endereço";
+            this.label1.Text = "Endereço :";
             // 
             // txtendereco
             // 
+            this.txtendereco.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtendereco.Location = new System.Drawing.Point(200, 322);
             this.txtendereco.Multiline = true;
             this.txtendereco.Name = "txtendereco";
             this.txtendereco.ReadOnly = true;
-            this.txtendereco.Size = new System.Drawing.Size(249, 49);
+            this.txtendereco.Size = new System.Drawing.Size(249, 26);
             this.txtendereco.TabIndex = 87;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(455, 144);
             this.label3.Name = "label3";
@@ -124,6 +132,7 @@
             // 
             // maskednascimento
             // 
+            this.maskednascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maskednascimento.Location = new System.Drawing.Point(200, 249);
             this.maskednascimento.Mask = "00/00/0000";
             this.maskednascimento.Name = "maskednascimento";
@@ -134,6 +143,7 @@
             // 
             // cbosexo
             // 
+            this.cbosexo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbosexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbosexo.Enabled = false;
             this.cbosexo.FormattingEnabled = true;
@@ -147,60 +157,67 @@
             // 
             // labsexo
             // 
+            this.labsexo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labsexo.AutoSize = true;
-            this.labsexo.Location = new System.Drawing.Point(149, 288);
+            this.labsexo.Location = new System.Drawing.Point(155, 288);
             this.labsexo.Name = "labsexo";
-            this.labsexo.Size = new System.Drawing.Size(31, 13);
+            this.labsexo.Size = new System.Drawing.Size(37, 13);
             this.labsexo.TabIndex = 96;
-            this.labsexo.Text = "Sexo";
+            this.labsexo.Text = "Sexo :";
             // 
             // labnascimento
             // 
+            this.labnascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labnascimento.AutoSize = true;
-            this.labnascimento.Location = new System.Drawing.Point(79, 252);
+            this.labnascimento.Location = new System.Drawing.Point(85, 252);
             this.labnascimento.Name = "labnascimento";
-            this.labnascimento.Size = new System.Drawing.Size(104, 13);
+            this.labnascimento.Size = new System.Drawing.Size(110, 13);
             this.labnascimento.TabIndex = 95;
-            this.labnascimento.Text = "Data de Nascimento";
+            this.labnascimento.Text = "Data de Nascimento :";
             // 
             // labsenha
             // 
+            this.labsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labsenha.AutoSize = true;
-            this.labsenha.Location = new System.Drawing.Point(145, 144);
+            this.labsenha.Location = new System.Drawing.Point(151, 144);
             this.labsenha.Name = "labsenha";
-            this.labsenha.Size = new System.Drawing.Size(38, 13);
+            this.labsenha.Size = new System.Drawing.Size(44, 13);
             this.labsenha.TabIndex = 94;
-            this.labsenha.Text = "Senha";
+            this.labsenha.Text = "Senha :";
             // 
             // labemail
             // 
+            this.labemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labemail.AutoSize = true;
-            this.labemail.Location = new System.Drawing.Point(145, 108);
+            this.labemail.Location = new System.Drawing.Point(151, 108);
             this.labemail.Name = "labemail";
-            this.labemail.Size = new System.Drawing.Size(35, 13);
+            this.labemail.Size = new System.Drawing.Size(41, 13);
             this.labemail.TabIndex = 93;
-            this.labemail.Text = "E-mail";
+            this.labemail.Text = "E-mail :";
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(147, 72);
+            this.label6.Location = new System.Drawing.Point(153, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 92;
-            this.label6.Text = "Login";
+            this.label6.Text = "Login :";
             // 
             // labname
             // 
+            this.labname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labname.AutoSize = true;
-            this.labname.Location = new System.Drawing.Point(145, 36);
+            this.labname.Location = new System.Drawing.Point(151, 36);
             this.labname.Name = "labname";
-            this.labname.Size = new System.Drawing.Size(35, 13);
+            this.labname.Size = new System.Drawing.Size(41, 13);
             this.labname.TabIndex = 91;
-            this.labname.Text = "Nome";
+            this.labname.Text = "Nome :";
             // 
             // txtsenha
             // 
+            this.txtsenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtsenha.Location = new System.Drawing.Point(200, 141);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
@@ -211,6 +228,7 @@
             // 
             // txtemail
             // 
+            this.txtemail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtemail.Location = new System.Drawing.Point(200, 105);
             this.txtemail.Name = "txtemail";
             this.txtemail.ReadOnly = true;
@@ -219,6 +237,7 @@
             // 
             // txtlogin
             // 
+            this.txtlogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtlogin.Location = new System.Drawing.Point(200, 69);
             this.txtlogin.Name = "txtlogin";
             this.txtlogin.ReadOnly = true;
@@ -227,6 +246,7 @@
             // 
             // txtname
             // 
+            this.txtname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtname.Location = new System.Drawing.Point(200, 33);
             this.txtname.Name = "txtname";
             this.txtname.ReadOnly = true;
@@ -235,7 +255,8 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(503, 407);
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Location = new System.Drawing.Point(349, 388);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 105;
@@ -246,7 +267,8 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(254, 407);
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditar.Location = new System.Drawing.Point(242, 388);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 104;
@@ -258,7 +280,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 456);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtcpf_cnpj);
