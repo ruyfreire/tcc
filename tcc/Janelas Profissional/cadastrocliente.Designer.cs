@@ -63,6 +63,7 @@
             // 
             // gridclientes
             // 
+            this.gridclientes.AllowUserToAddRows = false;
             this.gridclientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridclientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -139,9 +140,9 @@
             // btnVincular
             // 
             this.btnVincular.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnVincular.Location = new System.Drawing.Point(221, 371);
+            this.btnVincular.Location = new System.Drawing.Point(230, 372);
             this.btnVincular.Name = "btnVincular";
-            this.btnVincular.Size = new System.Drawing.Size(164, 32);
+            this.btnVincular.Size = new System.Drawing.Size(113, 23);
             this.btnVincular.TabIndex = 4;
             this.btnVincular.Text = "Vincular Cliente";
             this.btnVincular.UseVisualStyleBackColor = true;

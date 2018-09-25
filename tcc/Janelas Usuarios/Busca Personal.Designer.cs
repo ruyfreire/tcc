@@ -82,7 +82,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridPersonal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridPersonal.Location = new System.Drawing.Point(68, 166);
+            this.gridPersonal.Location = new System.Drawing.Point(68, 150);
             this.gridPersonal.Name = "gridPersonal";
             this.gridPersonal.ReadOnly = true;
             this.gridPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -95,7 +95,7 @@
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
-            this.nome.Width = 60;
+            this.nome.Width = 64;
             // 
             // crea
             // 
@@ -103,7 +103,7 @@
             this.crea.HeaderText = "CREA";
             this.crea.Name = "crea";
             this.crea.ReadOnly = true;
-            this.crea.Width = 61;
+            this.crea.Width = 65;
             // 
             // email
             // 
@@ -111,7 +111,7 @@
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            this.email.Width = 60;
+            this.email.Width = 66;
             // 
             // endereco
             // 
@@ -123,7 +123,7 @@
             // btnpesquisartudo
             // 
             this.btnpesquisartudo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnpesquisartudo.Location = new System.Drawing.Point(229, 101);
+            this.btnpesquisartudo.Location = new System.Drawing.Point(171, 98);
             this.btnpesquisartudo.Name = "btnpesquisartudo";
             this.btnpesquisartudo.Size = new System.Drawing.Size(151, 23);
             this.btnpesquisartudo.TabIndex = 13;
@@ -152,7 +152,7 @@
             // 
             // btnContratar
             // 
-            this.btnContratar.Location = new System.Drawing.Point(332, 380);
+            this.btnContratar.Location = new System.Drawing.Point(320, 393);
             this.btnContratar.Name = "btnContratar";
             this.btnContratar.Size = new System.Drawing.Size(151, 23);
             this.btnContratar.TabIndex = 13;
@@ -162,7 +162,7 @@
             // 
             // btnDispensar
             // 
-            this.btnDispensar.Location = new System.Drawing.Point(148, 380);
+            this.btnDispensar.Location = new System.Drawing.Point(136, 393);
             this.btnDispensar.Name = "btnDispensar";
             this.btnDispensar.Size = new System.Drawing.Size(151, 23);
             this.btnDispensar.TabIndex = 13;
@@ -172,7 +172,7 @@
             // 
             // btnMeuPersonal
             // 
-            this.btnMeuPersonal.Location = new System.Drawing.Point(348, 85);
+            this.btnMeuPersonal.Location = new System.Drawing.Point(345, 98);
             this.btnMeuPersonal.Name = "btnMeuPersonal";
             this.btnMeuPersonal.Size = new System.Drawing.Size(102, 23);
             this.btnMeuPersonal.TabIndex = 15;
@@ -186,7 +186,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(629, 452);
             this.ClientSize = new System.Drawing.Size(629, 441);
             this.Controls.Add(this.btnMeuPersonal);
             this.Controls.Add(this.gridPersonal);

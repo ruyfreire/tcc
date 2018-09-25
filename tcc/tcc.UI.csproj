@@ -45,16 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlimentoDieta.cs">
+    <Compile Include="Janelas Dieta_Alimento\AlimentoDieta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlimentoDieta.Designer.cs">
+    <Compile Include="Janelas Dieta_Alimento\AlimentoDieta.Designer.cs">
       <DependentUpon>AlimentoDieta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExercicioTreino.cs">
+    <Compile Include="Janelas Treino_Exercicios\ExercicioTreino.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExercicioTreino.Designer.cs">
+    <Compile Include="Janelas Treino_Exercicios\ExercicioTreino.Designer.cs">
       <DependentUpon>ExercicioTreino.cs</DependentUpon>
     </Compile>
     <Compile Include="Janelas Profissional\Dados_Cadastrais_Profissional.cs">
@@ -222,10 +222,10 @@
     <Compile Include="usuarioMDI.Designer.cs">
       <DependentUpon>usuarioMDI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlimentoDieta.resx">
+    <EmbeddedResource Include="Janelas Dieta_Alimento\AlimentoDieta.resx">
       <DependentUpon>AlimentoDieta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExercicioTreino.resx">
+    <EmbeddedResource Include="Janelas Treino_Exercicios\ExercicioTreino.resx">
       <DependentUpon>ExercicioTreino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janelas Profissional\Dados_Cadastrais_Profissional.resx">

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtnutricionista = new System.Windows.Forms.TextBox();
             this.btnpesquisar = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             // btnpesquisartudo
             // 
             this.btnpesquisartudo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnpesquisartudo.Location = new System.Drawing.Point(244, 104);
+            this.btnpesquisartudo.Location = new System.Drawing.Point(171, 95);
             this.btnpesquisartudo.Name = "btnpesquisartudo";
             this.btnpesquisartudo.Size = new System.Drawing.Size(151, 23);
             this.btnpesquisartudo.TabIndex = 3;
@@ -86,23 +87,31 @@
             // 
             // gridNutricionista
             // 
-            this.gridNutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridNutricionista.AllowUserToAddRows = false;
+            this.gridNutricionista.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gridNutricionista.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridNutricionista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridNutricionista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridNutricionista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
             this.crn,
             this.email,
             this.endereco});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridNutricionista.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridNutricionista.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridNutricionista.Location = new System.Drawing.Point(68, 144);
             this.gridNutricionista.MultiSelect = false;
             this.gridNutricionista.Name = "gridNutricionista";
@@ -115,21 +124,21 @@
             this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
-            this.nome.Width = 60;
+            this.nome.Width = 64;
             // 
             // crn
             // 
             this.crn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.crn.HeaderText = "CRN";
             this.crn.Name = "crn";
-            this.crn.Width = 55;
+            this.crn.Width = 58;
             // 
             // email
             // 
             this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
-            this.email.Width = 60;
+            this.email.Width = 66;
             // 
             // endereco
             // 
@@ -139,7 +148,7 @@
             // 
             // btnMeuNutricionista
             // 
-            this.btnMeuNutricionista.Location = new System.Drawing.Point(359, 96);
+            this.btnMeuNutricionista.Location = new System.Drawing.Point(350, 95);
             this.btnMeuNutricionista.Name = "btnMeuNutricionista";
             this.btnMeuNutricionista.Size = new System.Drawing.Size(102, 23);
             this.btnMeuNutricionista.TabIndex = 16;
@@ -172,12 +181,11 @@
             this.AcceptButton = this.btnpesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 441);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.btnContratar);
             this.Controls.Add(this.btnDispensar);
             this.Controls.Add(this.btnMeuNutricionista);
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.gridNutricionista);
             this.Controls.Add(this.btnpesquisartudo);
             this.Controls.Add(this.btnpesquisar);

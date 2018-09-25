@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboDieta = new System.Windows.Forms.ComboBox();
             this.gridAlimento = new System.Windows.Forms.DataGridView();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,19 +62,36 @@
             // 
             // gridAlimento
             // 
+            this.gridAlimento.AllowUserToAddRows = false;
             this.gridAlimento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlimento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridAlimento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAlimento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nome,
             this.grupo_nutricional,
             this.calorias,
             this.porcao});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlimento.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridAlimento.Location = new System.Drawing.Point(93, 132);
             this.gridAlimento.MultiSelect = false;
             this.gridAlimento.Name = "gridAlimento";
             this.gridAlimento.ReadOnly = true;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridAlimento.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridAlimento.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridAlimento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridAlimento.Size = new System.Drawing.Size(484, 201);
             this.gridAlimento.TabIndex = 22;
@@ -90,7 +109,7 @@
             this.grupo_nutricional.HeaderText = "Grupo Nutricional";
             this.grupo_nutricional.Name = "grupo_nutricional";
             this.grupo_nutricional.ReadOnly = true;
-            this.grupo_nutricional.Width = 105;
+            this.grupo_nutricional.Width = 120;
             // 
             // calorias
             // 
@@ -98,7 +117,7 @@
             this.calorias.HeaderText = "Calorias por porção";
             this.calorias.Name = "calorias";
             this.calorias.ReadOnly = true;
-            this.calorias.Width = 83;
+            this.calorias.Width = 95;
             // 
             // porcao
             // 
@@ -106,7 +125,7 @@
             this.porcao.HeaderText = "Porção";
             this.porcao.Name = "porcao";
             this.porcao.ReadOnly = true;
-            this.porcao.Width = 66;
+            this.porcao.Width = 72;
             // 
             // btnBuscar
             // 
@@ -203,7 +222,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(629, 452);
             this.Controls.Add(this.cboDieta);
             this.Controls.Add(this.gridAlimento);
             this.Controls.Add(this.btnTodosAlimentosDieta);
